@@ -1,0 +1,555 @@
+DATA;FILA;AGENTE;ORIGEM;DESTINO;IDATENDIMENTO;DDD;OPERADORA;TIPO;STATUS;STATUS_NEGOCIO;MAILING;DESLIGADOPOR;TEMPO_CONECTADO;TEMPO_DE_ESPERA;TEMPO_DE_CONVERSACAO
+2026-06-08 09:01:20;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521982069013;3000;17809200262601;55;;Entrante;Atendido;;;Cliente;00:04:25;00:00:02;00:04:23
+2026-06-08 09:04:20;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522988399343;3000;17809202062801;55;;Entrante;Atendido;;;Cliente;00:04:20;00:00:02;00:04:18
+2026-06-08 09:04:28;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521991502180;3000;17809202112861;55;;Entrante;Atendido;;;Agente;00:09:16;00:00:02;00:09:13
+2026-06-08 09:04:40;4000 - FirjanUra;6068-Firjan8;5521976562247;4000;17809202803061;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:11;00:00:01;00:02:11
+2026-06-08 09:04:40;4000 - FirjanUra;6068-Firjan8;5521976562247;6068;17809202803061;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:11;00:00:01;---
+2026-06-08 09:05:40;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5511934423090;3000;17809202632961;55;;Entrante;Atendido;;;Cliente;00:09:19;00:00:10;00:09:09
+2026-06-08 09:06:20;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521999458111;3000;17809203093121;55;;Entrante;Atendido;;;Cliente;00:06:26;00:02:25;00:04:01
+2026-06-08 09:07:01;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521988653580;3000;17809203173181;55;;Entrante;Atendido;;;Cliente;00:11:01;00:05:11;00:05:50
+2026-06-08 09:08:58;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5571991556448;3000;17809204423431;55;;Entrante;Atendido;;;Agente;00:10:24;00:03:41;00:06:44
+2026-06-08 09:09:28;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521966724444;3000;17809204723551;55;;Entrante;Atendido;;;Cliente;00:07:02;00:03:22;00:03:40
+2026-06-08 09:10:57;2010 - Urareceptivo;6016-Ura Receptiva 01;5511970520151;2010;17809206574141;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:07;---;00:02:07
+2026-06-08 09:10:58;2010 - Urareceptivo;6016-Ura Receptiva 01;5511970520151;6016;17809206574141;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:06;---;---
+2026-06-08 09:11:11;4000 - FirjanUra;6020-Urafirjan2;5521988672345;4000;17809206714251;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:19;---;00:02:19
+2026-06-08 09:11:12;4000 - FirjanUra;6020-Urafirjan2;5521988672345;6020;17809206714251;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:19;---;---
+2026-06-08 09:13:23;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521979132305;3000;17809206874401;55;;Entrante;Atendido;;;Cliente;00:03:03;00:00:25;00:02:38
+2026-06-08 09:13:24;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521994894380;3000;17809207514691;55;;Entrante;Atendido;;;Cliente;00:06:39;00:01:39;00:05:01
+2026-06-08 09:13:31;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521988672345;3000;17809206714251;55;;Entrante;Atendido;;;Cliente;00:07:49;00:03:00;00:04:49
+2026-06-08 09:14:44;1063 - Ativo;6042-Paulo Victor Santos;(51) 99166-6232;1063;17809208846021;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:04:58;00:00:02;00:04:53
+2026-06-08 09:14:47;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521965079443;3000;17809208385351;55;;Entrante;Atendido;;;Cliente;00:12:51;00:01:48;00:11:04
+2026-06-08 09:14:49;4000 - FirjanUra;6068-Firjan8;552125015447;4000;17809208896121;55;;Entrante;Atendido;OPCAO 6 - OUTRAS INFORMACOES;;Transferida;00:02:36;---;00:02:36
+2026-06-08 09:14:50;4000 - FirjanUra;6068-Firjan8;552125015447;6068;17809208896121;55;;Entrante;Atendido;OPCAO 6 - OUTRAS INFORMACOES;;--;00:02:36;---;---
+2026-06-08 09:16:56;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521991360142;3000;17809209486711;55;;Entrante;Atendido;;;Agente;00:20:31;00:01:11;00:19:20
+2026-06-08 09:17:03;4000 - FirjanUra;6075-Firjan15;5521972716149;4000;17809210237771;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:15;00:00:01;00:02:15
+2026-06-08 09:17:04;4000 - FirjanUra;6075-Firjan15;5521972716149;6075;17809210237771;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:14;00:00:01;---
+2026-06-08 09:17:26;3000 - FirjanHumano;6036-Adriana Monteiro Lima;552125015447;3000;17809208896121;55;;Entrante;Atendido;;;Cliente;00:11:55;00:02:43;00:09:11
+2026-06-08 09:17:46;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521995443891;3000;17809210097481;55;;Entrante;Atendido;;;Cliente;00:05:00;00:04:59;00:00:01
+2026-06-08 09:18:27;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 98235-1858;1063;17809211078821;51;r1telecomfixo;Discador;Atendido;Engano;MGE_E_4_6_1063;Agente;00:01:40;00:00:02;00:01:34
+2026-06-08 09:19:19;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521972716149;3000;17809210237771;55;;Entrante;Atendido;;;Cliente;00:18:19;00:03:32;00:14:47
+2026-06-08 09:20:21;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521991753363;3000;17809211389051;55;;Entrante;Atendido;;;Cliente;00:07:01;00:03:47;00:03:14
+2026-06-08 09:21:07;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5522999191908;3000;17809212099771;55;;Entrante;Atendido;;;Cliente;00:10:42;00:06:21;00:04:21
+2026-06-08 09:22:57;1063 - Ativo;6044-Roseli Honorato Dos Santos;(54) 99712-6426;1063;178092137711231;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:33;00:00:02;00:02:27
+2026-06-08 09:24:42;1020 - RecDDM;6010-Kaio Sousa Goncalves;5511943869726;1020;178092143711801;55;;Entrante;Atendido;;;Agente;00:02:38;00:00:02;00:02:36
+2026-06-08 09:25:00;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 98125-2649;1063;178092150013021;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:36;00:00:02;00:03:32
+2026-06-08 09:27:02;1020 - RecDDM;6013-Nathalia Dantas Dos Anjos;(22) 98115-3341;1020;178092160514281;22;;Entrante;Atendido;;;Agente;00:06:32;00:00:02;00:06:30
+2026-06-08 09:27:57;1063 - Ativo;6042-Paulo Victor Santos;(51) 99997-2275;1063;178092167715151;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:03:08;00:00:02;00:03:04
+2026-06-08 09:29:40;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521994894380;3000;178092172715851;55;;Entrante;Atendido;;;Cliente;00:06:15;00:00:02;00:06:13
+2026-06-08 09:29:58;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521991787399;3000;178092174316011;55;;Entrante;Atendido;;;Cliente;00:06:51;00:00:02;00:06:50
+2026-06-08 09:30:06;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521988672345;3000;178092170515531;55;;Entrante;Atendido;;;Agente;00:04:17;00:01:48;00:02:29
+2026-06-08 09:30:51;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99358-6911;1063;178092185117431;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:30;00:00:01;00:02:25
+2026-06-08 09:31:10;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5571991556448;3000;178092177216401;55;;Entrante;Atendido;;;Agente;00:12:50;00:03:18;00:09:32
+2026-06-08 09:35:05;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521984149140;3000;178092204919811;55;;Entrante;Atendido;;;Cliente;00:06:53;00:00:55;00:05:58
+2026-06-08 09:35:29;1063 - Ativo;6034-Mariana Nunes Da Motta;(54) 99974-4233;1063;178092212920951;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:18;00:00:02;00:02:14
+2026-06-08 09:35:37;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521933009624;3000;178092204319701;55;;Entrante;Atendido;;;Cliente;00:07:30;00:01:18;00:06:12
+2026-06-08 09:37:26;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99555-3551;1063;178092224622231;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:17;00:00:01;00:02:14
+2026-06-08 09:37:27;1063 - Ativo;6034-Mariana Nunes Da Motta;(47) 98834-4355;1063;178092224722291;47;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:24;00:00:02;00:03:19
+2026-06-08 09:38:37;4000 - FirjanUra;6074-Firjan14;5521987002000;4000;178092231723021;55;;Entrante;Atendido;NAO DIGITOU OPCAO - CURSOS SENAI;;Transferida;00:02:28;00:00:01;00:02:28
+2026-06-08 09:38:37;4000 - FirjanUra;6074-Firjan14;5521987002000;6074;178092231723021;55;;Entrante;Atendido;NAO DIGITOU OPCAO - CURSOS SENAI;;--;00:02:28;00:00:01;---
+2026-06-08 09:39:35;1063 - Ativo;6042-Paulo Victor Santos;(51) 99341-1620;1063;178092237523761;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:45;00:00:01;00:02:42
+2026-06-08 09:40:05;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(22) 99928-6098;1020;178092231522941;22;;Entrante;Atendido;;;Agente;00:04:40;00:00:02;00:04:38
+2026-06-08 09:40:25;1063 - Ativo;6044-Roseli Honorato Dos Santos;(53) 99907-7404;1063;178092242524411;53;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:46;00:00:02;00:02:42
+2026-06-08 09:41:06;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521987002000;3000;178092231723021;55;;Entrante;Atendido;;;Cliente;00:04:05;00:00:02;00:04:03
+2026-06-08 09:41:19;1063 - Ativo;6035-Kessia De Oliveira Angelo;(51) 99982-9239;1063;178092247925031;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:34;00:00:02;00:02:30
+2026-06-08 09:41:43;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99211-8713;1063;178092250325361;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:01:45;00:00:02;00:01:41
+2026-06-08 09:42:36;1063 - Ativo;6042-Paulo Victor Santos;(51) 99701-0660;1063;178092255625801;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:03:46;00:00:01;00:03:40
+2026-06-08 09:44:36;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 98140-2119;1063;178092267626801;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:01:54;00:00:02;00:01:49
+2026-06-08 09:45:54;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521980105800;3000;178092269827061;55;;Entrante;Atendido;;;Agente;00:06:42;00:00:02;00:06:40
+2026-06-08 09:46:14;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521983884380;3000;178092267626831;55;;Entrante;Atendido;;;Cliente;00:05:16;00:00:02;00:05:14
+2026-06-08 09:49:55;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521988950204;3000;178092293930341;55;;Entrante;Atendido;;;Cliente;00:04:43;00:00:02;00:04:41
+2026-06-08 09:51:00;4000 - FirjanUra;6071-Firjan12;5521988458684;4000;178092306031981;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS CURTA DURACAO;;Transferida;00:02:25;---;00:02:25
+2026-06-08 09:51:01;4000 - FirjanUra;6071-Firjan12;5521988458684;6071;178092306031981;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS CURTA DURACAO;;--;00:02:25;---;---
+2026-06-08 09:51:54;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5541998152498;3000;178092305631901;55;;Entrante;Atendido;;;Cliente;00:12:39;00:00:02;00:12:37
+2026-06-08 09:52:04;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99733-0926;1063;178092312432901;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:12;00:00:02;00:02:06
+2026-06-08 09:52:26;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521980976692;3000;178092309332341;55;;Entrante;Atendido;;;Cliente;00:09:24;00:00:02;00:09:23
+2026-06-08 09:53:25;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521988458684;3000;178092306031981;55;;Entrante;Atendido;;;Cliente;00:05:18;00:00:01;00:05:17
+2026-06-08 09:54:11;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521986538740;3000;178092314033201;55;;Entrante;Atendido;;;Cliente;00:03:22;00:00:02;00:03:20
+2026-06-08 09:58:02;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521964327186;3000;178092342436561;55;;Entrante;Atendido;;;Cliente;00:07:56;00:00:02;00:07:55
+2026-06-08 09:58:51;1063 - Ativo;6042-Paulo Victor Santos;(51) 99877-8900;1063;178092353138031;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:04:04;00:00:02;00:04:00
+2026-06-08 09:59:14;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99966-4167;1063;178092355438271;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:21;00:00:02;00:02:15
+2026-06-08 10:02:25;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;552138655148;3000;178092369639921;55;;Entrante;Atendido;;;Cliente;00:08:07;00:00:02;00:08:05
+2026-06-08 10:03:52;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;556530446565;3000;178092377040881;55;;Entrante;Atendido;;;Cliente;00:09:03;00:00:02;00:09:01
+2026-06-08 10:04:48;4000 - FirjanUra;6073-Firjan13;5522997551360;4000;178092388842551;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:07;00:00:01;00:02:07
+2026-06-08 10:04:48;4000 - FirjanUra;6073-Firjan13;5522997551360;6073;178092388842551;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:07;00:00:01;---
+2026-06-08 10:06:04;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521973052223;3000;178092390742931;55;;Entrante;Atendido;;;Cliente;00:03:50;00:00:02;00:03:48
+2026-06-08 10:06:56;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5522997551360;3000;178092388842551;55;;Entrante;Atendido;;;Cliente;00:13:42;00:00:03;00:13:39
+2026-06-08 10:07:20;4000 - FirjanUra;6019-Urafirjan1;5521988510421;4000;178092404044661;55;;Entrante;Atendido;NAO DIGITOU OPCAO - CURSOS SENAI;;Transferida;00:02:09;00:00:01;00:02:09
+2026-06-08 10:07:20;4000 - FirjanUra;6019-Urafirjan1;5521988510421;6019;178092404044661;55;;Entrante;Atendido;NAO DIGITOU OPCAO - CURSOS SENAI;;--;00:02:09;00:00:01;---
+2026-06-08 10:07:45;1063 - Ativo;6037-Simone Victoria De Carvalho;(54) 99606-5420;1063;178092406544931;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:33;00:00:01;00:02:29
+2026-06-08 10:09:17;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521995815889;3000;178092409845251;55;;Entrante;Atendido;;;Cliente;00:04:54;00:00:02;00:04:51
+2026-06-08 10:09:30;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521988510421;3000;178092404044661;55;;Entrante;Atendido;;;Cliente;00:04:53;00:00:01;00:04:52
+2026-06-08 10:10:24;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521991753363;3000;178092416145921;55;;Entrante;Atendido;;;Agente;00:08:15;00:00:02;00:08:13
+2026-06-08 10:13:11;4000 - FirjanUra;6065-Firjan5;552125871057;4000;178092439148321;55;;Entrante;Atendido;OPCAO 5 - CONSULTA FIRJAN SESI;;Transferida;00:02:01;---;00:02:01
+2026-06-08 10:13:12;4000 - FirjanUra;6065-Firjan5;552125871057;6065;178092439148321;55;;Entrante;Atendido;OPCAO 5 - CONSULTA FIRJAN SESI;;--;00:02:01;---;---
+2026-06-08 10:14:35;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521964013588;3000;178092441648701;55;;Entrante;Atendido;;;Cliente;00:04:57;00:00:01;00:04:55
+2026-06-08 10:14:46;4000 - FirjanUra;6068-Firjan8;5521994114562;4000;178092448649411;55;;Entrante;Atendido;OPCAO 3 - SAC;;Transferida;00:02:24;00:00:01;00:02:24
+2026-06-08 10:14:47;4000 - FirjanUra;6068-Firjan8;5521994114562;6068;178092448649411;55;;Entrante;Atendido;OPCAO 3 - SAC;;Cliente;00:02:24;00:00:01;00:02:24
+2026-06-08 10:15:05;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5524999847495;3000;178092445249041;55;;Entrante;Atendido;;;Cliente;00:05:29;00:00:02;00:05:27
+2026-06-08 10:17:54;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522992090380;3000;178092461851021;55;;Entrante;Atendido;;;Cliente;00:08:48;00:00:02;00:08:46
+2026-06-08 10:18:38;1063 - Ativo;6035-Kessia De Oliveira Angelo;(55) 99676-7579;1063;178092471852521;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:17;00:00:02;00:02:12
+2026-06-08 10:19:00;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99979-7081;1063;178092474052921;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:43;00:00:01;00:02:38
+2026-06-08 10:20:01;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521994114562;3000;178092468251931;55;;Entrante;Atendido;;;Cliente;00:04:47;00:00:01;00:04:46
+2026-06-08 10:20:14;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;552134154579;3000;178092472252601;55;;Entrante;Atendido;;;Cliente;00:04:19;00:00:02;00:04:18
+2026-06-08 10:21:58;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521965536765;3000;178092486154311;55;;Entrante;Atendido;;;Cliente;00:12:57;00:00:02;00:12:55
+2026-06-08 10:22:34;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521987539417;3000;178092489754681;55;;Entrante;Atendido;;;Cliente;00:05:52;00:00:02;00:05:50
+2026-06-08 10:23:52;1063 - Ativo;6080-Ana Beatriz Santos Esperanca;(51) 99532-2340;1063;178092503256171;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:10;00:00:01;00:02:04
+2026-06-08 10:25:18;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(53) 99112-3073;1063;178092511857071;53;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:04:37;00:00:02;00:04:33
+2026-06-08 10:25:32;1063 - Ativo;6037-Simone Victoria De Carvalho;(55) 99734-3626;1063;178092513257181;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:28;00:00:01;00:02:24
+2026-06-08 10:25:44;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 98445-9929;1063;178092514457261;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:01;00:00:02;00:02:56
+2026-06-08 10:26:07;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5522988384855;3000;178092507456571;55;;Entrante;Atendido;;;Cliente;00:04:29;00:00:01;00:04:28
+2026-06-08 10:26:15;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;552125094949;3000;178092509956881;55;;Entrante;Atendido;;;Cliente;00:04:49;00:00:02;00:04:46
+2026-06-08 10:33:26;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521993221268;3000;178092551162161;55;;Entrante;Atendido;;;Agente;00:06:50;00:00:01;00:06:49
+2026-06-08 10:33:46;1063 - Ativo;6035-Kessia De Oliveira Angelo;(51) 99962-7899;1063;178092562663641;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:50;00:00:02;00:01:45
+2026-06-08 10:37:05;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5522998377354;3000;178092575165361;55;;Entrante;Atendido;;;Cliente;00:03:24;00:00:02;00:03:22
+2026-06-08 10:38:11;1020 - RecDDM;6013-Nathalia Dantas Dos Anjos;(21) 98299-5589;1020;178092578665731;21;;Entrante;Atendido;;;Agente;00:05:34;00:00:02;00:05:32
+2026-06-08 10:38:41;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521979485995;3000;178092586166791;55;;Entrante;Atendido;;;Cliente;00:07:35;00:00:01;00:07:33
+2026-06-08 10:39:12;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521979415489;3000;178092589567331;55;;Entrante;Atendido;;;Cliente;00:04:18;00:00:02;00:04:16
+2026-06-08 10:39:13;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(83) 99362-0127;1020;178092585066561;83;;Entrante;Atendido;;;Agente;00:03:01;00:00:02;00:02:59
+2026-06-08 10:41:35;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5531985013348;3000;178092604269711;55;;Entrante;Atendido;;;Cliente;00:06:51;00:00:02;00:06:49
+2026-06-08 10:42:00;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521994114562;3000;178092602669511;55;;Entrante;Atendido;;;Agente;00:04:40;00:00:02;00:04:37
+2026-06-08 10:42:05;4000 - FirjanUra;6072-Firjan11;5521990440236;4000;178092612570701;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:16;00:00:01;00:02:16
+2026-06-08 10:42:05;4000 - FirjanUra;6072-Firjan11;5521990440236;6072;178092612570701;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:16;00:00:01;---
+2026-06-08 10:43:16;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 98117-7862;1063;178092619671911;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:05:56;00:00:03;00:05:52
+2026-06-08 10:43:21;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522999034982;3000;178092611170491;55;;Entrante;Atendido;;;Cliente;00:02:46;00:00:01;00:02:45
+2026-06-08 10:44:05;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521991648931;3000;178092613570911;55;;Entrante;Atendido;;;Cliente;00:04:40;00:00:01;00:04:38
+2026-06-08 10:44:20;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521993221268;3000;178092616171261;55;;Entrante;Atendido;;;Cliente;00:07:19;00:00:02;00:07:18
+2026-06-08 10:44:22;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521990440236;3000;178092612570701;55;;Entrante;Atendido;;;Cliente;00:06:24;00:00:01;00:06:23
+2026-06-08 10:44:23;1063 - Ativo;6034-Mariana Nunes Da Motta;(55) 99152-8645;1063;178092626372851;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:19;00:00:02;00:02:15
+2026-06-08 10:47:03;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5522999671089;3000;178092633173361;55;;Entrante;Atendido;;;Cliente;00:04:45;00:00:02;00:04:43
+2026-06-08 10:47:27;2010 - Urareceptivo;6016-Ura Receptiva 01;(31) 98743-4398;2010;178092644774501;31;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:00;00:00:01;00:01:59
+2026-06-08 10:47:42;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99288-9593;1063;178092646274741;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:02;00:00:01;00:01:57
+2026-06-08 10:49:25;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521984356767;3000;178092648875041;55;;Entrante;Atendido;;;Cliente;00:04:16;00:00:01;00:04:15
+2026-06-08 10:50:55;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521995366002;3000;178092653875621;55;;Entrante;Atendido;;;Cliente;00:06:23;00:00:02;00:06:22
+2026-06-08 10:51:40;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99414-8459;1063;178092670077481;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:55;00:00:01;00:01:51
+2026-06-08 10:52:43;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521999452206;3000;178092670777691;55;;Entrante;Atendido;;;Cliente;00:02:16;00:00:02;00:02:14
+2026-06-08 10:53:38;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(31) 98743-4398;1020;178092672877921;31;;Entrante;Atendido;;;Agente;00:03:51;00:00:02;00:03:49
+2026-06-08 10:54:49;1063 - Ativo;6042-Paulo Victor Santos;(51) 98214-0061;1063;178092688979861;51;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:50;00:00:02;00:02:44
+2026-06-08 10:54:50;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5524981863246;3000;178092683479171;55;;Entrante;Atendido;;;Agente;00:04:21;00:00:01;00:04:20
+2026-06-08 10:55:11;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521979808394;3000;178092681978971;55;;Entrante;Atendido;;;Cliente;00:03:23;00:00:02;00:03:21
+2026-06-08 10:55:29;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5522998720408;3000;178092687179671;55;;Entrante;Atendido;;;Agente;00:05:48;00:00:02;00:05:46
+2026-06-08 10:55:42;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521995443891;3000;178092688779831;55;;Entrante;Atendido;;;Cliente;00:08:41;00:00:02;00:08:39
+2026-06-08 10:57:04;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521986146848;3000;178092691680421;55;;Entrante;Atendido;;;Cliente;00:04:05;00:00:01;00:04:04
+2026-06-08 10:57:38;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;5561999687273;1020;178092697081291;55;;Entrante;Atendido;;;Agente;00:02:20;00:00:02;00:02:18
+2026-06-08 10:59:59;3000 - FirjanHumano;6036-Adriana Monteiro Lima;552226478080;3000;178092710483241;55;;Entrante;Atendido;;;Cliente;00:05:45;00:00:02;00:05:43
+2026-06-08 11:00:05;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 98928-5694;1063;178092720584881;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:12;00:00:02;00:03:08
+2026-06-08 11:00:15;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5511976091836;3000;178092713383721;55;;Entrante;Atendido;;;Cliente;00:04:55;00:00:02;00:04:53
+2026-06-08 11:00:18;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 3575-1111;1063;178092721885261;51;r1telecomfixo;Discador;Atendido;Caixa postal;MGE_E_4_6_1063;Agente;00:02:29;00:00:03;00:02:23
+2026-06-08 11:00:44;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521980694451;3000;178092719184591;55;;Entrante;Atendido;;;Cliente;00:05:56;00:00:02;00:05:54
+2026-06-08 11:01:52;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521979571832;3000;178092726085771;55;;Entrante;Atendido;;;Cliente;00:02:18;00:00:02;00:02:16
+2026-06-08 11:02:23;1063 - Ativo;6042-Paulo Victor Santos;(51) 99764-5183;1063;178092734386931;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:24;00:00:02;00:02:18
+2026-06-08 11:07:47;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521975874777;3000;178092761489821;55;;Entrante;Atendido;;;Cliente;00:12:09;00:00:02;00:12:07
+2026-06-08 11:08:36;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521974658515;3000;178092766290471;55;;Entrante;Atendido;;;Cliente;00:04:35;00:00:02;00:04:33
+2026-06-08 11:08:59;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99902-9284;1063;178092773991471;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:51;00:00:02;00:02:47
+2026-06-08 11:09:21;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(55) 99957-0684;1063;178092776191751;55;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Agente;00:02:17;00:00:02;00:02:12
+2026-06-08 11:12:13;1063 - Ativo;6042-Paulo Victor Santos;(51) 3205-2253;1063;178092793393941;51;r1telecomfixo;Discador;Atendido;Engano;MGE_E_4_6_1063;Cliente;00:02:19;00:00:02;00:02:15
+2026-06-08 11:13:02;1020 - RecDDM;6013-Nathalia Dantas Dos Anjos;5561999687273;1020;178092790093501;55;;Entrante;Atendido;;;Agente;00:04:33;00:00:02;00:04:32
+2026-06-08 11:13:05;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521975398092;3000;178092789193311;55;;Entrante;Atendido;;;Cliente;00:06:06;00:00:02;00:06:04
+2026-06-08 11:15:27;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521991487611;3000;178092802995021;55;;Entrante;Atendido;;;Cliente;00:07:43;00:00:02;00:07:42
+2026-06-08 11:16:18;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521976343620;3000;178092812295851;55;;Entrante;Atendido;;;Cliente;00:07:23;00:00:02;00:07:20
+2026-06-08 11:16:42;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(54) 99961-7890;1063;178092820296851;54;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:06:03;00:00:02;00:06:00
+2026-06-08 11:17:18;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99882-0499;1063;178092823897231;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:04:03;00:00:02;00:03:59
+2026-06-08 11:20:25;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 3588-1159;1063;178092842599281;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:39;00:00:02;00:02:34
+2026-06-08 11:22:22;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99760-2793;1063;1780928542100691;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:40;00:00:02;00:02:37
+2026-06-08 11:24:14;4000 - FirjanUra;6070-Firjan10;5522999446302;4000;1780928654101921;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:01;00:00:01;00:02:01
+2026-06-08 11:24:14;4000 - FirjanUra;6070-Firjan10;5522999446302;6070;1780928654101921;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:00;00:00:01;---
+2026-06-08 11:25:17;1063 - Ativo;6080-Ana Beatriz Santos Esperanca;(51) 99696-4617;1063;1780928717102961;51;r1telecomfixo;Discador;Atendido;Oportunidade;MGE_E_4_6_1063;Agente;00:01:49;00:00:03;00:01:43
+2026-06-08 11:26:01;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521979164387;3000;1780928655101991;55;;Entrante;Atendido;;;Agente;00:03:43;00:00:02;00:03:41
+2026-06-08 11:26:15;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522999446302;3000;1780928654101921;55;;Entrante;Atendido;;;Cliente;00:04:50;00:00:02;00:04:48
+2026-06-08 11:27:23;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521990637871;3000;1780928763103551;55;;Entrante;Atendido;;;Cliente;00:02:26;00:00:02;00:02:25
+2026-06-08 11:28:03;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99651-4189;1063;1780928883105151;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:02:14;00:00:02;00:02:09
+2026-06-08 11:31:28;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 3719-7511;1063;1780929088107411;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:31;00:00:01;00:02:26
+2026-06-08 11:31:45;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521998836777;3000;1780929052107091;55;;Entrante;Atendido;;;Agente;00:11:21;00:00:02;00:11:19
+2026-06-08 11:32:58;1063 - Ativo;6042-Paulo Victor Santos;(51) 3344-1606;1063;1780929178108581;51;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Agente;00:04:11;00:00:02;00:04:06
+2026-06-08 11:33:57;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 3748-7402;1063;1780929237109321;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:08;00:00:03;00:02:03
+2026-06-08 11:36:06;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 98499-0526;1063;1780929366110681;51;r1telecomfixo;Discador;Atendido;Retorno;MGE_E_4_6_1063;Cliente;00:02:23;00:00:01;00:02:19
+2026-06-08 11:36:28;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521998069117;3000;1780929282109761;55;;Entrante;Atendido;;;Agente;00:05:28;00:00:02;00:05:26
+2026-06-08 11:36:35;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99758-1009;1063;1780929395111011;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:23;00:00:02;00:02:19
+2026-06-08 11:37:21;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99851-7368;1063;1780929441111481;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:56;00:00:02;00:02:53
+2026-06-08 11:38:26;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521988134782;3000;1780929453111671;55;;Entrante;Atendido;;;Cliente;00:06:32;00:00:02;00:06:30
+2026-06-08 11:39:25;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5524981143540;3000;1780929444111531;55;;Entrante;Atendido;;;Cliente;00:13:06;00:00:01;00:13:05
+2026-06-08 11:40:04;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521974599608;3000;1780929493112071;55;;Entrante;Atendido;;;Agente;00:04:12;00:00:02;00:04:10
+2026-06-08 11:42:27;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521995866623;3000;1780929652114111;55;;Entrante;Atendido;;;Cliente;00:03:40;00:00:02;00:03:38
+2026-06-08 11:42:34;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521972256244;3000;1780929696114631;55;;Entrante;Atendido;;;Cliente;00:14:52;00:00:02;00:14:49
+2026-06-08 11:43:52;1063 - Ativo;6042-Paulo Victor Santos;(51) 98224-0076;1063;1780929832116271;51;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:53;00:00:02;00:02:49
+2026-06-08 11:44:08;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(21) 99009-0771;1020;1780929741115221;21;;Entrante;Atendido;;;Agente;00:02:25;00:00:02;00:02:23
+2026-06-08 11:44:24;1063 - Ativo;6035-Kessia De Oliveira Angelo;(55) 99973-8780;1063;1780929864116781;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:02:00;00:00:02;00:01:56
+2026-06-08 11:44:25;1063 - Ativo;6053-Lais Da Silva Ferreira;(55) 99652-5408;1063;1780929865116791;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:02;00:00:02;00:01:58
+2026-06-08 11:45:18;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 3438-7529;1063;1780929918117601;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Agente;00:01:49;00:00:01;00:01:45
+2026-06-08 11:46:03;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;552125951309;3000;1780929909117431;55;;Entrante;Atendido;;;Cliente;00:10:29;00:00:02;00:10:27
+2026-06-08 11:46:08;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521964270277;3000;1780929918117621;55;;Entrante;Atendido;;;Cliente;00:04:11;00:00:01;00:04:10
+2026-06-08 11:46:10;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521990593099;3000;1780929913117521;55;;Entrante;Atendido;;;Agente;00:09:45;00:00:02;00:09:44
+2026-06-08 11:47:10;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521973223030;3000;1780929937117921;55;;Entrante;Atendido;;;Cliente;00:05:37;00:00:02;00:05:35
+2026-06-08 11:47:26;1063 - Ativo;6042-Paulo Victor Santos;(51) 99929-4031;1063;1780930046118841;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:26;00:00:02;00:02:22
+2026-06-08 11:50:11;4000 - FirjanUra;6020-Urafirjan2;5521989858619;4000;1780930211120931;55;;Entrante;Atendido;OPCAO 6 - OUTRAS INFORMACOES;;Transferida;00:02:02;---;00:02:02
+2026-06-08 11:50:12;4000 - FirjanUra;6020-Urafirjan2;5521989858619;6020;1780930211120931;55;;Entrante;Atendido;OPCAO 6 - OUTRAS INFORMACOES;;--;00:02:02;---;---
+2026-06-08 11:51:09;4000 - FirjanUra;6021-Urafirjan3;5521979789900;4000;1780930269121731;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:13;---;00:02:13
+2026-06-08 11:51:10;4000 - FirjanUra;6021-Urafirjan3;5521979789900;6021;1780930269121731;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:12;---;---
+2026-06-08 11:51:43;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99973-3594;1063;1780930303122271;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:53;00:00:02;00:01:47
+2026-06-08 11:52:14;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521989858619;3000;1780930211120931;55;;Entrante;Atendido;;;Cliente;00:02:33;00:00:03;00:02:30
+2026-06-08 11:53:22;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521979789900;3000;1780930269121731;55;;Entrante;Atendido;;;Agente;00:03:51;00:00:01;00:03:49
+2026-06-08 11:53:32;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 3028-9000;1063;1780930412123511;51;r1telecomfixo;Discador;Atendido;Ligacao caida;MGE_E_4_6_1063;Cliente;00:01:56;00:00:02;00:01:51
+2026-06-08 11:53:33;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;5511949317895;1020;1780930336122601;55;;Entrante;Atendido;;;Cliente;00:12:54;00:00:12;00:12:42
+2026-06-08 11:54:42;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521968486281;3000;1780930399123291;55;;Entrante;Atendido;;;Cliente;00:08:42;00:00:02;00:08:41
+2026-06-08 11:58:02;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5522992850519;3000;1780930579125991;55;;Entrante;Atendido;;;Cliente;00:02:08;00:00:02;00:02:06
+2026-06-08 11:58:21;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 2108-9014;1063;1780930701127561;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:55;00:00:02;00:01:50
+2026-06-08 11:59:32;1063 - Ativo;6035-Kessia De Oliveira Angelo;(85) 99175-2445;1063;1780930772128441;85;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:01:58;00:00:01;00:01:55
+2026-06-08 11:59:39;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521980463008;3000;1780930721127761;55;;Entrante;Atendido;;;Agente;00:03:35;00:00:02;00:03:33
+2026-06-08 12:01:26;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521965458816;3000;1780930807128991;55;;Entrante;Atendido;;;Cliente;00:03:48;00:00:02;00:03:45
+2026-06-08 12:03:13;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99856-2778;1063;1780930993130961;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:01;00:00:03;00:02:56
+2026-06-08 12:03:41;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521992729071;3000;1780930953130521;55;;Entrante;Atendido;;;Cliente;00:03:59;00:00:02;00:03:57
+2026-06-08 12:03:55;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99763-0630;1063;1780931035131341;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:23;00:00:01;00:02:20
+2026-06-08 12:05:08;1063 - Ativo;6035-Kessia De Oliveira Angelo;(51) 2101-6906;1063;1780931108132031;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:01:56;00:00:02;00:01:50
+2026-06-08 12:09:15;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521994722135;3000;1780931299133811;55;;Entrante;Atendido;;;Cliente;00:06:00;00:00:02;00:05:58
+2026-06-08 12:10:05;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521968486281;3000;1780931319134141;55;;Entrante;Atendido;;;Cliente;00:05:04;00:00:01;00:05:03
+2026-06-08 12:10:09;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 3714-2155;1063;1780931409135311;51;r1telecomfixo;Discador;Atendido;Caixa postal;MGE_E_4_6_1063;Agente;00:08:46;00:00:03;00:08:40
+2026-06-08 12:12:02;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521971782127;3000;1780931462135891;55;;Entrante;Atendido;;;Cliente;00:07:12;00:00:02;00:07:10
+2026-06-08 12:12:49;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521980854130;3000;1780931510136521;55;;Entrante;Atendido;;;Agente;00:07:33;00:00:02;00:07:31
+2026-06-08 12:13:13;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99366-8008;1063;1780931593137511;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:07;00:00:02;00:02:01
+2026-06-08 12:13:44;1020 - RecDDM;6009-Christiane Pimentel Diniz;5521976178651;1020;1780931531136911;55;;Entrante;Atendido;;;Agente;00:03:29;00:00:02;00:03:27
+2026-06-08 12:13:51;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;(21) 98839-3215;1020;1780931529136821;21;;Entrante;Atendido;;;Cliente;00:03:24;00:00:02;00:03:22
+2026-06-08 12:14:28;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521999854286;3000;1780931619137761;55;;Entrante;Atendido;;;Cliente;00:04:33;00:00:02;00:04:31
+2026-06-08 12:15:13;1063 - Ativo;6080-Ana Beatriz Santos Esperanca;(51) 3214-4531;1063;1780931713138921;51;r1telecomfixo;Discador;Atendido;Ligacao muda;MGE_E_4_6_1063;Agente;00:02:09;00:00:02;00:02:05
+2026-06-08 12:16:01;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521974275499;3000;1780931700138751;55;;Entrante;Atendido;;;Cliente;00:09:43;00:00:02;00:09:41
+2026-06-08 12:16:51;1020 - RecDDM;6010-Kaio Sousa Goncalves;(21) 98917-0803;1020;1780931714138971;21;;Entrante;Atendido;;;Cliente;00:27:12;00:00:02;00:27:10
+2026-06-08 12:18:06;1020 - RecDDM;6009-Christiane Pimentel Diniz;(21) 3233-3000;1020;1780931802139911;21;;Entrante;Atendido;;;Agente;00:03:43;00:00:03;00:03:41
+2026-06-08 12:18:20;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521985017087;3000;1780931805140031;55;;Entrante;Atendido;;;Cliente;00:07:09;00:00:02;00:07:07
+2026-06-08 12:19:38;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5522992587804;3000;1780931920141501;55;;Entrante;Atendido;;;Agente;00:04:38;00:00:02;00:04:36
+2026-06-08 12:20:38;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 3381-3054;1063;1780932038142711;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:04:30;00:00:01;00:04:26
+2026-06-08 12:23:35;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521965864825;3000;1780932120143491;55;;Entrante;Atendido;;;Cliente;00:10:07;00:00:01;00:10:05
+2026-06-08 12:23:37;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;(27) 3313-9700;1020;1780932191144331;27;;Entrante;Atendido;;;Cliente;00:04:56;00:00:02;00:04:55
+2026-06-08 12:25:22;4000 - FirjanUra;6075-Firjan15;5521959301588;4000;1780932322145941;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:24;00:00:01;00:02:24
+2026-06-08 12:25:22;4000 - FirjanUra;6075-Firjan15;5521959301588;6075;1780932322145941;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:24;00:00:01;---
+2026-06-08 12:25:56;4000 - FirjanUra;6019-Urafirjan1;5521985815212;4000;1780932356146311;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:19;---;00:02:19
+2026-06-08 12:25:57;4000 - FirjanUra;6019-Urafirjan1;5521985815212;6019;1780932356146311;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:19;---;---
+2026-06-08 12:27:47;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521959301588;3000;1780932322145941;55;;Entrante;Atendido;;;Agente;00:06:11;00:00:02;00:06:09
+2026-06-08 12:28:16;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521985815212;3000;1780932356146311;55;;Entrante;Atendido;;;Cliente;00:02:56;00:00:02;00:02:54
+2026-06-08 12:28:52;4000 - FirjanUra;6066-Firjan6;5524988598337;4000;1780932532148111;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:32;00:00:01;00:02:32
+2026-06-08 12:28:52;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521983993890;3000;1780932439147131;55;;Entrante;Atendido;;;Cliente;00:04:22;00:00:02;00:04:20
+2026-06-08 12:28:52;4000 - FirjanUra;6066-Firjan6;5524988598337;6066;1780932532148111;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:32;00:00:01;---
+2026-06-08 12:31:24;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5524988598337;3000;1780932532148111;55;;Entrante;Atendido;;;Cliente;00:04:07;00:00:02;00:04:05
+2026-06-08 12:31:44;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521986548940;3000;1780932654149261;55;;Entrante;Atendido;;;Cliente;00:05:14;00:00:02;00:05:12
+2026-06-08 12:32:53;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 98179-1580;1063;1780932773150581;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:04:13;00:00:02;00:04:07
+2026-06-08 12:34:13;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(55) 99967-9602;1063;1780932853151511;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:52;00:00:02;00:01:48
+2026-06-08 12:35:01;1063 - Ativo;6044-Roseli Honorato Dos Santos;(53) 99948-5527;1063;1780932901152011;53;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:04:02;00:00:03;00:03:58
+2026-06-08 12:35:13;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99341-4606;1063;1780932913152091;51;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Agente;00:04:41;00:00:17;00:04:23
+2026-06-08 12:35:41;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521991228102;3000;1780932854151551;55;;Entrante;Atendido;;;Cliente;00:06:42;00:00:01;00:06:41
+2026-06-08 12:35:42;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521973711930;3000;1780932846151431;55;;Entrante;Atendido;;;Cliente;00:06:18;00:00:02;00:06:16
+2026-06-08 12:36:27;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521980158375;3000;1780932931152241;55;;Entrante;Atendido;;;Cliente;00:03:36;00:00:02;00:03:34
+2026-06-08 12:37:59;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521986359355;3000;1780933024153081;55;;Entrante;Atendido;;;Cliente;00:05:21;00:00:02;00:05:19
+2026-06-08 12:40:47;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(54) 99602-3112;1063;1780933247155001;54;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:02:14;00:00:02;00:02:08
+2026-06-08 12:41:42;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 3254-5744;1063;1780933302155521;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:55;00:00:02;00:02:50
+2026-06-08 12:41:48;1063 - Ativo;6035-Kessia De Oliveira Angelo;(53) 99173-6503;1063;1780933308155591;53;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:24;00:00:02;00:02:19
+2026-06-08 12:41:55;4000 - FirjanUra;6075-Firjan15;5521997279187;4000;1780933315155651;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:08;00:00:01;00:02:08
+2026-06-08 12:41:55;4000 - FirjanUra;6075-Firjan15;5521997279187;6075;1780933315155651;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:08;00:00:01;---
+2026-06-08 12:42:32;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99278-1037;1063;1780933352155901;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:34;00:00:02;00:02:28
+2026-06-08 12:42:32;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99662-1314;1063;1780933352155991;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:32;00:00:33;00:01:56
+2026-06-08 12:44:18;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521983912219;3000;1780933369156241;55;;Entrante;Atendido;;;Cliente;00:03:15;00:00:02;00:03:13
+2026-06-08 12:44:43;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521993244406;3000;1780933389156491;55;;Entrante;Atendido;;;Cliente;00:05:40;00:00:02;00:05:39
+2026-06-08 12:47:31;4000 - FirjanUra;6066-Firjan6;5521983851391;4000;1780933651159341;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:28;00:00:01;00:02:28
+2026-06-08 12:47:31;4000 - FirjanUra;6066-Firjan6;5521983851391;6066;1780933651159341;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:28;00:00:01;---
+2026-06-08 12:47:42;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521974459975;3000;1780933570158321;55;;Entrante;Atendido;;;Cliente;00:05:57;00:00:02;00:05:55
+2026-06-08 12:48:10;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521999455287;3000;1780933633159131;55;;Entrante;Atendido;;;Cliente;00:06:12;00:00:02;00:06:10
+2026-06-08 12:49:09;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521990890679;3000;1780933695159941;55;;Entrante;Atendido;;;Cliente;00:09:20;00:00:01;00:09:19
+2026-06-08 12:49:39;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521986548940;3000;1780933727160401;55;;Entrante;Atendido;;;Cliente;00:05:24;00:00:49;00:04:34
+2026-06-08 12:50:00;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521983851391;3000;1780933651159341;55;;Entrante;Atendido;;;Cliente;00:06:12;00:03:44;00:02:28
+2026-06-08 12:51:54;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99707-8473;1063;1780933914162491;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:15;00:00:01;00:03:11
+2026-06-08 12:52:08;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 3097-8451;1063;1780933928162721;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:46;00:00:02;00:02:42
+2026-06-08 12:53:01;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521991228102;3000;1780933924162631;55;;Entrante;Atendido;;;Cliente;00:06:34;00:01:01;00:05:33
+2026-06-08 12:53:48;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521994177204;3000;1780933910162421;55;;Entrante;Atendido;;;Cliente;00:07:45;00:00:38;00:07:07
+2026-06-08 12:55:34;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(54) 99986-7282;1063;1780934134164991;54;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:46;00:00:01;00:02:43
+2026-06-08 12:55:51;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 3723-6643;1063;1780934151165221;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:05:22;00:00:02;00:05:16
+2026-06-08 12:55:53;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521983727743;3000;1780934076164241;55;;Entrante;Atendido;;;Cliente;00:05:41;00:00:02;00:05:39
+2026-06-08 12:56:05;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521998549018;3000;1780934109164591;55;;Entrante;Atendido;;;Cliente;00:15:39;00:03:34;00:12:04
+2026-06-08 12:56:22;4000 - FirjanUra;6066-Firjan6;5521976266379;4000;1780934182165641;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:07;---;00:02:07
+2026-06-08 12:56:23;4000 - FirjanUra;6066-Firjan6;5521976266379;6066;1780934182165641;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:07;---;---
+2026-06-08 12:56:37;1063 - Ativo;6044-Roseli Honorato Dos Santos;(55) 3305-1117;1063;1780934197165831;55;r1telecomfixo;Discador;Atendido;Ligacao muda;MGE_E_4_6_1063;Cliente;00:02:18;00:00:02;00:02:14
+2026-06-08 12:56:42;4000 - FirjanUra;6067-Firjan7;5524999752988;4000;1780934202165901;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:05;---;00:02:05
+2026-06-08 12:56:43;4000 - FirjanUra;6067-Firjan7;5524999752988;6067;1780934202165901;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:05;---;---
+2026-06-08 12:58:37;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521979702449;3000;1780934229166211;55;;Entrante;Atendido;;;Cliente;00:07:10;00:01:59;00:05:11
+2026-06-08 12:58:48;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5524999752988;3000;1780934202165901;55;;Entrante;Atendido;;;Cliente;00:14:59;00:02:55;00:12:04
+2026-06-08 13:00:30;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521972484946;3000;1780934374167731;55;;Entrante;Atendido;;;Cliente;00:04:53;00:01:07;00:03:45
+2026-06-08 13:02:58;1063 - Ativo;6035-Kessia De Oliveira Angelo;(51) 98111-9600;1063;1780934578169831;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:01:54;00:00:02;00:01:51
+2026-06-08 13:03:21;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521983307647;3000;1780934505169071;55;;Entrante;Atendido;;;Cliente;00:05:19;00:02:09;00:03:10
+2026-06-08 13:08:34;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521993392258;3000;1780934859172601;55;;Entrante;Atendido;;;Cliente;00:07:09;00:00:03;00:07:05
+2026-06-08 13:09:26;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99937-5008;1063;1780934966173711;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:51;00:00:01;00:01:48
+2026-06-08 13:12:32;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99603-6845;1063;1780935152175771;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:57;00:00:02;00:02:52
+2026-06-08 13:14:51;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521982225328;3000;1780935229176621;55;;Entrante;Atendido;;;Cliente;00:06:20;00:00:02;00:06:18
+2026-06-08 13:15:55;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99909-3100;1063;1780935355178091;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:06;00:00:01;00:03:02
+2026-06-08 13:16:31;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5511976894634;3000;1780935288177391;55;;Entrante;Atendido;;;Cliente;00:05:04;00:00:02;00:05:02
+2026-06-08 13:19:36;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(47) 99936-0800;1063;1780935576180541;47;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:03:30;00:00:02;00:03:26
+2026-06-08 13:19:56;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 98235-1858;1063;1780935596180851;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:17;00:00:01;00:02:12
+2026-06-08 13:20:03;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521976598405;3000;1780935539180001;55;;Entrante;Atendido;;;Cliente;00:05:23;00:00:03;00:05:20
+2026-06-08 13:20:17;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521983659486;3000;1780935561180271;55;;Entrante;Atendido;;;Cliente;00:09:41;00:00:02;00:09:39
+2026-06-08 13:20:50;4000 - FirjanUra;6069-Firjan9;5521999863690;4000;1780935650181401;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:06;00:00:01;00:02:06
+2026-06-08 13:20:51;4000 - FirjanUra;6069-Firjan9;5521999863690;6069;1780935650181401;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:06;00:00:01;---
+2026-06-08 13:22:57;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521999863690;3000;1780935650181401;55;;Entrante;Atendido;;;Cliente;00:02:37;00:00:02;00:02:36
+2026-06-08 13:23:26;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521971468790;3000;1780935752182641;55;;Entrante;Atendido;;;Cliente;00:03:05;00:00:02;00:03:04
+2026-06-08 13:23:54;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99993-3087;1063;1780935834183421;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:43;00:00:02;00:02:38
+2026-06-08 13:27:49;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521990389744;3000;1780936013185621;55;;Entrante;Atendido;;;Cliente;00:05:37;00:00:01;00:05:35
+2026-06-08 13:30:29;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(53) 99172-6266;1063;1780936229188201;53;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:04:54;00:00:02;00:04:48
+2026-06-08 13:30:43;1063 - Ativo;6042-Paulo Victor Santos;(55) 3744-4736;1063;1780936243188491;55;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:02:07;00:00:02;00:02:04
+2026-06-08 13:32:40;2010 - Urareceptivo;6017-Ura Receptiva 02;5573981494421;2010;1780936360189801;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:08;00:00:01;00:02:08
+2026-06-08 13:32:40;2010 - Urareceptivo;6017-Ura Receptiva 02;5573981494421;6017;1780936360189801;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:08;00:00:01;---
+2026-06-08 13:33:19;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5522997050688;3000;1780936339189401;55;;Entrante;Atendido;;;Agente;00:07:58;00:00:01;00:07:56
+2026-06-08 13:34:24;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522996175487;3000;1780936351189641;55;;Entrante;Atendido;;;Cliente;00:03:28;00:00:02;00:03:27
+2026-06-08 13:34:26;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521969268417;3000;1780936360189821;55;;Entrante;Atendido;;;Cliente;00:06:22;00:00:02;00:06:19
+2026-06-08 13:34:31;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521999666703;3000;1780936388190251;55;;Entrante;Atendido;;;Cliente;00:04:02;00:00:02;00:04:00
+2026-06-08 13:34:48;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5573981494421;1020;1780936360189801;55;;Entrante;Atendido;;;Cliente;00:08:43;00:00:02;00:08:41
+2026-06-08 13:35:13;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521965915793;3000;1780936458190941;55;;Entrante;Atendido;;;Cliente;00:05:43;00:00:03;00:05:40
+2026-06-08 13:36:07;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521985703198;3000;1780936513191751;55;;Entrante;Atendido;;;Cliente;00:03:00;00:00:02;00:02:58
+2026-06-08 13:38:09;1063 - Ativo;6053-Lais Da Silva Ferreira;(53) 99109-9925;1063;1780936689194051;53;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:53;00:00:02;00:02:47
+2026-06-08 13:38:13;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99712-4544;1063;1780936693194211;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:06:00;00:00:02;00:05:54
+2026-06-08 13:40:18;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521959228245;3000;1780936763195011;55;;Entrante;Atendido;;;Cliente;00:06:05;00:00:02;00:06:03
+2026-06-08 13:41:03;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521995427451;3000;1780936805195561;55;;Entrante;Atendido;;;Cliente;00:04:41;00:00:02;00:04:39
+2026-06-08 13:43:36;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5521996109969;1020;1780936986198021;55;;Entrante;Atendido;;;Cliente;00:02:18;00:00:02;00:02:16
+2026-06-08 13:44:04;4000 - FirjanUra;6067-Firjan7;5521965860418;4000;1780937044198741;55;;Entrante;Atendido;DESLIGOU - CURSO SENAI;;Cliente;00:02:12;---;00:02:12
+2026-06-08 13:44:05;4000 - FirjanUra;6067-Firjan7;5521965860418;6067;1780937044198741;55;;Entrante;Atendido;DESLIGOU - CURSO SENAI;;Cliente;00:02:12;---;00:02:12
+2026-06-08 13:44:09;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521920076966;3000;1780936951197551;55;;Entrante;Atendido;;;Cliente;00:04:36;00:00:02;00:04:34
+2026-06-08 13:46:23;1063 - Ativo;6042-Paulo Victor Santos;(55) 99957-7157;1063;1780937183200631;55;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Agente;00:03:01;00:00:02;00:02:57
+2026-06-08 13:48:43;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(21) 3233-3000;1020;1780937216201181;21;;Entrante;Atendido;;;Agente;00:04:42;00:00:02;00:04:40
+2026-06-08 13:51:20;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5524999273814;3000;1780937372203131;55;;Entrante;Atendido;;;Cliente;00:08:07;00:00:03;00:08:03
+2026-06-08 13:53:32;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521996732376;3000;1780937553205461;55;;Entrante;Atendido;;;Cliente;00:09:39;00:00:02;00:09:38
+2026-06-08 13:53:52;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521999972797;3000;1780937572205701;55;;Entrante;Atendido;;;Cliente;00:10:49;00:00:02;00:10:48
+2026-06-08 13:57:23;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99814-9440;1063;1780937843209451;51;r1telecomfixo;Discador;Atendido;Ligacao caida;MGE_E_4_6_1063;Cliente;00:02:02;00:00:02;00:01:57
+2026-06-08 13:57:30;4000 - FirjanUra;6075-Firjan15;5521983899528;4000;1780937850209551;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:08;00:00:01;00:02:08
+2026-06-08 13:57:30;4000 - FirjanUra;6075-Firjan15;5521983899528;6075;1780937850209551;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:08;00:00:01;---
+2026-06-08 13:58:19;1063 - Ativo;6034-Mariana Nunes Da Motta;(54) 99943-4174;1063;1780937899210251;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:30;00:00:01;00:02:27
+2026-06-08 13:58:47;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521996657268;3000;1780937869209811;55;;Entrante;Atendido;;;Agente;00:06:02;00:00:02;00:06:01
+2026-06-08 13:59:38;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521983899528;3000;1780937850209551;55;;Entrante;Atendido;;;Cliente;00:04:41;00:00:02;00:04:40
+2026-06-08 14:00:32;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522997971546;3000;1780937972210551;55;;Entrante;Atendido;;;Cliente;00:05:20;00:00:03;00:05:17
+2026-06-08 14:00:55;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521964014904;3000;1780937979210761;55;;Entrante;Atendido;;;Cliente;00:09:56;00:00:50;00:09:06
+2026-06-08 14:02:46;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99677-8506;1063;1780938166212871;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:40;00:00:02;00:02:37
+2026-06-08 14:04:01;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99171-8827;1063;1780938241213751;51;r1telecomfixo;Discador;Atendido;Oportunidade;MGE_E_4_6_1063;Cliente;00:03:02;00:00:02;00:02:57
+2026-06-08 14:04:33;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5541996378798;1020;1780938185213011;55;;Entrante;Atendido;;;Agente;00:06:08;00:00:02;00:06:06
+2026-06-08 14:04:35;1063 - Ativo;6034-Mariana Nunes Da Motta;(53) 98403-7988;1063;1780938275214191;53;r1telecomfixo;Discador;Atendido;Retorno;MGE_E_4_6_1063;Cliente;00:01:52;00:00:02;00:01:49
+2026-06-08 14:04:41;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99500-1058;1063;1780938281214261;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:02:36;00:00:02;00:02:31
+2026-06-08 14:05:02;1063 - Ativo;6042-Paulo Victor Santos;(51) 98217-3262;1063;1780938302214581;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:03:03;00:00:02;00:02:58
+2026-06-08 14:05:34;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;552130838383;1020;1780938232213621;55;;Entrante;Atendido;;;Agente;00:06:06;00:00:02;00:06:04
+2026-06-08 14:05:45;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521980581145;3000;1780938287214371;55;;Entrante;Atendido;;;Cliente;00:07:27;00:00:03;00:07:24
+2026-06-08 14:05:48;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521983750914;3000;1780938293214481;55;;Entrante;Atendido;;;Agente;00:04:20;00:00:01;00:04:19
+2026-06-08 14:10:00;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99995-9964;1063;1780938600217441;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:05;00:00:02;00:02:01
+2026-06-08 14:11:41;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521968410614;3000;1780938645217911;55;;Entrante;Atendido;;;Cliente;00:08:34;00:00:02;00:08:32
+2026-06-08 14:14:26;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521986318339;3000;1780938817219941;55;;Entrante;Atendido;;;Cliente;00:06:07;00:00:02;00:06:06
+2026-06-08 14:14:43;1063 - Ativo;6042-Paulo Victor Santos;(51) 98032-1132;1063;1780938883220971;51;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:40;00:00:02;00:02:35
+2026-06-08 14:14:44;4000 - FirjanUra;6071-Firjan12;5521990582092;4000;1780938884221011;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:04;---;00:02:04
+2026-06-08 14:14:45;4000 - FirjanUra;6071-Firjan12;5521990582092;6071;1780938884221011;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:04;---;---
+2026-06-08 14:15:55;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521999078193;3000;1780938835220241;55;;Entrante;Atendido;;;Cliente;00:04:58;00:00:02;00:04:56
+2026-06-08 14:16:49;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521990582092;3000;1780938884221011;55;;Entrante;Atendido;;;Cliente;00:06:13;00:00:03;00:06:11
+2026-06-08 14:19:04;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5524998110491;3000;1780939086223461;55;;Entrante;Atendido;;;Agente;00:07:51;00:00:02;00:07:49
+2026-06-08 14:19:13;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521968225213;3000;1780939099223711;55;;Entrante;Atendido;;;Cliente;00:07:05;00:01:08;00:05:56
+2026-06-08 14:19:36;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5571997314438;1020;1780939087223521;55;;Entrante;Atendido;;;Agente;00:06:59;00:00:02;00:06:56
+2026-06-08 14:20:20;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99956-9950;1063;1780939220225181;51;r1telecomfixo;Discador;Atendido;Engano;MGE_E_4_6_1063;Cliente;00:02:04;00:00:01;00:02:01
+2026-06-08 14:20:24;1063 - Ativo;6044-Roseli Honorato Dos Santos;(53) 99972-4279;1063;1780939224225261;53;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:05:58;00:00:02;00:05:53
+2026-06-08 14:23:06;1063 - Ativo;6053-Lais Da Silva Ferreira;(54) 99106-1067;1063;1780939386226841;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:14;00:00:02;00:02:09
+2026-06-08 14:25:03;1063 - Ativo;6034-Mariana Nunes Da Motta;(55) 98454-6347;1063;1780939503228261;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:48;00:00:02;00:03:43
+2026-06-08 14:25:21;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99581-1524;1063;1780939521228601;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:41;00:00:01;00:02:36
+2026-06-08 14:26:33;4000 - FirjanUra;6019-Urafirjan1;5521964625050;4000;1780939593229631;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:26;00:00:01;00:02:26
+2026-06-08 14:26:33;4000 - FirjanUra;6019-Urafirjan1;5521964625050;6019;1780939593229631;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:26;00:00:01;---
+2026-06-08 14:27:14;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521976484498;3000;1780939591229581;55;;Entrante;Atendido;;;Cliente;00:04:31;00:00:02;00:04:29
+2026-06-08 14:28:59;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521964625050;3000;1780939593229631;55;;Entrante;Atendido;;;Cliente;00:08:56;00:00:03;00:08:53
+2026-06-08 14:29:34;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99906-2706;1063;1780939774231961;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:13;00:00:02;00:03:09
+2026-06-08 14:29:35;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521973750227;3000;1780939693230971;55;;Entrante;Atendido;;;Cliente;00:04:20;00:00:02;00:04:18
+2026-06-08 14:30:41;1063 - Ativo;6042-Paulo Victor Santos;(51) 99987-0810;1063;1780939841232851;51;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:10;00:00:02;00:02:04
+2026-06-08 14:31:50;1063 - Ativo;6034-Mariana Nunes Da Motta;(14) 99868-1493;1063;1780939910233721;14;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:20;00:00:02;00:02:14
+2026-06-08 14:32:21;4000 - FirjanUra;6069-Firjan9;5522998416986;4000;1780939941234121;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:14;---;00:02:14
+2026-06-08 14:32:22;4000 - FirjanUra;6069-Firjan9;5522998416986;6069;1780939941234121;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:14;---;---
+2026-06-08 14:34:01;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521999863690;3000;1780939947234261;55;;Entrante;Atendido;;;Agente;00:08:40;00:00:02;00:08:37
+2026-06-08 14:35:06;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521968050625;3000;1780940057235681;55;;Entrante;Atendido;;;Cliente;00:10:45;00:00:02;00:10:43
+2026-06-08 14:35:42;2010 - Urareceptivo;6017-Ura Receptiva 02;5535998853855;2010;1780940142236681;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:00;---;00:02:00
+2026-06-08 14:35:43;2010 - Urareceptivo;6017-Ura Receptiva 02;5535998853855;6017;1780940142236681;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:00;---;---
+2026-06-08 14:36:18;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99848-1876;1063;1780940178237321;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:33;00:00:02;00:02:27
+2026-06-08 14:37:32;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99909-4891;1063;1780940252238241;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:54;00:00:02;00:02:50
+2026-06-08 14:37:43;1020 - RecDDM;6009-Christiane Pimentel Diniz;5535998853855;1020;1780940142236681;55;;Entrante;Atendido;;;Agente;00:06:08;00:00:06;00:06:02
+2026-06-08 14:37:43;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(21) 96610-9823;1020;1780940263238491;21;;Entrante;Atendido;;;Cliente;00:03:14;00:00:02;00:03:11
+2026-06-08 14:37:44;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5528988038344;3000;1780940158236921;55;;Entrante;Atendido;;;Cliente;00:04:07;00:00:03;00:04:04
+2026-06-08 14:37:55;4000 - FirjanUra;6075-Firjan15;5521970200005;4000;1780940275238721;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:12;---;00:02:12
+2026-06-08 14:37:56;4000 - FirjanUra;6075-Firjan15;5521970200005;6075;1780940275238721;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:11;---;---
+2026-06-08 14:39:48;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99912-1240;1063;1780940388240211;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:02:37;00:00:02;00:02:31
+2026-06-08 14:40:07;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521970200005;3000;1780940275238721;55;;Entrante;Atendido;;;Cliente;00:05:25;00:00:02;00:05:24
+2026-06-08 14:40:20;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(11) 96473-3658;1063;1780940420240641;11;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:53;00:00:01;00:01:48
+2026-06-08 14:41:19;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5524999523393;3000;1780940384240151;55;;Entrante;Atendido;;;Cliente;00:02:37;00:00:03;00:02:34
+2026-06-08 14:41:45;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521998912894;3000;1780940445241031;55;;Entrante;Atendido;;;Cliente;00:04:49;00:00:02;00:04:48
+2026-06-08 14:42:24;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521982805504;3000;1780940425240741;55;;Entrante;Atendido;;;Cliente;00:09:41;00:00:03;00:09:38
+2026-06-08 14:43:44;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99582-9593;1063;1780940624243251;51;r1telecomfixo;Discador;Atendido;Retorno;MGE_E_4_6_1063;Cliente;00:01:39;00:00:02;00:01:34
+2026-06-08 14:44:08;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521971879029;3000;1780940594242841;55;;Entrante;Atendido;;;Cliente;00:04:08;00:00:02;00:04:06
+2026-06-08 14:45:01;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99658-9647;1063;1780940701244121;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:24;00:00:01;00:02:22
+2026-06-08 14:47:37;1063 - Ativo;6042-Paulo Victor Santos;(55) 99627-3825;1063;1780940857245791;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:24;00:00:02;00:02:20
+2026-06-08 14:49:00;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 99969-6119;1063;1780940940246681;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:57;00:00:02;00:01:52
+2026-06-08 14:51:46;1063 - Ativo;6037-Simone Victoria De Carvalho;(54) 3211-8706;1063;1780941106248471;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:21;00:00:02;00:03:16
+2026-06-08 14:51:50;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99752-2154;1063;1780941110248531;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:53;00:00:02;00:02:48
+2026-06-08 14:53:25;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521994902632;3000;1780941151249041;55;;Entrante;Atendido;;;Cliente;00:04:27;00:00:02;00:04:26
+2026-06-08 14:53:53;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5522992336164;3000;1780941179249491;55;;Entrante;Atendido;;;Cliente;00:06:51;00:00:03;00:06:48
+2026-06-08 14:55:00;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(55) 98419-0665;1063;1780941300250971;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:32;00:00:02;00:02:28
+2026-06-08 14:55:35;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5531999203780;3000;1780941231250161;55;;Entrante;Atendido;;;Cliente;00:05:25;00:00:02;00:05:23
+2026-06-08 14:55:57;4000 - FirjanUra;6072-Firjan11;5521979104316;4000;1780941357251551;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS CURTA DURACAO;;Transferida;00:02:20;---;00:02:20
+2026-06-08 14:55:58;4000 - FirjanUra;6072-Firjan11;5521979104316;6072;1780941357251551;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS CURTA DURACAO;;--;00:02:20;---;---
+2026-06-08 14:58:03;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;552220105393;3000;1780941373251831;55;;Entrante;Atendido;;;Cliente;00:04:49;00:00:02;00:04:47
+2026-06-08 14:58:18;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521979104316;3000;1780941357251551;55;;Entrante;Atendido;;;Cliente;00:03:50;00:00:02;00:03:49
+2026-06-08 14:59:00;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521969678892;3000;1780941488253381;55;;Entrante;Atendido;;;Agente;00:12:14;00:00:01;00:12:12
+2026-06-08 14:59:19;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;552126093611;3000;1780941503253621;55;;Entrante;Atendido;;;Cliente;00:05:10;00:00:02;00:05:08
+2026-06-08 14:59:29;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521994533372;3000;1780941514253841;55;;Entrante;Atendido;;;Cliente;00:06:30;00:01:13;00:05:16
+2026-06-08 15:00:14;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99518-8583;1063;1780941614255071;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:20;00:00:02;00:02:14
+2026-06-08 15:00:23;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;(21) 96610-9823;1020;1780941599254881;21;;Entrante;Atendido;;;Cliente;00:04:57;00:00:01;00:04:55
+2026-06-08 15:01:13;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521994152346;3000;1780941618255181;55;;Entrante;Atendido;;;Cliente;00:16:52;00:00:01;00:16:50
+2026-06-08 15:01:46;4000 - FirjanUra;6064-Firjan4;5521990500533;4000;1780941706256451;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:06;00:00:01;00:02:06
+2026-06-08 15:01:46;4000 - FirjanUra;6064-Firjan4;5521990500533;6064;1780941706256451;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:06;00:00:01;---
+2026-06-08 15:02:13;4000 - FirjanUra;6066-Firjan6;5521971879029;4000;1780941733256831;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:11;00:00:01;00:02:11
+2026-06-08 15:02:14;4000 - FirjanUra;6066-Firjan6;5521971879029;6066;1780941733256831;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:10;00:00:01;---
+2026-06-08 15:03:53;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521990500533;3000;1780941706256451;55;;Entrante;Atendido;;;Cliente;00:04:53;00:00:02;00:04:51
+2026-06-08 15:04:25;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521971879029;3000;1780941733256831;55;;Entrante;Atendido;;;Cliente;00:03:35;00:00:08;00:03:27
+2026-06-08 15:05:07;2010 - Urareceptivo;6017-Ura Receptiva 02;(21) 99270-0085;2010;1780941907259531;21;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:02;---;00:02:02
+2026-06-08 15:05:08;2010 - Urareceptivo;6017-Ura Receptiva 02;(21) 99270-0085;6017;1780941907259531;21;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:01;---;---
+2026-06-08 15:05:08;1063 - Ativo;6034-Mariana Nunes Da Motta;(54) 3441-8167;1063;1780941908259591;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:02:51;00:00:02;00:02:47
+2026-06-08 15:07:09;1020 - RecDDM;6008-Natiele Luana Ferreira Da Silva;(21) 99270-0085;1020;1780941907259531;21;;Entrante;Atendido;;;Agente;00:09:00;00:00:02;00:08:59
+2026-06-08 15:07:20;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99671-0473;1063;1780942040261281;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:05:27;00:00:02;00:05:23
+2026-06-08 15:07:29;1020 - RecDDM;6009-Christiane Pimentel Diniz;(21) 99958-3814;1020;1780941965260381;21;;Entrante;Atendido;;;Agente;00:04:31;00:00:01;00:04:29
+2026-06-08 15:07:47;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99771-0058;1063;1780942067261631;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:47;00:00:02;00:03:42
+2026-06-08 15:07:53;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521970387573;3000;1780941969260441;55;;Entrante;Atendido;;;Cliente;00:03:56;00:00:02;00:03:54
+2026-06-08 15:10:27;1063 - Ativo;6034-Mariana Nunes Da Motta;(54) 3211-9323;1063;1780942227263591;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:00;00:00:02;00:02:56
+2026-06-08 15:11:03;4000 - FirjanUra;6075-Firjan15;5521986332822;4000;1780942263264171;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;Transferida;00:02:30;---;00:02:30
+2026-06-08 15:11:04;4000 - FirjanUra;6075-Firjan15;5521986332822;6075;1780942263264171;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS LONGA DURACAO;;--;00:02:29;---;---
+2026-06-08 15:12:03;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521969842305;3000;1780942269264301;55;;Entrante;Atendido;;;Cliente;00:02:24;00:00:01;00:02:23
+2026-06-08 15:12:18;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521971782127;3000;1780942281264471;55;;Entrante;Atendido;;;Cliente;00:08:11;00:00:02;00:08:09
+2026-06-08 15:12:53;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521983899528;3000;1780942260264021;55;;Entrante;Atendido;;;Agente;00:10:02;00:00:01;00:10:00
+2026-06-08 15:13:07;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521969678892;3000;1780942333265171;55;;Entrante;Atendido;;;Cliente;00:06:12;00:00:02;00:06:10
+2026-06-08 15:13:34;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521986332822;3000;1780942263264171;55;;Entrante;Atendido;;;Cliente;00:12:19;00:00:01;00:12:17
+2026-06-08 15:13:46;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5522999687254;3000;1780942369265691;55;;Entrante;Atendido;;;Cliente;00:03:19;00:00:02;00:03:17
+2026-06-08 15:13:51;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521967080525;3000;1780942371265761;55;;Entrante;Atendido;;;Cliente;00:10:20;00:00:03;00:10:17
+2026-06-08 15:15:24;1063 - Ativo;6042-Paulo Victor Santos;(55) 99131-2371;1063;1780942524267831;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:58;00:00:01;00:02:54
+2026-06-08 15:17:08;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521985703198;3000;1780942579268531;55;;Entrante;Atendido;;;Cliente;00:02:52;00:00:02;00:02:50
+2026-06-08 15:17:42;1063 - Ativo;6037-Simone Victoria De Carvalho;(54) 3228-4566;1063;1780942662269891;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:58;00:00:02;00:03:53
+2026-06-08 15:18:11;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521980976692;3000;1780942640269491;55;;Entrante;Atendido;;;Cliente;00:05:51;00:00:03;00:05:48
+2026-06-08 15:18:51;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521971606412;3000;1780942653269741;55;;Entrante;Atendido;;;Cliente;00:06:18;00:00:02;00:06:16
+2026-06-08 15:20:08;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99333-9419;1063;1780942808271731;51;r1telecomfixo;Discador;Atendido;Engano;MGE_E_4_6_1063;Cliente;00:02:08;00:00:01;00:02:03
+2026-06-08 15:21:43;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5524998111149;3000;1780942832271951;55;;Entrante;Atendido;;;Cliente;00:34:51;00:00:01;00:34:50
+2026-06-08 15:25:12;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;(21) 99763-4002;1020;1780943112275351;21;;Entrante;Atendido;;;Agente;00:05:21;00:00:02;00:05:19
+2026-06-08 15:27:33;1020 - RecDDM;6009-Christiane Pimentel Diniz;(71) 98801-7060;1020;1780943167276151;71;;Entrante;Atendido;;;Agente;00:04:21;00:00:02;00:04:19
+2026-06-08 15:29:06;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521976109063;3000;1780943284278131;55;;Entrante;Atendido;;;Cliente;00:04:21;00:00:01;00:04:20
+2026-06-08 15:29:32;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521999372558;3000;1780943318278621;55;;Entrante;Atendido;;;Cliente;00:04:07;00:00:01;00:04:05
+2026-06-08 15:30:58;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521988752668;3000;1780943402280011;55;;Entrante;Atendido;;;Cliente;00:07:23;00:00:01;00:07:22
+2026-06-08 15:32:39;1063 - Ativo;6053-Lais Da Silva Ferreira;(54) 99967-5946;1063;1780943559281711;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:55;00:00:01;00:01:52
+2026-06-08 15:32:45;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(55) 99607-2568;1063;1780943565281851;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:11;00:00:02;00:03:08
+2026-06-08 15:33:39;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521994152346;3000;1780943565281841;55;;Entrante;Atendido;;;Cliente;00:05:04;00:00:02;00:05:02
+2026-06-08 15:34:22;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5511964310363;1020;1780943572282001;55;;Entrante;Atendido;;;Cliente;00:04:23;00:00:02;00:04:20
+2026-06-08 15:37:54;3000 - FirjanHumano;6036-Adriana Monteiro Lima;(21) 2038-4382;(21) 98097-6692;1780943874285441;21;FaleVono;Sainte;Atendido;;;Cliente;00:16:55;---;00:16:51
+2026-06-08 15:39:08;1063 - Ativo;6035-Kessia De Oliveira Angelo;(54) 3261-5715;1063;1780943948286461;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:03;00:00:02;00:01:59
+2026-06-08 15:39:18;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521979618056;3000;1780943906285891;55;;Entrante;Atendido;;;Agente;00:05:55;00:00:02;00:05:53
+2026-06-08 15:39:20;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 98041-4842;1063;1780943960286621;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:09;00:00:01;00:02:05
+2026-06-08 15:39:45;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;552220215687;3000;1780943936286251;55;;Entrante;Atendido;;;Cliente;00:17:40;00:00:02;00:17:38
+2026-06-08 15:40:04;1063 - Ativo;6042-Paulo Victor Santos;(13) 99186-1822;1063;1780944004287101;13;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:44;00:00:02;00:02:38
+2026-06-08 15:42:23;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(54) 99977-2478;1063;1780944143288801;54;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:01:46;00:00:02;00:01:40
+2026-06-08 15:44:52;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521986332822;3000;1780944206289691;55;;Entrante;Atendido;;;Cliente;00:08:32;00:00:02;00:08:30
+2026-06-08 15:45:06;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521987609538;3000;1780944250290361;55;;Entrante;Atendido;;;Cliente;00:06:05;00:00:02;00:06:03
+2026-06-08 15:45:12;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521965628692;3000;1780944254290531;55;;Entrante;Atendido;;;Cliente;00:08:35;00:00:01;00:08:33
+2026-06-08 15:45:34;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;(21) 99958-3814;1020;1780944251290421;21;;Entrante;Atendido;;;Cliente;00:17:32;00:00:02;00:17:30
+2026-06-08 15:46:16;4000 - FirjanUra;6019-Urafirjan1;5521964010480;4000;1780944376292351;55;;Entrante;Atendido;OPCAO 6 - OUTRAS INFORMACOES;;Transferida;00:02:34;00:00:01;00:02:34
+2026-06-08 15:46:16;4000 - FirjanUra;6019-Urafirjan1;5521964010480;6019;1780944376292351;55;;Entrante;Atendido;OPCAO 6 - OUTRAS INFORMACOES;;--;00:02:33;00:00:01;---
+2026-06-08 15:47:01;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521992674680;3000;1780944365292131;55;;Entrante;Atendido;;;Agente;00:10:05;00:00:02;00:10:02
+2026-06-08 15:47:54;2010 - Urareceptivo;6018-Ura Receptiva 03;552134394687;2010;1780944474293921;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:11;00:00:01;00:02:11
+2026-06-08 15:47:54;2010 - Urareceptivo;6018-Ura Receptiva 03;552134394687;6018;1780944474293921;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:11;00:00:01;---
+2026-06-08 15:48:41;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521992120881;3000;1780944464293701;55;;Entrante;Atendido;;;Cliente;00:05:37;00:00:02;00:05:35
+2026-06-08 15:48:48;1063 - Ativo;6037-Simone Victoria De Carvalho;(54) 2102-1155;1063;1780944528294581;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:34;00:00:01;00:02:31
+2026-06-08 15:48:49;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521994872687;3000;1780944415293001;55;;Entrante;Atendido;;;Agente;00:09:05;00:01:37;00:07:27
+2026-06-08 15:48:50;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521964010480;3000;1780944376292351;55;;Entrante;Atendido;;;Agente;00:02:30;00:02:26;00:00:04
+2026-06-08 15:48:55;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99339-7430;1063;1780944535294721;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:18;00:00:02;00:02:12
+2026-06-08 15:50:17;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521978597821;3000;1780944561295031;55;;Entrante;Atendido;;;Cliente;00:05:02;00:01:08;00:03:53
+2026-06-08 15:52:04;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 98511-0360;1063;1780944724296601;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:32;00:00:02;00:02:26
+2026-06-08 15:52:32;2010 - Urareceptivo;6018-Ura Receptiva 03;5527999087476;2010;1780944752296971;55;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:18;00:00:01;00:02:18
+2026-06-08 15:52:32;2010 - Urareceptivo;6018-Ura Receptiva 03;5527999087476;6018;1780944752296971;55;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:18;00:00:01;00:02:18
+2026-06-08 15:53:05;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521982063450;3000;1780944736296731;55;;Entrante;Atendido;;;Cliente;00:04:10;00:00:23;00:03:47
+2026-06-08 15:53:20;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521988970907;3000;1780944743296851;55;;Entrante;Atendido;;;Cliente;00:04:00;00:00:31;00:03:29
+2026-06-08 15:54:50;2010 - Urareceptivo;6018-Ura Receptiva 03;5527999087476;6018;1780944752296971;55;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:18;00:00:01;00:02:18
+2026-06-08 15:54:52;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99672-8749;1063;1780944892298641;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:52;00:00:02;00:02:46
+2026-06-08 15:54:55;2010 - Urareceptivo;6016-Ura Receptiva 01;5527999087476;2010;1780944895298741;55;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:01;---;00:02:00
+2026-06-08 15:54:56;2010 - Urareceptivo;6016-Ura Receptiva 01;5527999087476;6016;1780944895298741;55;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:00;---;00:02:00
+2026-06-08 15:55:41;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521964054242;3000;1780944868298291;55;;Entrante;Atendido;;;Cliente;00:04:44;00:00:02;00:04:42
+2026-06-08 15:57:10;2010 - Urareceptivo;6016-Ura Receptiva 01;5527999087476;2010;1780945030300631;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:05;00:00:01;00:02:05
+2026-06-08 15:57:10;2010 - Urareceptivo;6016-Ura Receptiva 01;5527999087476;6016;1780945030300631;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:05;00:00:01;---
+2026-06-08 15:58:34;1020 - RecDDM;6009-Christiane Pimentel Diniz;(21) 96443-9222;1020;1780944994300191;21;;Entrante;Atendido;;;Agente;00:02:49;00:00:01;00:02:48
+2026-06-08 15:59:53;1063 - Ativo;6042-Paulo Victor Santos;(51) 99269-0427;1063;1780945193302871;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:02:08;00:00:02;00:02:04
+2026-06-08 16:00:34;1063 - Ativo;6034-Mariana Nunes Da Motta;(53) 99976-5921;1063;1780945234303371;53;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:47;00:00:02;00:02:43
+2026-06-08 16:00:47;1063 - Ativo;6053-Lais Da Silva Ferreira;(54) 99954-1722;1063;1780945247303441;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:28;00:00:02;00:03:24
+2026-06-08 16:01:03;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 99728-8666;1063;1780945263303651;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:35;00:00:01;00:02:32
+2026-06-08 16:01:38;1020 - RecDDM;6009-Christiane Pimentel Diniz;(21) 3439-4687;1020;1780945191302741;21;;Entrante;Atendido;;;Agente;00:03:56;00:00:01;00:03:55
+2026-06-08 16:02:57;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5527999087476;1020;1780945292304001;55;;Entrante;Atendido;;;Cliente;00:03:08;00:00:14;00:02:54
+2026-06-08 16:04:09;1063 - Ativo;6042-Paulo Victor Santos;(54) 98124-1996;1063;1780945449305701;54;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:56;00:00:01;00:02:52
+2026-06-08 16:04:46;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5522999365758;3000;1780945431305451;55;;Entrante;Atendido;;;Cliente;00:08:35;00:00:01;00:08:34
+2026-06-08 16:06:08;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521976300390;3000;1780945513306671;55;;Entrante;Atendido;;;Cliente;00:03:03;00:00:02;00:03:01
+2026-06-08 16:07:29;1063 - Ativo;6042-Paulo Victor Santos;(51) 99363-5583;1063;1780945649308091;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:26;00:00:01;00:02:21
+2026-06-08 16:07:30;4000 - FirjanUra;6074-Firjan14;5521959209698;4000;1780945650308151;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS CURTA DURACAO;;Transferida;00:02:55;---;00:02:55
+2026-06-08 16:07:31;4000 - FirjanUra;6074-Firjan14;5521959209698;6074;1780945650308151;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS CURTA DURACAO;;--;00:02:55;---;---
+2026-06-08 16:07:51;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521976950263;3000;1780945559307271;55;;Entrante;Atendido;;;Cliente;00:02:31;00:00:02;00:02:29
+2026-06-08 16:08:40;4000 - FirjanUra;6019-Urafirjan1;5522999688922;4000;1780945720309081;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;Transferida;00:02:21;---;00:02:21
+2026-06-08 16:08:41;4000 - FirjanUra;6019-Urafirjan1;5522999688922;6019;1780945720309081;55;;Entrante;Atendido;OPCAO 1 - ATENDIMENTO HUMANO CURSOS MEDIA DURACAO;;--;00:02:21;---;---
+2026-06-08 16:09:15;1020 - RecDDM;6009-Christiane Pimentel Diniz;(21) 98127-3616;1020;1780945660308311;21;;Entrante;Atendido;;;Agente;00:02:08;00:00:02;00:02:06
+2026-06-08 16:09:23;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5522997932689;3000;1780945678308581;55;;Entrante;Atendido;;;Cliente;00:03:26;00:00:02;00:03:24
+2026-06-08 16:09:38;2010 - Urareceptivo;6018-Ura Receptiva 03;(92) 98138-3201;2010;1780945778309971;92;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:12;---;00:02:11
+2026-06-08 16:10:08;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521971782127;3000;1780945752309581;55;;Entrante;Atendido;;;Cliente;00:07:35;00:00:01;00:07:34
+2026-06-08 16:10:26;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521959209698;3000;1780945650308151;55;;Entrante;Atendido;;;Agente;00:10:49;00:00:02;00:10:46
+2026-06-08 16:10:32;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5521969401606;1020;1780945792310251;55;;Entrante;Atendido;;;Cliente;00:08:49;00:00:02;00:08:47
+2026-06-08 16:10:44;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(54) 3191-0373;1063;1780945844310951;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:06:30;00:00:02;00:06:26
+2026-06-08 16:11:02;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5522999688922;3000;1780945720309081;55;;Entrante;Atendido;;;Cliente;00:06:23;00:00:01;00:06:21
+2026-06-08 16:11:14;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521974752897;3000;1780945789310171;55;;Entrante;Atendido;;;Cliente;00:02:10;00:00:01;00:02:08
+2026-06-08 16:11:50;2010 - Urareceptivo;6018-Ura Receptiva 03;(92) 98138-3201;6018;1780945778309971;92;;Entrante;Atendido;Cliente sem pendencias dentro do horario de atendimento agendar retornar;;Agente;00:02:12;---;00:02:11
+2026-06-08 16:12:42;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(54) 3733-6000;1063;1780945962312381;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:04:57;00:00:02;00:04:51
+2026-06-08 16:16:41;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521959364704;3000;1780946103314851;55;;Entrante;Atendido;;;Cliente;00:03:34;00:00:02;00:03:32
+2026-06-08 16:17:07;1063 - Ativo;6034-Mariana Nunes Da Motta;(51) 98181-8438;1063;1780946227316401;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:02:22;00:00:02;00:02:18
+2026-06-08 16:17:56;1063 - Ativo;6053-Lais Da Silva Ferreira;(55) 99977-3515;1063;1780946276316991;55;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:49;00:00:02;00:02:43
+2026-06-08 16:18:17;2010 - Urareceptivo;6017-Ura Receptiva 02;5511952864130;2010;1780946297317201;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:15;00:00:01;00:02:15
+2026-06-08 16:18:17;2010 - Urareceptivo;6017-Ura Receptiva 02;5511952864130;6017;1780946297317201;55;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:15;00:00:01;---
+2026-06-08 16:18:32;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;552139769929;3000;1780946257316761;55;;Entrante;Atendido;;;Cliente;00:03:05;00:00:02;00:03:04
+2026-06-08 16:20:16;1020 - RecDDM;6009-Christiane Pimentel Diniz;(21) 98071-6180;1020;1780946416318451;21;;Entrante;Atendido;;;Cliente;00:04:39;00:00:02;00:04:37
+2026-06-08 16:20:32;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5511952864130;1020;1780946297317201;55;;Entrante;Atendido;;;Agente;00:07:35;00:00:02;00:07:34
+2026-06-08 16:20:57;1063 - Ativo;6053-Lais Da Silva Ferreira;(54) 3441-9697;1063;1780946457319051;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:14;00:00:02;00:02:11
+2026-06-08 16:23:00;3000 - FirjanHumano;6036-Adriana Monteiro Lima;552139769929;3000;1780946527319871;55;;Entrante;Atendido;;;Cliente;00:06:52;00:00:02;00:06:50
+2026-06-08 16:23:46;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521986375972;3000;1780946565320421;55;;Entrante;Atendido;;;Cliente;00:06:52;00:00:02;00:06:50
+2026-06-08 16:24:06;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521967841305;3000;1780946589320791;55;;Entrante;Atendido;;;Cliente;00:06:04;00:00:01;00:06:03
+2026-06-08 16:24:17;1063 - Ativo;6044-Roseli Honorato Dos Santos;(51) 98681-8457;1063;1780946657321861;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:55;00:00:02;00:01:49
+2026-06-08 16:24:35;1063 - Ativo;6035-Kessia De Oliveira Angelo;(54) 99632-9699;1063;1780946675322101;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:01:32;00:00:02;00:01:26
+2026-06-08 16:24:58;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521990759111;3000;1780946640321611;55;;Entrante;Atendido;;;Cliente;00:07:12;00:00:02;00:07:10
+2026-06-08 16:26:59;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99961-7282;1063;1780946819323791;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:02:03;00:00:02;00:01:57
+2026-06-08 16:27:05;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521973510971;3000;1780946770323291;55;;Entrante;Atendido;;;Cliente;00:08:37;00:00:01;00:08:36
+2026-06-08 16:27:47;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521965157190;3000;1780946760323111;55;;Entrante;Atendido;;;Cliente;00:05:41;00:00:02;00:05:39
+2026-06-08 16:28:09;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521965135074;3000;1780946788323471;55;;Entrante;Atendido;;;Cliente;00:07:15;00:00:02;00:07:13
+2026-06-08 16:28:59;1063 - Ativo;6044-Roseli Honorato Dos Santos;(54) 99971-1394;1063;1780946939325201;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:03:07;00:00:02;00:03:02
+2026-06-08 16:30:50;1063 - Ativo;6053-Lais Da Silva Ferreira;(51) 99583-5005;1063;1780947050326531;51;r1telecomfixo;Discador;Atendido;Retorno;MGE_E_4_6_1063;Cliente;00:02:55;00:00:02;00:02:50
+2026-06-08 16:31:59;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(54) 3315-2230;1063;1780947119327321;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Agente;00:04:15;00:00:02;00:04:10
+2026-06-08 16:32:27;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5524992679244;3000;1780947106327121;55;;Entrante;Atendido;;;Cliente;00:02:27;00:00:01;00:02:26
+2026-06-08 16:33:19;1020 - RecDDM;6009-Christiane Pimentel Diniz;(71) 99186-7360;1020;1780947157327951;71;;Entrante;Atendido;;;Agente;00:02:01;00:00:01;00:01:59
+2026-06-08 16:34:00;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521979569855;3000;1780947134327511;55;;Entrante;Atendido;;;Cliente;00:04:28;00:00:01;00:04:26
+2026-06-08 16:35:11;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(43) 99169-9694;1063;1780947311329821;43;r1telecomfixo;Discador;Atendido;Engano;MGE_E_4_6_1063;Cliente;00:03:01;00:00:01;00:02:56
+2026-06-08 16:36:38;1063 - Ativo;6044-Roseli Honorato Dos Santos;(54) 3224-2300;1063;1780947398331131;54;r1telecomfixo;Discador;Atendido;Desligou;MGE_E_4_6_1063;Cliente;00:01:39;00:00:02;00:01:34
+2026-06-08 16:36:50;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521982903095;3000;1780947356330551;55;;Entrante;Atendido;;;Cliente;00:04:31;00:00:02;00:04:29
+2026-06-08 16:38:17;1063 - Ativo;6037-Simone Victoria De Carvalho;(51) 99113-3466;1063;1780947497332461;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Cliente;00:03:40;00:00:02;00:03:36
+2026-06-08 16:41:46;1063 - Ativo;6042-Paulo Victor Santos;(51) 99151-5751;1063;1780947706335051;51;r1telecomfixo;Discador;Atendido;Informacao;MGE_E_4_6_1063;Agente;00:02:42;00:00:01;00:02:39
+2026-06-08 16:43:20;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521991840499;3000;1780947745335411;55;;Entrante;Atendido;;;Cliente;00:07:20;00:00:01;00:07:19
+2026-06-08 16:44:27;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99317-8780;1063;1780947867336791;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:33;00:00:01;00:02:29
+2026-06-08 16:44:49;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5524999832167;3000;1780947790336001;55;;Entrante;Atendido;;;Cliente;00:03:50;00:00:01;00:03:49
+2026-06-08 16:46:43;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521994693232;3000;1780947921337701;55;;Entrante;Atendido;;;Cliente;00:05:41;00:00:01;00:05:40
+2026-06-08 16:47:39;3000 - FirjanHumano;6036-Adriana Monteiro Lima;5521987242777;3000;1780948010338801;55;;Entrante;Atendido;;;Cliente;00:03:06;00:00:01;00:03:05
+2026-06-08 16:48:18;1063 - Ativo;6042-Paulo Victor Santos;(53) 99197-1808;1063;1780948098340041;53;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:01:52;00:00:02;00:01:47
+2026-06-08 16:50:50;3000 - FirjanHumano;6040-Jaqueline Siqueira De Almeida;5521965753392;3000;1780948201341171;55;;Entrante;Atendido;;;Cliente;00:07:24;00:00:02;00:07:22
+2026-06-08 16:54:51;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(53) 99710-1629;1063;1780948491344741;53;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:06:14;00:00:02;00:06:08
+2026-06-08 16:58:46;3000 - FirjanHumano;6051-Solaine Da Rocha Valadares;5521988690393;3000;1780948618346381;55;;Entrante;Atendido;;;Cliente;00:03:48;00:00:01;00:03:47
+2026-06-08 16:58:52;1063 - Ativo;6034-Mariana Nunes Da Motta;(54) 99687-5161;1063;1780948732347771;54;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:01;00:00:02;00:01:56
+2026-06-08 17:00:33;1020 - RecDDM;6009-Christiane Pimentel Diniz;5551981704059;1020;1780948740347861;55;;Entrante;Atendido;;;Cliente;00:12:01;00:00:01;00:12:00
+2026-06-08 17:06:13;3000 - FirjanHumano;6054-Aline Maria De Azevedo Ferreira;5521979470554;3000;1780949120352341;55;;Entrante;Atendido;;;Cliente;00:02:11;00:00:02;00:02:10
+2026-06-08 17:08:10;3000 - FirjanHumano;6043-Oliria Emmeline Alves Do Nascimento Santos;5521970443156;3000;1780949231353481;55;;Entrante;Atendido;;;Cliente;00:04:28;00:00:02;00:04:25
+2026-06-08 17:13:52;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521959262117;3000;1780949570357771;55;;Entrante;Atendido;;;Cliente;00:04:13;00:00:03;00:04:10
+2026-06-08 17:16:38;1063 - Ativo;6037-Simone Victoria De Carvalho;(53) 98121-2741;1063;1780949798360511;53;r1telecomfixo;Discador;Atendido;Fora do perfl;MGE_E_4_6_1063;Cliente;00:02:43;00:00:02;00:02:40
+2026-06-08 17:20:22;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5516992242155;1020;1780949935362051;55;;Entrante;Atendido;;;Agente;00:06:32;00:00:03;00:06:29
+2026-06-08 17:20:27;1020 - RecDDM;6009-Christiane Pimentel Diniz;5521984385231;1020;1780949908361751;55;;Entrante;Atendido;;;Agente;00:03:00;00:00:02;00:02:58
+2026-06-08 17:28:53;3000 - FirjanHumano;6079-Ana Paula Mello Cardoso Soares;5521988774647;3000;1780950473367451;55;;Entrante;Atendido;;;Cliente;00:02:32;00:00:02;00:02:29
+2026-06-08 17:30:13;3000 - FirjanHumano;6038-Mariane De Oliveira Santos;5521966939123;3000;1780950509367891;55;;Entrante;Atendido;;;Cliente;00:04:49;00:00:02;00:04:47
+2026-06-08 17:30:51;3000 - FirjanHumano;6085-Valeria De Oliveira Alves;5521986332822;3000;1780950569368361;55;;Entrante;Atendido;;;Cliente;00:04:11;00:00:03;00:04:08
+2026-06-08 17:32:37;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5561992540379;1020;1780950668369711;55;;Entrante;Atendido;;;Cliente;00:02:24;00:00:02;00:02:22
+2026-06-08 17:37:13;2010 - Urareceptivo;6018-Ura Receptiva 03;(27) 99643-4691;2010;1780951033376871;27;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;Transferida;00:02:05;00:00:01;00:02:05
+2026-06-08 17:37:13;2010 - Urareceptivo;6018-Ura Receptiva 03;(27) 99643-4691;6018;1780951033376871;27;;Entrante;Atendido;Transferencia recusa proposta a vista com instituicao 1;;--;00:02:05;00:00:01;---
+2026-06-08 17:39:57;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 98164-0712;1063;1780951197378631;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:20;00:00:07;00:02:10
+2026-06-08 17:45:41;1063 - Ativo;6056-Caique Fonseca Da Conceicao;(51) 99877-1817;1063;1780951541382001;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:02:47;00:00:02;00:02:42
+2026-06-08 17:53:55;3000 - FirjanHumano;6078-Agatha Cristina Souza Oliveira Florindo;5521995837171;3000;1780951922385711;55;;Entrante;Atendido;;;Agente;00:06:18;00:00:02;00:06:16
+2026-06-08 17:55:50;1063 - Ativo;6041-Sabrina Santana Da Costa Ferreira;(51) 99304-2593;1063;1780952150387961;51;r1telecomfixo;Discador;Atendido;Interesse;MGE_E_4_6_1063;Cliente;00:03:58;00:00:02;00:03:52
+2026-06-08 18:08:50;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5511930718381;1020;1780952832390741;55;;Entrante;Atendido;;;Cliente;00:07:36;00:00:02;00:07:35
+2026-06-08 18:23:58;1020 - RecDDM;6009-Christiane Pimentel Diniz;5521970628282;1020;1780953743391191;55;;Entrante;Atendido;;;Agente;00:08:44;00:00:02;00:08:42
+2026-06-08 18:32:08;1020 - RecDDM;6009-Christiane Pimentel Diniz;5522996128167;1020;1780954248391501;55;;Entrante;Atendido;;;Agente;00:02:26;00:00:38;00:01:48
+2026-06-08 18:47:48;1020 - RecDDM;6002-Odhara Cristina Severo De Oliveira Brito;5511937398599;1020;1780955177391931;55;;Entrante;Atendido;;;Cliente;00:06:22;00:00:01;00:06:20
