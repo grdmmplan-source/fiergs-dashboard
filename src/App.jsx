@@ -7,153 +7,15 @@ import {
 } from "recharts";
 import BrMaisProdutivo from "./BrMaisProdutivo.jsx";
 import DiagnosticoDiscagem from "./DiagnosticoDiscagem.jsx";
+import PerformanceAgente from "./PerformanceAgente.jsx";
+import { _F, _M } from "./dados.js";
 
 // ============================================================
-// DADOS — extraídos de Discagem_Fila.csv (01/06/2026 a 05/06/2026)
+// CONSOLIDADO — calculado dinamicamente a partir de _F e _M
 // ============================================================
-const _F = {
-  label: "Fiergs0106 — Ativo", carteira: "530",
-  periodo: "01/06/2026 a 05/06/2026",
-  mailing_carga: 64013, mailing_discador: 20184,
-  discados_unicos: 3854, nao_discados: 16330,
-  cobertura_pct: 19.09, penetracao_pct: 6.02,
-  total_tentativas: 4305, atendidos: 2358, nao_atendeu: 1873, ocupado: 74,
-  hit_rate_pct: 54.77, interessados: 1, contatos_decisor: 6,
-  media_tent_empresa: 1.1, sem_sucesso: 3848, acordos: 0, conversao_pct: 0.0,
-  por_hora: [
-    { hora: "10h", tentativas: 190,  atendidas: 102,  interesse: 0 },
-    { hora: "11h", tentativas: 36,   atendidas: 26,   interesse: 0 },
-    { hora: "12h", tentativas: 1442, atendidas: 667,  interesse: 0 },
-    { hora: "13h", tentativas: 2256, atendidas: 1338, interesse: 1 },
-    { hora: "14h", tentativas: 381,  atendidas: 225,  interesse: 0 },
-  ],
-  por_dia: [
-    { dia: "01/06", ddd: "Seg", tent: 4305, atend: 2358, naoAtend: 1873, ocup: 74, int: 1, docs: 3854, hr: 54.77 },
-  ],
-  por_dia_hora: {
-    "01/06": [
-      { hora: "10h", tentativas: 190,  atendidas: 102,  interesse: 0 },
-      { hora: "11h", tentativas: 36,   atendidas: 26,   interesse: 0 },
-      { hora: "12h", tentativas: 1442, atendidas: 667,  interesse: 0 },
-      { hora: "13h", tentativas: 2256, atendidas: 1338, interesse: 1 },
-      { hora: "14h", tentativas: 381,  atendidas: 225,  interesse: 0 },
-    ],
-  },
-  status_dist: [
-    { name: "Atendido",    value: 2358, cor: "#f97316" },
-    { name: "Não Atendeu", value: 1873, cor: "#ef4444" },
-    { name: "Ocupado",     value: 74,   cor: "#f59e0b" },
-  ],
-  tabulacoes: [
-    { name: "Ligação caída",      qtd: 11 },
-    { name: "Não tabulada (CRM)", qtd: 7  },
-    { name: "Informação",         qtd: 5  },
-    { name: "Engano",             qtd: 3  },
-    { name: "Desligou",           qtd: 2  },
-    { name: "Ligação muda",       qtd: 2  },
-    { name: "Não atende",         qtd: 2  },
-    { name: "Interesse",          qtd: 1  },
-    { name: "Caixa postal",       qtd: 1  },
-  ],
-};
-
-const _M = {
-  label: "MGE_E_4_6_1063 — Ativo", carteira: "1063",
-  periodo: "01/06/2026 a 05/06/2026",
-  mailing_carga: 64013, mailing_discador: 48141,
-  discados_unicos: 19488, nao_discados: 28653,
-  cobertura_pct: 40.48, penetracao_pct: 30.44,
-  total_tentativas: 67795, atendidos: 36669, nao_atendeu: 30427, ocupado: 699,
-  hit_rate_pct: 54.09, interessados: 238, contatos_decisor: 492,
-  media_tent_empresa: 3.5, sem_sucesso: 18947, acordos: 0, conversao_pct: 0.0,
-  por_hora: [
-    { hora: "09h", tentativas: 6385, atendidas: 3732, interesse: 28 },
-    { hora: "10h", tentativas: 7221, atendidas: 3977, interesse: 24 },
-    { hora: "11h", tentativas: 7070, atendidas: 3637, interesse: 20 },
-    { hora: "12h", tentativas: 6183, atendidas: 2832, interesse: 24 },
-    { hora: "13h", tentativas: 6325, atendidas: 3395, interesse: 25 },
-    { hora: "14h", tentativas: 8691, atendidas: 4962, interesse: 24 },
-    { hora: "15h", tentativas: 8232, atendidas: 4681, interesse: 26 },
-    { hora: "16h", tentativas: 9659, atendidas: 5246, interesse: 46 },
-    { hora: "17h", tentativas: 7986, atendidas: 4190, interesse: 21 },
-    { hora: "18h", tentativas: 43,   atendidas: 17,   interesse: 0  },
-  ],
-  por_dia: [
-    { dia: "01/06", ddd: "Seg", tent: 7938,  atend: 4374,  naoAtend: 3474, ocup: 90,  int: 29,  docs: 7938,  hr: 55.10 },
-    { dia: "02/06", ddd: "Ter", tent: 20185, atend: 11475, naoAtend: 8491, ocup: 219, int: 40,  docs: 12843, hr: 56.85 },
-    { dia: "03/06", ddd: "Qua", tent: 20018, atend: 10906, naoAtend: 8931, ocup: 181, int: 57,  docs: 10448, hr: 54.48 },
-    { dia: "05/06", ddd: "Sex", tent: 19654, atend: 9914,  naoAtend: 9531, ocup: 209, int: 112, docs: 12930, hr: 50.44 },
-  ],
-  por_dia_hora: {
-    "01/06": [
-      { hora: "14h", tentativas: 1744, atendidas: 1017, interesse: 0  },
-      { hora: "15h", tentativas: 1280, atendidas: 715,  interesse: 4  },
-      { hora: "16h", tentativas: 2589, atendidas: 1461, interesse: 20 },
-      { hora: "17h", tentativas: 2314, atendidas: 1176, interesse: 4  },
-      { hora: "18h", tentativas: 11,   atendidas: 5,    interesse: 0  },
-    ],
-    "02/06": [
-      { hora: "09h", tentativas: 2088, atendidas: 1316, interesse: 0  },
-      { hora: "10h", tentativas: 2467, atendidas: 1440, interesse: 6  },
-      { hora: "11h", tentativas: 2413, atendidas: 1301, interesse: 6  },
-      { hora: "12h", tentativas: 2093, atendidas: 951,  interesse: 9  },
-      { hora: "13h", tentativas: 2221, atendidas: 1213, interesse: 8  },
-      { hora: "14h", tentativas: 2374, atendidas: 1400, interesse: 4  },
-      { hora: "15h", tentativas: 2249, atendidas: 1366, interesse: 2  },
-      { hora: "16h", tentativas: 2293, atendidas: 1371, interesse: 0  },
-      { hora: "17h", tentativas: 1983, atendidas: 1115, interesse: 3  },
-      { hora: "18h", tentativas: 4,    atendidas: 2,    interesse: 0  },
-    ],
-    "03/06": [
-      { hora: "09h", tentativas: 1963, atendidas: 1136, interesse: 15 },
-      { hora: "10h", tentativas: 2397, atendidas: 1308, interesse: 7  },
-      { hora: "11h", tentativas: 2390, atendidas: 1169, interesse: 4  },
-      { hora: "12h", tentativas: 1926, atendidas: 923,  interesse: 6  },
-      { hora: "13h", tentativas: 2151, atendidas: 1299, interesse: 2  },
-      { hora: "14h", tentativas: 2243, atendidas: 1313, interesse: 4  },
-      { hora: "15h", tentativas: 2396, atendidas: 1434, interesse: 3  },
-      { hora: "16h", tentativas: 2572, atendidas: 1252, interesse: 8  },
-      { hora: "17h", tentativas: 1955, atendidas: 1063, interesse: 8  },
-      { hora: "18h", tentativas: 25,   atendidas: 9,    interesse: 0  },
-    ],
-    "05/06": [
-      { hora: "09h", tentativas: 2334, atendidas: 1280, interesse: 12 },
-      { hora: "10h", tentativas: 2357, atendidas: 1229, interesse: 11 },
-      { hora: "11h", tentativas: 2267, atendidas: 1167, interesse: 10 },
-      { hora: "12h", tentativas: 2164, atendidas: 958,  interesse: 9  },
-      { hora: "13h", tentativas: 1953, atendidas: 883,  interesse: 15 },
-      { hora: "14h", tentativas: 2330, atendidas: 1232, interesse: 15 },
-      { hora: "15h", tentativas: 2307, atendidas: 1166, interesse: 17 },
-      { hora: "16h", tentativas: 2205, atendidas: 1162, interesse: 17 },
-      { hora: "17h", tentativas: 1734, atendidas: 836,  interesse: 6  },
-      { hora: "18h", tentativas: 3,    atendidas: 0,    interesse: 0  },
-    ],
-  },
-  status_dist: [
-    { name: "Atendido",    value: 36669, cor: "#f97316" },
-    { name: "Não Atendeu", value: 30427, cor: "#ef4444" },
-    { name: "Ocupado",     value: 699,   cor: "#f59e0b" },
-  ],
-  tabulacoes: [
-    { name: "Ligação caída",      qtd: 301 },
-    { name: "Desligou",           qtd: 293 },
-    { name: "Informação",         qtd: 250 },
-    { name: "Interesse",          qtd: 238 },
-    { name: "Engano",             qtd: 180 },
-    { name: "Fora do perfil",     qtd: 173 },
-    { name: "Ligação muda",       qtd: 100 },
-    { name: "Não tabulada (CRM)", qtd: 71  },
-    { name: "Retorno",            qtd: 49  },
-    { name: "Caixa postal",       qtd: 10  },
-    { name: "Não atende",         qtd: 7   },
-    { name: "Oportunidade",       qtd: 4   },
-  ],
-};
-
-// Consolidado: soma das duas campanhas
 function mergeHoras(a, b) {
   const map = {};
-  [...a, ...b].forEach(h => {
+  [...(a||[]), ...(b||[])].forEach(h => {
     if (!map[h.hora]) map[h.hora] = { hora: h.hora, tentativas: 0, atendidas: 0, interesse: 0 };
     map[h.hora].tentativas += h.tentativas;
     map[h.hora].atendidas  += h.atendidas;
@@ -162,47 +24,78 @@ function mergeHoras(a, b) {
   return Object.values(map).sort((a, b) => a.hora.localeCompare(b.hora));
 }
 
+function mergeDias(a, b) {
+  const map = {};
+  [...(a||[]), ...(b||[])].forEach(d => {
+    if (!map[d.dia]) map[d.dia] = { dia: d.dia, ddd: d.ddd, tent: 0, atend: 0, naoAtend: 0, falha: 0, ocup: 0, int: 0, docs: 0 };
+    map[d.dia].tent     += d.tent;
+    map[d.dia].atend    += d.atend;
+    map[d.dia].naoAtend += d.naoAtend;
+    map[d.dia].falha    += (d.falha || 0);
+    map[d.dia].ocup     += d.ocup;
+    map[d.dia].int      += d.int;
+    map[d.dia].docs     += d.docs;
+  });
+  const days = Object.values(map).sort((a, b) => a.dia.localeCompare(b.dia));
+  days.forEach(d => { d.hr = d.tent > 0 ? Math.round(d.atend / d.tent * 10000) / 100 : 0; });
+  return days;
+}
+
+function mergePorDiaHora(fDH, mDH) {
+  const allDates = new Set([...Object.keys(fDH || {}), ...Object.keys(mDH || {})]);
+  const result = {};
+  allDates.forEach(dia => { result[dia] = mergeHoras((fDH||{})[dia] || [], (mDH||{})[dia] || []); });
+  return result;
+}
+
+function mergeTabList(a, b) {
+  const map = {};
+  [...(a||[]), ...(b||[])].forEach(t => {
+    if (!map[t.name]) map[t.name] = { name: t.name, qtd: 0 };
+    map[t.name].qtd += t.qtd;
+  });
+  return Object.values(map).sort((a, b) => b.qtd - a.qtd);
+}
+
+const _Ctent  = _F.total_tentativas + _M.total_tentativas;
+const _Catend = _F.atendidos + _M.atendidos;
+const _Cdocs  = _F.discados_unicos + _M.discados_unicos;
+const _Cdisc  = _F.mailing_discador + _M.mailing_discador;
+
 const _C = {
   label: "Consolidado — Ativo", carteira: "Todas",
-  periodo: "01/06/2026 a 05/06/2026",
-  mailing_carga: 64013, mailing_discador: 68325,
-  discados_unicos: 23342, nao_discados: 44983,
-  cobertura_pct: 34.16, penetracao_pct: 36.46,
-  total_tentativas: 72100, atendidos: 39027, nao_atendeu: 32300, ocupado: 773,
-  hit_rate_pct: 54.13, interessados: 239, contatos_decisor: 498,
-  media_tent_empresa: 3.1, sem_sucesso: 22795, acordos: 0, conversao_pct: 0.0,
+  periodo: _M.periodo,
+  mailing_carga: 64013,
+  mailing_discador: _Cdisc,
+  discados_unicos: _Cdocs,
+  nao_discados: _F.nao_discados + _M.nao_discados,
+  cobertura_pct: Math.round(_Cdocs / _Cdisc * 10000) / 100,
+  penetracao_pct: Math.round(_Cdocs / 64013 * 10000) / 100,
+  total_tentativas: _Ctent,
+  atendidos: _Catend,
+  nao_atendeu: _F.nao_atendeu + _M.nao_atendeu,
+  falha_telefonia: _F.falha_telefonia + _M.falha_telefonia,
+  ocupado: _F.ocupado + _M.ocupado,
+  hit_rate_pct: Math.round(_Catend / _Ctent * 10000) / 100,
+  cpc: _F.cpc + _M.cpc,
+  cpca: _F.cpca + _M.cpca,
+  pct_cpc:  Math.round((_F.cpc  + _M.cpc)  / _Catend * 10000) / 100,
+  pct_cpca: Math.round((_F.cpca + _M.cpca) / (_F.cpc + _M.cpc) * 10000) / 100,
+  interessados: _F.interessados + _M.interessados,
+  contatos_decisor: _F.contatos_decisor + _M.contatos_decisor,
+  media_tent_empresa: Math.round(_Ctent / _Cdocs * 10) / 10,
+  sem_sucesso: _F.sem_sucesso + _M.sem_sucesso,
+  acordos: 0, conversao_pct: 0,
   por_hora: mergeHoras(_F.por_hora, _M.por_hora),
-  por_dia: [
-    { dia: "01/06", ddd: "Seg", tent: 12243, atend: 6732, naoAtend: 5347, ocup: 164, int: 30,  docs: 11792, hr: 54.99 },
-    { dia: "02/06", ddd: "Ter", tent: 20185, atend: 11475,naoAtend: 8491, ocup: 219, int: 40,  docs: 12843, hr: 56.85 },
-    { dia: "03/06", ddd: "Qua", tent: 20018, atend: 10906,naoAtend: 8931, ocup: 181, int: 57,  docs: 10448, hr: 54.48 },
-    { dia: "05/06", ddd: "Sex", tent: 19654, atend: 9914, naoAtend: 9531, ocup: 209, int: 112, docs: 12930, hr: 50.44 },
-  ],
-  por_dia_hora: {
-    "01/06": mergeHoras(_F.por_dia_hora["01/06"], _M.por_dia_hora["01/06"]),
-    "02/06": _M.por_dia_hora["02/06"],
-    "03/06": _M.por_dia_hora["03/06"],
-    "05/06": _M.por_dia_hora["05/06"],
-  },
+  por_dia: mergeDias(_F.por_dia, _M.por_dia),
+  por_dia_hora: mergePorDiaHora(_F.por_dia_hora, _M.por_dia_hora),
   status_dist: [
-    { name: "Atendido",    value: 39027, cor: "#f97316" },
-    { name: "Não Atendeu", value: 32300, cor: "#ef4444" },
-    { name: "Ocupado",     value: 773,   cor: "#f59e0b" },
+    { name: "Atendido",        value: _F.atendidos       + _M.atendidos,       cor: "#22c55e" },
+    { name: "Falha Telefonia", value: _F.falha_telefonia + _M.falha_telefonia, cor: "#ef4444" },
+    { name: "Não Atendeu",     value: _F.nao_atendeu     + _M.nao_atendeu,     cor: "#6b7280" },
+    { name: "Ocupado",         value: _F.ocupado         + _M.ocupado,         cor: "#f59e0b" },
   ],
-  tabulacoes: [
-    { name: "Ligação caída",      qtd: 312 },
-    { name: "Desligou",           qtd: 295 },
-    { name: "Informação",         qtd: 255 },
-    { name: "Interesse",          qtd: 239 },
-    { name: "Engano",             qtd: 183 },
-    { name: "Fora do perfil",     qtd: 173 },
-    { name: "Ligação muda",       qtd: 102 },
-    { name: "Não tabulada (CRM)", qtd: 78  },
-    { name: "Retorno",            qtd: 49  },
-    { name: "Caixa postal",       qtd: 11  },
-    { name: "Não atende",         qtd: 9   },
-    { name: "Oportunidade",       qtd: 4   },
-  ],
+  tabulacoes: mergeTabList(_F.tabulacoes, _M.tabulacoes),
 };
 
 const CAMPANHAS = {
@@ -225,13 +118,14 @@ function computeFilteredCamp(base, gran, sel) {
   );
   const src = diasFiltrados.length > 0 ? diasFiltrados : base.por_dia;
 
-  const total_tentativas  = src.reduce((s, d) => s + d.tent, 0);
-  const atendidos         = src.reduce((s, d) => s + d.atend, 0);
-  const nao_atendeu       = src.reduce((s, d) => s + d.naoAtend, 0);
-  const ocupado           = src.reduce((s, d) => s + d.ocup, 0);
-  const interessados      = src.reduce((s, d) => s + d.int, 0);
-  const discados_unicos   = src.reduce((s, d) => s + d.docs, 0);
-  const hit_rate_pct      = total_tentativas > 0
+  const total_tentativas   = src.reduce((s, d) => s + d.tent, 0);
+  const atendidos          = src.reduce((s, d) => s + d.atend, 0);
+  const nao_atendeu        = src.reduce((s, d) => s + d.naoAtend, 0);
+  const falha_telefonia    = src.reduce((s, d) => s + (d.falha || 0), 0);
+  const ocupado            = src.reduce((s, d) => s + d.ocup, 0);
+  const interessados       = src.reduce((s, d) => s + d.int, 0);
+  const discados_unicos    = src.reduce((s, d) => s + d.docs, 0);
+  const hit_rate_pct       = total_tentativas > 0
     ? Math.round(atendidos / total_tentativas * 10000) / 100 : 0;
   const media_tent_empresa = discados_unicos > 0
     ? Math.round(total_tentativas / discados_unicos * 10) / 10 : 0;
@@ -251,12 +145,13 @@ function computeFilteredCamp(base, gran, sel) {
 
   return {
     ...base,
-    total_tentativas, atendidos, nao_atendeu, ocupado,
+    total_tentativas, atendidos, nao_atendeu, falha_telefonia, ocupado,
     interessados, discados_unicos, hit_rate_pct, media_tent_empresa,
     status_dist: [
-      { name: "Atendido",    value: atendidos,  cor: "#f97316" },
-      { name: "Não Atendeu", value: nao_atendeu, cor: "#ef4444" },
-      { name: "Ocupado",     value: ocupado,    cor: "#f59e0b" },
+      { name: "Atendido",        value: atendidos,       cor: "#22c55e" },
+      { name: "Falha Telefonia", value: falha_telefonia, cor: "#ef4444" },
+      { name: "Não Atendeu",     value: nao_atendeu,     cor: "#6b7280" },
+      { name: "Ocupado",         value: ocupado,         cor: "#f59e0b" },
     ],
     chartData, xKey,
   };
@@ -269,14 +164,15 @@ const fmt = n => Number(n).toLocaleString("pt-BR");
 const pct = (n, dec = 1) => Number(n).toFixed(dec).replace(".", ",") + "%";
 
 const SECOES = [
-  { id: "visaogeral",  icon: "👁",  label: "Visão Geral" },
-  { id: "cobertura",   icon: "📋", label: "Cobertura Mailing" },
-  { id: "esforco",     icon: "📊", label: "Esforço de Discagem" },
-  { id: "qualidade",   icon: "◎",  label: "Qualidade da Base" },
-  { id: "conversao",   icon: "↗",  label: "Conversão" },
-  { id: "funil",       icon: "🔽", label: "Funil Operacional" },
-  { id: "brprodutivo",  icon: "🇧🇷", label: "Perfil BR + Produtivo" },
-  { id: "diagnostico",  icon: "🔬", label: "Diagnóstico Perfil x Discagem" },
+  { id: "visaogeral",        icon: "👁",  label: "Visão Geral" },
+  { id: "cobertura",         icon: "📋", label: "Cobertura Mailing" },
+  { id: "esforco",           icon: "📊", label: "Esforço de Discagem" },
+  { id: "conversao",         icon: "↗",  label: "Conversão" },
+  { id: "coberturaempresas", icon: "🏢", label: "Cobertura Empresas" },
+  { id: "exportar",          icon: "⬇",  label: "Exportar Dados" },
+  { id: "brprodutivo",       icon: "🇧🇷", label: "Perfil BR + Produtivo" },
+  { id: "diagnostico",       icon: "🔬", label: "Diagnóstico Perfil x Discagem" },
+  { id: "performanceagente", icon: "👤", label: "Performance Agente" },
 ];
 
 // ============================================================
@@ -313,7 +209,7 @@ function KpiCard({ label, value, sub, accent, icon }) {
       <div style={{ fontSize: 26, fontWeight: 700, color: accent || "#f0f0f0", lineHeight: 1, marginBottom: 6 }}>
         {value}
       </div>
-      {sub && <div style={{ fontSize: 11, color: "#5a5a5a" }}>{sub}</div>}
+      {sub && <div style={{ fontSize: 11, color: "#9a9a9a" }}>{sub}</div>}
     </div>
   );
 }
@@ -338,29 +234,21 @@ function VisaoGeral({ camp }) {
         <div style={{ fontSize: 13, color: "#a0a0a0", marginBottom: 20 }}>
           Carteira {c.carteira} · Dashboard de Acompanhamento Operacional
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: "1px solid #2a2a2a", paddingTop: 18 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", borderTop: "1px solid #2a2a2a", paddingTop: 18 }}>
           {[
             { v: fmt(c.discados_unicos),   l: "Empresas Discadas" },
             { v: fmt(c.total_tentativas),  l: "Total de Tentativas" },
+            { v: fmt(c.atendidos),         l: "Atendidas" },
             { v: fmt(c.interessados),      l: "Interessados" },
-            { v: pct(c.hit_rate_pct),      l: "Hit Rate" },
+            { v: pct(c.cpc > 0 ? c.cpca / c.cpc * 100 : 0), l: "% Conversão" },
           ].map((item, i) => (
             <div key={i} style={{ textAlign: "center", padding: "6px 0",
-              borderRight: i < 3 ? "1px solid #2a2a2a" : "none" }}>
+              borderRight: i < 4 ? "1px solid #2a2a2a" : "none" }}>
               <div style={{ fontSize: 26, fontWeight: 700 }}>{item.v}</div>
-              <div style={{ fontSize: 11, color: "#5a5a5a", textTransform: "uppercase", letterSpacing: 1, marginTop: 4 }}>{item.l}</div>
+              <div style={{ fontSize: 11, color: "#9a9a9a", textTransform: "uppercase", letterSpacing: 1, marginTop: 4 }}>{item.l}</div>
             </div>
           ))}
         </div>
-      </div>
-
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, marginBottom: 20 }}>
-        <KpiCard label="Total de Empresas"       value={fmt(c.discados_unicos)}   sub="Empresas únicas discadas"         accent="#f97316" icon="🏢" />
-        <KpiCard label="Total de Tentativas"     value={fmt(c.total_tentativas)}  sub="Tentativas de contato realizadas" accent="#f97316" icon="📞" />
-        <KpiCard label="Interessados"            value={fmt(c.interessados)}       sub="Empresas c/ interesse confirmado" accent="#22c55e" icon="◎" />
-        <KpiCard label="Hit Rate"                value={pct(c.hit_rate_pct)}      sub={`${fmt(c.atendidos)} atendidas`}  accent="#22c55e" icon="↗" />
-        <KpiCard label="Contatos com Decisor"   value={fmt(c.contatos_decisor)}   sub="Interesse + Informação"           accent="#3b82f6" icon="👤" />
-        <KpiCard label="Média Tent./Empresa"    value={String(c.media_tent_empresa).replace(".", ",")} sub="Esforço médio por empresa" accent="#f97316" icon="🔁" />
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }}>
@@ -385,8 +273,8 @@ function VisaoGeral({ camp }) {
           <ResponsiveContainer width="100%" height={220}>
             <ComposedChart data={chartData}>
               <CartesianGrid stroke="#2a2a2a" />
-              <XAxis dataKey={xKey} tick={{ fill: "#5a5a5a", fontSize: 11 }} />
-              <YAxis tick={{ fill: "#5a5a5a", fontSize: 11 }} />
+              <XAxis dataKey={xKey} tick={{ fill: "#9a9a9a", fontSize: 11 }} />
+              <YAxis tick={{ fill: "#9a9a9a", fontSize: 11 }} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: "#a0a0a0" }} />
               <Bar dataKey="tentativas" name="Tentativas" fill="#f97316" opacity={0.85} radius={[3,3,0,0]} />
@@ -431,7 +319,7 @@ function CoberturaMailing({ camp: c }) {
         <ResponsiveContainer width="100%" height={260}>
           <BarChart data={funil} layout="vertical">
             <CartesianGrid stroke="#2a2a2a" horizontal={false} />
-            <XAxis type="number" tick={{ fill: "#5a5a5a", fontSize: 11 }} />
+            <XAxis type="number" tick={{ fill: "#9a9a9a", fontSize: 11 }} />
             <YAxis dataKey="name" type="category" tick={{ fill: "#a0a0a0", fontSize: 11 }} width={130} />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="value" name="Registros" radius={[0,4,4,0]}>
@@ -447,15 +335,17 @@ function CoberturaMailing({ camp: c }) {
 function FunilOperacional({ camp: c }) {
   const total = c.total_tentativas;
   const atend = c.atendidos;
+  const falhaTel = c.falha_telefonia || 0;
   const falhas = c.nao_atendeu + c.ocupado;
   const cpc = c.interessados;
   const acordos = c.acordos;
   const nodes = [
-    { label: "Esforço",  value: total,  pct: "100%",                            cor: "#f97316" },
-    { label: "Atendidas",value: atend,  pct: pct(atend/total*100),               cor: "#22c55e" },
-    { label: "Falhas",   value: falhas, pct: pct(falhas/total*100),              cor: "#ef4444" },
-    { label: "CPC",      value: cpc,    pct: pct(atend > 0 ? cpc/atend*100 : 0), cor: "#3b82f6" },
-    { label: "Acordos",  value: acordos,pct: pct(cpc > 0 ? acordos/cpc*100 : 0), cor: "#8b5cf6" },
+    { label: "Esforço",        value: total,    pct: "100%",                             cor: "#f97316" },
+    { label: "Atendidas",      value: atend,    pct: pct(atend/total*100),                cor: "#22c55e" },
+    { label: "Falha Telefonia",value: falhaTel, pct: pct(falhaTel/total*100),             cor: "#ef4444" },
+    { label: "Não Atendeu",    value: falhas,   pct: pct(falhas/total*100),               cor: "#6b7280" },
+    { label: "CPC",            value: cpc,      pct: pct(atend > 0 ? cpc/atend*100 : 0), cor: "#3b82f6" },
+    { label: "Acordos",        value: acordos,  pct: pct(cpc > 0 ? acordos/cpc*100 : 0), cor: "#8b5cf6" },
   ];
   return (
     <>
@@ -468,7 +358,7 @@ function FunilOperacional({ camp: c }) {
                 borderRadius: 8, padding: "14px 16px", textAlign: "center", minWidth: 110 }}>
                 <div style={{ fontSize: 18, fontWeight: 700, color: n.cor }}>{n.pct}</div>
                 <div style={{ fontSize: 13, color: "#a0a0a0", margin: "2px 0" }}>{fmt(n.value)}</div>
-                <div style={{ fontSize: 10, color: "#5a5a5a", textTransform: "uppercase", letterSpacing: 0.5 }}>{n.label}</div>
+                <div style={{ fontSize: 10, color: "#9a9a9a", textTransform: "uppercase", letterSpacing: 0.5 }}>{n.label}</div>
               </div>
               {i < nodes.length - 1 && <div key={`arr${i}`} style={{ color: "#333", fontSize: 22, flexShrink: 0 }}>→</div>}
             </>
@@ -476,12 +366,12 @@ function FunilOperacional({ camp: c }) {
         </div>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
-        <KpiCard label="Total Discagens"  value={fmt(c.total_tentativas)}          sub="Esforço total"          accent="#f97316" icon="📞" />
-        <KpiCard label="Atendidas"        value={fmt(c.atendidos)}                 sub={`Hit Rate: ${pct(c.hit_rate_pct)}`} accent="#22c55e" icon="✅" />
-        <KpiCard label="Não Atendidas"    value={fmt(c.nao_atendeu + c.ocupado)}   sub="Falhas + Ocupado"       accent="#ef4444" icon="❌" />
-        <KpiCard label="CPC"              value={fmt(c.interessados)}              sub="Contatos qualificados"  accent="#3b82f6" icon="🎯" />
-        <KpiCard label="Acordos"          value={fmt(c.acordos)}                   sub="Fechamentos"            accent="#8b5cf6" icon="🤝" />
-        <KpiCard label="Conversão"        value={pct(c.conversao_pct)}             sub="CPC → Acordo"           accent="#ec4899" icon="💹" />
+        <KpiCard label="Total Discagens"   value={fmt(c.total_tentativas)}            sub="Esforço total"                   accent="#f97316" icon="📞" />
+        <KpiCard label="Atendidas"         value={fmt(c.atendidos)}                   sub={`Hit Rate: ${pct(c.hit_rate_pct)}`} accent="#22c55e" icon="✅" />
+        <KpiCard label="Falha Telefonia"   value={fmt(c.falha_telefonia || 0)}        sub="ISDN 128 / 131 / 147"            accent="#ef4444" icon="⚡" />
+        <KpiCard label="Não Atendeu"       value={fmt(c.nao_atendeu + c.ocupado)}     sub="Sem contato + Ocupado"           accent="#6b7280" icon="❌" />
+        <KpiCard label="CPC"               value={fmt(c.interessados)}                sub="Contatos qualificados"           accent="#3b82f6" icon="🎯" />
+        <KpiCard label="Acordos"           value={fmt(c.acordos)}                     sub="Fechamentos"                     accent="#8b5cf6" icon="🤝" />
       </div>
     </>
   );
@@ -490,31 +380,64 @@ function FunilOperacional({ camp: c }) {
 function EsforcoDicagem({ camp: c }) {
   const xKey = c.xKey || "hora";
   const chartData = c.chartData || c.por_hora;
+  const esforcoData = chartData.map(d => ({
+    ...d,
+    esforco: d.atendidas > 0 ? Math.round(d.tentativas / d.atendidas * 10) / 10 : 0,
+  }));
+  const diaData = c.por_dia.map(d => ({
+    dia: d.dia, ddd: d.ddd, tent: d.tent, atend: d.atend,
+    esforco: d.atend > 0 ? Math.round(d.tent / d.atend * 10) / 10 : 0,
+  }));
   return (
     <>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, marginBottom: 20 }}>
-        <KpiCard label="Total Tentativas"       value={fmt(c.total_tentativas)} sub="Chamadas realizadas"      accent="#f97316" icon="📞" />
-        <KpiCard label="Atendidas"              value={fmt(c.atendidos)}        sub={`${pct(c.hit_rate_pct)} hit rate`} accent="#22c55e" icon="✅" />
-        <KpiCard label="Não Atendeu"            value={fmt(c.nao_atendeu)}      sub="Sem contato"             accent="#ef4444" icon="📵" />
-        <KpiCard label="Ocupado"                value={fmt(c.ocupado)}          sub="Linha ocupada"           accent="#f59e0b" icon="🔴" />
+        <KpiCard label="Total Tentativas"      value={fmt(c.total_tentativas)}   sub="Chamadas realizadas"              accent="#f97316" icon="📞" />
+        <KpiCard label="Atendidas"             value={fmt(c.atendidos)}          sub={`${pct(c.hit_rate_pct)} hit rate`} accent="#22c55e" icon="✅" />
+        <KpiCard label="Falha Telefonia"       value={fmt(c.falha_telefonia||0)} sub="ISDN 128/131/147 — erro de rota"   accent="#ef4444" icon="⚡" />
+        <KpiCard label="Não Atendeu"           value={fmt(c.nao_atendeu)}        sub="Sem contato real"                 accent="#6b7280" icon="📵" />
+        <KpiCard label="Ocupado"               value={fmt(c.ocupado)}            sub="Linha ocupada"                    accent="#f59e0b" icon="🔴" />
         <KpiCard label="Média Tent./Empresa"   value={String(c.media_tent_empresa).replace(".", ",")} sub="Esforço médio" accent="#3b82f6" icon="🔁" />
-        <KpiCard label="Sem Sucesso"            value={fmt(c.sem_sucesso)}      sub="Aguardando retorno"      accent="#ec4899" icon="⚠️" />
       </div>
-      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 10, padding: 22 }}>
+
+      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 10, padding: 22, marginBottom: 16 }}>
         <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>Discagens por {xKey === "hora" ? "Hora" : xKey === "ddd" ? "Dia da Semana" : "Dia"} — Detalhe</div>
-        <div style={{ fontSize: 12, color: "#a0a0a0", marginBottom: 16 }}>Atendidas vs. Não atendidas por período</div>
+        <div style={{ fontSize: 12, color: "#a0a0a0", marginBottom: 16 }}>Atendidas, Tentativas e Esforço (tent./atend.) por período</div>
         <ResponsiveContainer width="100%" height={280}>
-          <BarChart data={chartData}>
+          <ComposedChart data={esforcoData}>
             <CartesianGrid stroke="#2a2a2a" />
-            <XAxis dataKey={xKey} tick={{ fill: "#5a5a5a", fontSize: 11 }} />
-            <YAxis tick={{ fill: "#5a5a5a", fontSize: 11 }} />
+            <XAxis dataKey={xKey} tick={{ fill: "#9a9a9a", fontSize: 11 }} />
+            <YAxis yAxisId="left"  tick={{ fill: "#9a9a9a", fontSize: 11 }} />
+            <YAxis yAxisId="right" orientation="right" tick={{ fill: "#a855f7", fontSize: 11 }} unit="x" />
             <Tooltip content={<CustomTooltip />} />
             <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: "#a0a0a0" }} />
-            <Bar dataKey="atendidas"  name="Atendidas"       stackId="a" fill="#22c55e" />
-            <Bar dataKey="tentativas" name="Tentativas Total" stackId="a" fill="#f97316" opacity={0.5} radius={[3,3,0,0]} />
-          </BarChart>
+            <Bar yAxisId="left" dataKey="atendidas"  name="Atendidas"        stackId="a" fill="#22c55e" />
+            <Bar yAxisId="left" dataKey="tentativas" name="Tentativas Total"  stackId="a" fill="#f97316" opacity={0.5} radius={[3,3,0,0]} />
+            <Line yAxisId="right" dataKey="esforco" name="Esforço (tent/atend)" stroke="#a855f7" strokeWidth={2}
+              dot={{ fill: "#a855f7", r: 4 }} activeDot={{ r: 6 }} type="monotone" />
+          </ComposedChart>
         </ResponsiveContainer>
       </div>
+
+      {diaData.length > 1 && (
+        <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 10, padding: 22 }}>
+          <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>Evolução Diária — Detalhe</div>
+          <div style={{ fontSize: 12, color: "#a0a0a0", marginBottom: 16 }}>Tentativas, atendidas e esforço por dia</div>
+          <ResponsiveContainer width="100%" height={260}>
+            <ComposedChart data={diaData}>
+              <CartesianGrid stroke="#2a2a2a" />
+              <XAxis dataKey="dia" tick={{ fill: "#9a9a9a", fontSize: 11 }} />
+              <YAxis yAxisId="left"  tick={{ fill: "#9a9a9a", fontSize: 11 }} />
+              <YAxis yAxisId="right" orientation="right" tick={{ fill: "#a855f7", fontSize: 11 }} unit="x" />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: "#a0a0a0" }} />
+              <Bar yAxisId="left" dataKey="tent"  name="Tentativas" fill="#f97316" opacity={0.7} radius={[3,3,0,0]} />
+              <Bar yAxisId="left" dataKey="atend" name="Atendidas"  fill="#22c55e" opacity={0.9} radius={[3,3,0,0]} />
+              <Line yAxisId="right" dataKey="esforco" name="Esforço (tent/atend)" stroke="#a855f7" strokeWidth={2}
+                dot={{ fill: "#a855f7", r: 4 }} activeDot={{ r: 6 }} type="monotone" />
+            </ComposedChart>
+          </ResponsiveContainer>
+        </div>
+      )}
     </>
   );
 }
@@ -529,7 +452,7 @@ function TabelaTabulacoes({ tabulacoes }) {
         <thead>
           <tr>
             {["Finalização", "Qtd", "%", ""].map(h => (
-              <th key={h} style={{ fontSize: 10, fontWeight: 700, color: "#5a5a5a", textTransform: "uppercase",
+              <th key={h} style={{ fontSize: 10, fontWeight: 700, color: "#9a9a9a", textTransform: "uppercase",
                 letterSpacing: 1, padding: "6px 8px", borderBottom: "1px solid #2a2a2a",
                 textAlign: h === "Qtd" || h === "%" ? "right" : "left" }}>{h}</th>
             ))}
@@ -567,7 +490,7 @@ function TabelaPeriodo({ chartData, xKey }) {
         <thead>
           <tr>
             {[colLabel, "Tentativas", "Atendidas", "Hit Rate"].map(h => (
-              <th key={h} style={{ fontSize: 10, fontWeight: 700, color: "#5a5a5a", textTransform: "uppercase",
+              <th key={h} style={{ fontSize: 10, fontWeight: 700, color: "#9a9a9a", textTransform: "uppercase",
                 letterSpacing: 1, padding: "6px 8px", borderBottom: "1px solid #2a2a2a",
                 textAlign: h === colLabel ? "left" : "right" }}>{h}</th>
             ))}
@@ -591,6 +514,164 @@ function TabelaPeriodo({ chartData, xKey }) {
         </tbody>
       </table>
     </div>
+  );
+}
+
+// ============================================================
+// COBERTURA EMPRESAS
+// ============================================================
+function CoberturaEmpresas({ camp }) {
+  const colunas = [
+    { key: "Consolidado",    data: _C },
+    { key: "Fiergs0106",     data: _F },
+    { key: "MGE_E_4_6_1063", data: _M },
+  ];
+  const rows = [
+    { label: "Empresas Discadas",  fn: c => fmt(c.discados_unicos) },
+    { label: "Tentativas",        fn: c => fmt(c.total_tentativas) },
+    { label: "Alô (Atendidos)",   fn: c => fmt(c.atendidos) },
+    { label: "Hit Rate",          fn: c => pct(c.hit_rate_pct) },
+    { label: "CPC",               fn: c => fmt(c.cpc) },
+    { label: "CPCA",              fn: c => fmt(c.cpca) },
+    { label: "% Conversão (CPCA/CPC)", fn: c => pct(c.cpc > 0 ? c.cpca / c.cpc * 100 : 0) },
+  ];
+  return (
+    <>
+      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 10, padding: 22, marginBottom: 20 }}>
+        <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>Comparativo por Campanha</div>
+        <div style={{ fontSize: 12, color: "#a0a0a0", marginBottom: 20 }}>Empresas · Tentativas · Alô · CPC · CPCA · Conversão</div>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: "left", padding: "8px 12px", borderBottom: "1px solid #333", color: "#9a9a9a", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}>Indicador</th>
+              {colunas.map(col => (
+                <th key={col.key} style={{ textAlign: "right", padding: "8px 12px", borderBottom: "1px solid #333", color: col.key === "Consolidado" ? "#f97316" : "#a0a0a0", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}>
+                  {col.data.label.replace(" - Ativo","").replace(" — Ativo","")}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)" }}>
+                <td style={{ padding: "10px 12px", borderBottom: "1px solid #222", color: "#d0d0d0", fontWeight: 500 }}>{row.label}</td>
+                {colunas.map(col => (
+                  <td key={col.key} style={{ padding: "10px 12px", textAlign: "right", borderBottom: "1px solid #222",
+                    color: col.key === "Consolidado" ? "#f0f0f0" : "#a0a0a0", fontWeight: col.key === "Consolidado" ? 700 : 400 }}>
+                    {row.fn(col.data)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {camp.por_dia.length > 0 && (
+        <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 10, padding: 22 }}>
+          <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>Evolução Diária — {camp.label}</div>
+          <div style={{ fontSize: 12, color: "#a0a0a0", marginBottom: 20 }}>Empresas discadas, alô e interesse por dia</div>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+            <thead>
+              <tr>
+                {["Dia", "Semana", "Empresas", "Tentativas", "Alô", "% Alô", "Interesse"].map(h => (
+                  <th key={h} style={{ textAlign: h === "Dia" || h === "Semana" ? "left" : "right", padding: "6px 10px", borderBottom: "1px solid #333", color: "#9a9a9a", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {camp.por_dia.map((d, i) => (
+                <tr key={i} style={{ background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)" }}>
+                  <td style={{ padding: "8px 10px", borderBottom: "1px solid #222", color: "#f0f0f0", fontWeight: 600 }}>{d.dia}</td>
+                  <td style={{ padding: "8px 10px", borderBottom: "1px solid #222", color: "#9a9a9a" }}>{d.ddd}</td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", borderBottom: "1px solid #222", color: "#a0a0a0" }}>{fmt(d.docs)}</td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", borderBottom: "1px solid #222", color: "#a0a0a0" }}>{fmt(d.tent)}</td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", borderBottom: "1px solid #222", color: "#22c55e", fontWeight: 600 }}>{fmt(d.atend)}</td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", borderBottom: "1px solid #222", color: "#f97316" }}>{pct(d.hr)}</td>
+                  <td style={{ padding: "8px 10px", textAlign: "right", borderBottom: "1px solid #222", color: "#a855f7" }}>{fmt(d.int)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </>
+  );
+}
+
+// ============================================================
+// EXPORTAR DADOS
+// ============================================================
+function ExportarDados() {
+  const downloadCSV = (filename, rows) => {
+    const content = rows.map(r => r.join(";")).join("\n");
+    const blob = new Blob(["﻿" + content], { type: "text/csv;charset=utf-8;" });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement("a");
+    a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const exportInteressados = () => {
+    const rows = [["Campanha", "Carteira", "Status", "Quantidade"]];
+    [_F, _M].forEach(camp => {
+      camp.tabulacoes
+        .filter(t => t.name === "Interesse" || t.name === "Oportunidade")
+        .forEach(t => rows.push([camp.label, camp.carteira, t.name, t.qtd]));
+    });
+    downloadCSV("interessados_oportunidades.csv", rows);
+  };
+
+  const exportDiscagem = () => {
+    const rows = [["Campanha", "Carteira", "Periodo", "Dia", "DiaSemana", "Empresas", "Tentativas", "Atendidos", "Nao_Atendeu", "Falha_Telefonia", "Ocupado", "Interesse", "HitRate_pct"]];
+    [_F, _M].forEach(camp => {
+      camp.por_dia.forEach(d => {
+        rows.push([camp.label, camp.carteira, camp.periodo, d.dia, d.ddd, d.docs, d.tent, d.atend, d.naoAtend, d.falha||0, d.ocup, d.int, d.hr]);
+      });
+    });
+    downloadCSV("discagem_fila_resumo.csv", rows);
+  };
+
+  const BtnExport = ({ label, sub, icon, onClick, color }) => (
+    <div style={{ background: "#1a1a1a", border: `1px solid ${color}44`, borderRadius: 10, padding: 28, display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ fontSize: 16, fontWeight: 700, color }}>{icon} {label}</div>
+      <div style={{ fontSize: 12, color: "#9a9a9a", lineHeight: 1.5 }}>{sub}</div>
+      <button onClick={onClick} style={{
+        marginTop: 8, background: color, border: "none", color: "#fff",
+        fontFamily: "Inter, sans-serif", fontSize: 13, fontWeight: 700,
+        padding: "10px 20px", borderRadius: 6, cursor: "pointer", alignSelf: "flex-start",
+      }}>
+        Baixar CSV
+      </button>
+    </div>
+  );
+
+  return (
+    <>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 24 }}>
+        <BtnExport
+          label="Interessados e Oportunidades"
+          sub="Exporta o total de contatos classificados como Interesse ou Oportunidade, agrupados por campanha e carteira."
+          icon="◎" color="#22c55e"
+          onClick={exportInteressados}
+        />
+        <BtnExport
+          label="Resumo Discagem Fila"
+          sub="Exporta a evolução diária de discagem: empresas, tentativas, atendidos, falhas e interesse por dia e campanha."
+          icon="📋" color="#3b82f6"
+          onClick={exportDiscagem}
+        />
+      </div>
+      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 10, padding: 20 }}>
+        <div style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.8 }}>
+          <strong style={{ color: "#d0d0d0" }}>Arquivo CSV completo (Discagem_Fila.csv)</strong><br />
+          O arquivo bruto com todos os registros encontra-se em:<br />
+          <code style={{ background: "#111", padding: "4px 8px", borderRadius: 4, color: "#f97316", fontSize: 12 }}>
+            C:\1Claude\FIERGS\Arquivos\Discagem_Fila.csv
+          </code>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -657,29 +738,20 @@ export default function App() {
       case "visaogeral": return <VisaoGeral camp={camp} />;
       case "cobertura":  return <CoberturaMailing camp={camp} />;
       case "esforco":    return <EsforcoDicagem camp={camp} />;
-      case "funil":       return <FunilOperacional camp={camp} />;
-      case "brprodutivo":  return <BrMaisProdutivo />;
-      case "diagnostico":  return <DiagnosticoDiscagem />;
+      case "brprodutivo":       return <BrMaisProdutivo />;
+      case "diagnostico":       return <DiagnosticoDiscagem />;
+      case "performanceagente": return <PerformanceAgente />;
+      case "coberturaempresas": return <CoberturaEmpresas camp={camp} />;
+      case "exportar":          return <ExportarDados />;
       case "conversao":
         return (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
-            <KpiCard label="Interessados"       value={fmt(camp.interessados)}                        sub="Empresas com interesse"    accent="#22c55e" icon="◎" />
-            <KpiCard label="Acordos"            value={fmt(camp.acordos)}                             sub="Fechamentos confirmados"   accent="#8b5cf6" icon="🤝" />
-            <KpiCard label="Taxa de Conversão"  value={pct(camp.conversao_pct)}                       sub="Acordos / Interessados"    accent="#ec4899" icon="💹" />
-            <KpiCard label="Valor Total"        value="R$ 0,00"                                       sub="Receita acordos"           accent="#f59e0b" icon="💰" />
-            <KpiCard label="Contatos Decisor"   value={fmt(camp.contatos_decisor)}                    sub="CPC efetivo"               accent="#3b82f6" icon="👤" />
-            <KpiCard label="Não CPC"            value={fmt(camp.atendidos - camp.contatos_decisor)}   sub="Atendidos sem qualif."     accent="#ef4444" icon="❌" />
-          </div>
-        );
-      case "qualidade":
-        return (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
-            <KpiCard label="Base Carga Total"   value={fmt(camp.mailing_carga)}    sub="Prospecção completa"   accent="#3b82f6" icon="📦" />
-            <KpiCard label="Enviado ao Discador" value={fmt(camp.mailing_discador)} sub="Ativo no sistema"      accent="#f97316" icon="📤" />
-            <KpiCard label="Cobertura"          value={pct(camp.cobertura_pct)}    sub="Discados / enviado"    accent="#22c55e" icon="📊" />
-            <KpiCard label="Penetração"         value={pct(camp.penetracao_pct)}   sub="vs. base carga"        accent="#8b5cf6" icon="🎯" />
-            <KpiCard label="Gap Remanescente"   value={fmt(camp.nao_discados)}     sub="Ainda não discados"    accent="#ef4444" icon="⚠️" />
-            <KpiCard label="Sem Sucesso"        value={fmt(camp.sem_sucesso)}      sub="Sem contato efetivo"   accent="#ec4899" icon="📵" />
+            <KpiCard label="Interessados"      value="—" sub="Em apuração"          accent="#22c55e" icon="◎" />
+            <KpiCard label="Acordos"           value="—" sub="Em apuração"          accent="#8b5cf6" icon="🤝" />
+            <KpiCard label="Taxa de Conversão" value="—" sub="Em apuração"          accent="#ec4899" icon="💹" />
+            <KpiCard label="Valor Total"       value="—" sub="Em apuração"          accent="#f59e0b" icon="💰" />
+            <KpiCard label="CPC"               value="—" sub="Em apuração"          accent="#3b82f6" icon="👤" />
+            <KpiCard label="CPCA"              value="—" sub="Em apuração"          accent="#ef4444" icon="🎯" />
           </div>
         );
       default: return <VisaoGeral camp={camp} />;
@@ -734,7 +806,7 @@ export default function App() {
         }}>
           {/* LEFT: seletor de campanha */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: 12, color: "#5a5a5a" }}>Campanha</span>
+            <span style={{ fontSize: 12, color: "#9a9a9a" }}>Campanha</span>
             <select value={campKey} onChange={e => handleCampChange(e.target.value)} style={{
               background: "#222", border: "1px solid #2a2a2a", color: "#f0f0f0",
               fontFamily: "Inter, sans-serif", fontSize: 13, padding: "6px 12px",
@@ -757,7 +829,7 @@ export default function App() {
               <button key={g.key} onClick={() => handleGranChange(g.key)} style={{
                 background: gran === g.key ? "rgba(249,115,22,.2)" : "transparent",
                 border: `1px solid ${gran === g.key ? "rgba(249,115,22,.5)" : "#2a2a2a"}`,
-                color: gran === g.key ? "#f97316" : "#5a5a5a",
+                color: gran === g.key ? "#f97316" : "#9a9a9a",
                 fontSize: 11, fontWeight: gran === g.key ? 700 : 500,
                 padding: "5px 12px", borderRadius: 5, cursor: "pointer",
                 fontFamily: "Inter, sans-serif", transition: "all .15s",
@@ -774,7 +846,7 @@ export default function App() {
                     <button key={c.val} onClick={() => toggleSel(c.val)} style={{
                       background: ativo ? "rgba(34,197,94,.2)" : "#1a1a1a",
                       border: `1px solid ${ativo ? "rgba(34,197,94,.5)" : "#2a2a2a"}`,
-                      color: ativo ? "#22c55e" : "#5a5a5a",
+                      color: ativo ? "#22c55e" : "#9a9a9a",
                       fontSize: 11, fontWeight: ativo ? 700 : 400,
                       padding: "4px 10px", borderRadius: 4, cursor: "pointer",
                       fontFamily: "Inter, sans-serif", transition: "all .15s",
