@@ -13,8 +13,8 @@ Set-Location $PSScriptRoot
 # ── CONFIGURACOES FIXAS (atualizar se o mailing mudar) ────────────
 $MAILING_CARGA = 64013
 $CFG = @{
-  "Fiergs0106"     = @{ label = "Fiergs0106 - Ativo";      carteira = "530";   discador = 20184 }
-  "MGE_E_4_6_1063" = @{ label = "MGE_E_4_6_1063 - Ativo";  carteira = "1063";  discador = 48141 }
+  "Fiergs0106" = @{ label = "Fiergs0106 - Ativo"; carteira = "530";  discador = 20184 }
+  "MGE_1063"   = @{ label = "MGE 1063 - Ativo";   carteira = "1063"; discador = 64013 }
 }
 
 # ── MAPEAMENTO ISDN ───────────────────────────────────────────────
@@ -71,15 +71,9 @@ Write-Host "  Carregando CSV..." -ForegroundColor Cyan
 if (-not (Test-Path $CsvPath)) { Write-Host "  ERRO: $CsvPath nao encontrado" -ForegroundColor Red; exit 1 }
 
 $raw  = Import-Csv -Path $CsvPath -Delimiter ";" -Encoding Default
+$all  = $raw   # _AJ calculado inline em Get-CampJS (evita Add-Member em 300k rows)
 
-# Enriquece em memoria (nao sobrescreve o CSV original)
-$all  = $raw | ForEach-Object {
-  $code = $_.ISDN_CODE.Trim()
-  $aj   = if ($isdnMap.ContainsKey($code)) { $isdnMap[$code] } else { $_.STATUS }
-  $_ | Add-Member -MemberType NoteProperty -Name "_AJ" -Value $aj -Force -PassThru
-}
-
-Write-Host "  $($all.Count) registros. Ajuste_Status calculado em memoria." -ForegroundColor Green
+Write-Host "  $($all.Count) registros carregados." -ForegroundColor Green
 
 # ═════════════════════════════════════════════════════════════════
 # 2. CALCULAR KPIs POR CAMPANHA
@@ -90,99 +84,124 @@ Write-Host "  Calculando KPIs..." -ForegroundColor Cyan
 function Get-CampJS($rows, $campName) {
   $cfg = $CFG[$campName]
 
-  # Totais
-  $tent  = cnt $rows
-  $atend = cnt ($rows | Where-Object { $_._AJ -eq "Atendido" })
-  $falha = cnt ($rows | Where-Object { $_._AJ -eq "Falha_Telefonia" })
-  $na    = cnt ($rows | Where-Object { $naCats -contains $_._AJ })
-  $ocup  = cnt ($rows | Where-Object { $_._AJ -eq "Ocupado" })
-  $hr    = pct $atend $tent
+  # Lookup O(1) (evita -contains sobre array a cada linha)
+  $cpcSet  = @{}; foreach ($x in $cpcCats)  { $cpcSet[$x]  = 1 }
+  $cpcaSet = @{}; foreach ($x in $cpcaCats) { $cpcaSet[$x] = 1 }
+  $naSet   = @{}; foreach ($x in $naCats)   { $naSet[$x]   = 1 }
 
-  # CPC / CPCA
-  $cpc   = cnt ($rows | Where-Object { $cpcCats  -contains $_.STATUS_NEGOCIO })
-  $cpca  = cnt ($rows | Where-Object { $cpcaCats -contains $_.STATUS_NEGOCIO })
-  $pCpc  = pct $cpc  $atend
-  $pCpca = pct $cpca $cpc
-  $inter = cnt ($rows | Where-Object { $_.STATUS_NEGOCIO -eq "Interesse" })
+  # Contadores
+  $tent=0; $atend=0; $falha=0; $na=0; $ocup=0; $cpc=0; $cpca=0; $inter=0
+  $docsSet = [System.Collections.Generic.HashSet[string]]::new()
+  $horaMap = @{}; $diaMap = @{}; $diahMap = @{}; $tabMap = @{}
 
-  # Unicos (usa IDCRM; fallback para DESTINO)
-  $docsArr = $rows | Select-Object -ExpandProperty IDCRM | Where-Object { $_ -ne "" -and $null -ne $_ } | Select-Object -Unique
-  $docs  = cnt $docsArr
-  if ($docs -le 1) {
-    $docs = cnt ($rows | Select-Object -ExpandProperty DESTINO | Where-Object { $_ -ne "" -and $null -ne $_ } | Select-Object -Unique)
+  # ── LOOP UNICO (substitui 8+ passes anteriores) ──────────────────
+  foreach ($row in $rows) {
+    $tent++
+
+    # _AJ inline (sem Add-Member)
+    $code = $row.ISDN_CODE.Trim()
+    $aj   = if ($isdnMap.ContainsKey($code)) { $isdnMap[$code] } else { $row.STATUS }
+
+    if     ($aj -eq "Atendido")          { $atend++ }
+    elseif ($aj -eq "Falha_Telefonia")   { $falha++ }
+    elseif ($naSet.ContainsKey($aj))     { $na++    }
+    elseif ($aj -eq "Ocupado")           { $ocup++  }
+
+    $neg = $row.STATUS_NEGOCIO
+    if ($cpcSet.ContainsKey($neg))       { $cpc++   }
+    if ($cpcaSet.ContainsKey($neg))      { $cpca++  }
+    if ($neg -eq "Interesse")            { $inter++ }
+
+    $id = $row.IDCRM; if ($id -eq "") { $id = $row.DESTINO }
+    if ($id -ne "") { [void]$docsSet.Add($id) }
+
+    if ($neg -ne "") {
+      if ($tabMap.ContainsKey($neg)) { $tabMap[$neg]++ } else { $tabMap[$neg] = 1 }
+    }
+
+    # Parse data inline (sem regex, sem chamada de funcao)
+    $data = $row.DATA
+    if ($data.Length -lt 11) { continue }
+    $dia = "?"; $hora = "?"; $ddd = "?"
+    try {
+      if ($data[4] -eq '-') {
+        # ISO: "2026-06-01 14:30:00"
+        $dia     = $data.Substring(8,2) + "/" + $data.Substring(5,2)
+        $hora    = $data.Substring(11,2) + "h"
+        $dateStr = $data.Substring(0,10)
+      } else {
+        # BR: "01/06/2026 14:30:00"
+        $dia     = $data.Substring(0,2) + "/" + $data.Substring(3,2)
+        $hora    = $data.Substring(11,2) + "h"
+        $dateStr = $data.Substring(6,4)+"-"+$data.Substring(3,2)+"-"+$data.Substring(0,2)
+      }
+      $dt  = [DateTime]::ParseExact($dateStr,"yyyy-MM-dd",[cultureinfo]::InvariantCulture)
+      $ddd = $dowPt[$dt.DayOfWeek.ToString()]
+    } catch { continue }
+
+    # por_hora
+    if (-not $horaMap.ContainsKey($hora)) { $horaMap[$hora] = @(0,0,0) }
+    $horaMap[$hora][0]++
+    if ($aj -eq "Atendido")          { $horaMap[$hora][1]++ }
+    if ($cpcaSet.ContainsKey($neg))  { $horaMap[$hora][2]++ }
+
+    # por_dia
+    if (-not $diaMap.ContainsKey($dia)) {
+      $diaMap[$dia] = @{ t=0;a=0;ft=0;na=0;oc=0;int=0;ddd=$ddd;docs=[System.Collections.Generic.HashSet[string]]::new() }
+    }
+    $d = $diaMap[$dia]; $d.t++
+    if ($aj -eq "Atendido")          { $d.a++   }
+    if ($aj -eq "Falha_Telefonia")   { $d.ft++  }
+    if ($naSet.ContainsKey($aj))     { $d.na++  }
+    if ($aj -eq "Ocupado")           { $d.oc++  }
+    if ($cpcaSet.ContainsKey($neg))  { $d.int++ }
+    if ($id -ne "") { [void]$d.docs.Add($id) }
+
+    # por_dia_hora
+    if (-not $diahMap.ContainsKey($dia))        { $diahMap[$dia] = @{} }
+    if (-not $diahMap[$dia].ContainsKey($hora)) { $diahMap[$dia][$hora] = @(0,0,0) }
+    $diahMap[$dia][$hora][0]++
+    if ($aj -eq "Atendido")          { $diahMap[$dia][$hora][1]++ }
+    if ($cpcaSet.ContainsKey($neg))  { $diahMap[$dia][$hora][2]++ }
   }
+
+  # Valores derivados
+  $docs    = $docsSet.Count
+  $hr      = pct $atend $tent
+  $pCpc    = pct $cpc  $atend
+  $pCpca   = pct $cpca $cpc
   $naoDis  = $cfg.discador - $docs
   $cobPct  = pct $docs $cfg.discador
   $penPct  = pct $docs $MAILING_CARGA
   $mediaTE = if ($docs -gt 0) { rnd ([double]$tent / [double]$docs) 1 } else { 0 }
   $semSuc  = [Math]::Max(0, $docs - $atend)
 
-  # Periodo
-  $datas = @(); $rows | ForEach-Object { $d,$h,$ddd = Get-DiaHora $_.DATA; if ($d -ne "?") { $datas += $d } }
-  # @() garante array mesmo com 1 elemento; sort por MMDD para ordem cronologica correta
-  $datas = @($datas | Select-Object -Unique | Sort-Object { ($_ -split "/")[1] + ($_ -split "/")[0] })
-  $dtMin = if ($datas.Count -gt 0) { $datas[0] } else { "?/?" }
-  $dtMax = if ($datas.Count -gt 0) { $datas[$datas.Count - 1] } else { "?/?" }
+  # Periodo a partir das chaves do diaMap
+  $datas   = @($diaMap.Keys | Sort-Object { ($_ -split "/")[1] + ($_ -split "/")[0] })
+  $dtMin   = if ($datas.Count -gt 0) { $datas[0] } else { "?/?" }
+  $dtMax   = if ($datas.Count -gt 0) { $datas[-1] } else { "?/?" }
   $periodo = "$dtMin/2026 a $dtMax/2026"
 
-  # por_hora (acumulado)
-  $horaMap = @{}
-  $rows | ForEach-Object {
-    $d,$hora,$ddd = Get-DiaHora $_.DATA
-    if ($hora -eq "?") { return }
-    if (-not $horaMap.ContainsKey($hora)) { $horaMap[$hora] = @{ t=0; a=0; i=0 } }
-    $horaMap[$hora].t += 1
-    if ($_._AJ -eq "Atendido") { $horaMap[$hora].a += 1 }
-    if ($cpcaCats -contains $_.STATUS_NEGOCIO) { $horaMap[$hora].i += 1 }
-  }
+  # Gerar linhas JS
   $porHoraLines = $horaMap.Keys | Sort-Object | ForEach-Object {
     $h = $horaMap[$_]
-    "    { hora: `"$_`", tentativas: $($h.t), atendidas: $($h.a), interesse: $($h.i) }"
+    "    { hora: `"$_`", tentativas: $($h[0]), atendidas: $($h[1]), interesse: $($h[2]) }"
   }
 
-  # por_dia
-  $diaMap = @{}
-  $rows | ForEach-Object {
-    $dia,$hora,$ddd2 = Get-DiaHora $_.DATA
-    if ($dia -eq "?") { return }
-    if (-not $diaMap.ContainsKey($dia)) { $diaMap[$dia] = @{ t=0; a=0; ft=0; na=0; oc=0; int=0; docs=@{}; ddd=$ddd2 } }
-    $diaMap[$dia].t  += 1
-    if ($_._AJ -eq "Atendido")       { $diaMap[$dia].a  += 1 }
-    if ($_._AJ -eq "Falha_Telefonia"){ $diaMap[$dia].ft += 1 }
-    if ($naCats -contains $_._AJ)    { $diaMap[$dia].na += 1 }
-    if ($_._AJ -eq "Ocupado")        { $diaMap[$dia].oc += 1 }
-    if ($cpcaCats -contains $_.STATUS_NEGOCIO) { $diaMap[$dia].int += 1 }
-    $id = $_.IDCRM; if ($id -eq "") { $id = $_.DESTINO }
-    if ($id -ne "") { $diaMap[$dia].docs[$id] = 1 }
-  }
   $porDiaLines = $diaMap.Keys | Sort-Object | ForEach-Object {
-    $d   = $diaMap[$_]
-    $hr2 = pct $d.a $d.t
-    $dc  = $d.docs.Keys.Count
+    $d = $diaMap[$_]; $hr2 = pct $d.a $d.t; $dc = $d.docs.Count
     "    { dia: `"$_`", ddd: `"$($d.ddd)`", tent: $($d.t), atend: $($d.a), naoAtend: $($d.na), falha: $($d.ft), ocup: $($d.oc), int: $($d.int), docs: $dc, hr: $hr2 }"
   }
 
-  # por_dia_hora
-  $diahMap = @{}
-  $rows | ForEach-Object {
-    $dia,$hora,$ddd2 = Get-DiaHora $_.DATA
-    if ($dia -eq "?" -or $hora -eq "?") { return }
-    if (-not $diahMap.ContainsKey($dia)) { $diahMap[$dia] = @{} }
-    if (-not $diahMap[$dia].ContainsKey($hora)) { $diahMap[$dia][$hora] = @{ t=0; a=0; i=0 } }
-    $diahMap[$dia][$hora].t += 1
-    if ($_._AJ -eq "Atendido") { $diahMap[$dia][$hora].a += 1 }
-    if ($cpcaCats -contains $_.STATUS_NEGOCIO) { $diahMap[$dia][$hora].i += 1 }
-  }
   $porDiaHoraLines = $diahMap.Keys | Sort-Object | ForEach-Object {
     $dia = $_
     $hLines = $diahMap[$dia].Keys | Sort-Object | ForEach-Object {
       $h = $diahMap[$dia][$_]
-      "      { hora: `"$_`", tentativas: $($h.t), atendidas: $($h.a), interesse: $($h.i) }"
+      "      { hora: `"$_`", tentativas: $($h[0]), atendidas: $($h[1]), interesse: $($h[2]) }"
     }
     "    `"$dia`": [`n" + ($hLines -join ",`n") + "`n    ]"
   }
 
-  # status_dist (ASCII-safe)
   $sDist = @(
     "    { name: `"Atendido`",        value: $atend, cor: `"#22c55e`" }",
     "    { name: `"Falha Telefonia`", value: $falha, cor: `"#ef4444`" }",
@@ -190,14 +209,12 @@ function Get-CampJS($rows, $campName) {
     "    { name: `"Ocupado`",         value: $ocup,  cor: `"#f59e0b`" }"
   )
 
-  # tabulacoes (usa STATUS_NEGOCIO bruto - valores ASCII do CSV)
-  $tabLines = $rows | Where-Object { $_.STATUS_NEGOCIO -ne "" -and $null -ne $_.STATUS_NEGOCIO } |
-    Group-Object STATUS_NEGOCIO | Sort-Object Count -Descending | Select-Object -First 15 |
-    ForEach-Object { "    { name: `"$($_.Name)`", qtd: $($_.Count) }" }
+  $tabLines = $tabMap.Keys | Sort-Object { -$tabMap[$_] } | Select-Object -First 15 |
+    ForEach-Object { "    { name: `"$_`", qtd: $($tabMap[$_]) }" }
 
   $varName = if ($campName -eq "Fiergs0106") { "_F" } else { "_M" }
 
-  $jsOut = "export const $varName = {`n"
+  $jsOut  = "export const $varName = {`n"
   $jsOut += "  label: `"$($cfg.label)`", carteira: `"$($cfg.carteira)`",`n"
   $jsOut += "  periodo: `"$periodo`",`n"
   $jsOut += "  mailing_carga: $MAILING_CARGA, mailing_discador: $($cfg.discador),`n"
@@ -220,8 +237,12 @@ function Get-CampJS($rows, $campName) {
 }
 
 $blocks = @()
-foreach ($name in @("Fiergs0106","MGE_E_4_6_1063")) {
-  $rows = @($all | Where-Object { $_.MAILING -eq $name })
+foreach ($name in @("Fiergs0106","MGE_1063")) {
+  if ($name -eq "MGE_1063") {
+    $rows = @($all | Where-Object { $_.MAILING -match "1063" })
+  } else {
+    $rows = @($all | Where-Object { $_.MAILING -eq $name })
+  }
   Write-Host "  $name`: $($rows.Count) registros" -ForegroundColor Gray
   if ($rows.Count -gt 0) { $blocks += Get-CampJS $rows $name }
   else { Write-Host "  AVISO: sem dados para $name" -ForegroundColor Yellow }
