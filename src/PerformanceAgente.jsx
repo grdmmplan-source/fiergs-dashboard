@@ -130,7 +130,7 @@ function TabRanking() {
 
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 4, padding: 20 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-          <div style={{ color: LIGHT, fontSize: 15, fontWeight: 700 }}>Ranking — 14 Dias de Operação</div>
+          <div style={{ color: LIGHT, fontSize: 15, fontWeight: 700 }}>Ranking — 20 Dias de Operação</div>
           <div style={{ display: "flex", gap: 6 }}>
             {[
               ["positivos", "Positivos"],
@@ -190,7 +190,7 @@ function TabRanking() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 16 }}>
           <AlertBox type="green">
-            🏆 <strong style={{ color: GREEN }}>Top conversão: Kessia Angelo — 213 interesses em 14 dias</strong><br />
+            🏆 <strong style={{ color: GREEN }}>Top conversão: Kessia Angelo — 213 interesses em 20 dias</strong><br />
             Kessia lidera em interesse absoluto. Mariana lidera em positivos totais (304) pela constância em retornos (104).
           </AlertBox>
           <AlertBox type="blue">
@@ -219,7 +219,7 @@ function TabVisual() {
 
       {/* Positivos por agente */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 4, padding: 20 }}>
-        <SectionHeader title="Positivos por Agente (Interesse + Oportunidade + Retorno)" badge={{ text: "14 dias", color: GREEN }} />
+        <SectionHeader title="Positivos por Agente (Interesse + Oportunidade + Retorno)" badge={{ text: "20 dias", color: GREEN }} />
         <ResponsiveContainer width="100%" height={220}>
           <BarChart data={sorted} barCategoryGap="20%">
             <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -522,7 +522,7 @@ export default function PerformanceAgente() {
             <span style={{ fontSize: 15, fontWeight: 700 }}>Análise Completa de Agentes</span>
           </div>
           <div style={{ fontSize: 12, color: "#9a9a9a" }}>
-            12 agentes ativos · 01/06–19/06/2026 · 14 dias úteis · Fonte: Discagem_Fila.csv
+            12 agentes ativos · 01/06–25/06/2026 · 20 dias úteis · Fonte: Discagem_Fila.csv
           </div>
         </div>
         <div style={{ display: "flex", gap: 24, textAlign: "right", paddingRight: 4 }}>
@@ -556,7 +556,7 @@ export default function PerformanceAgente() {
 
       <div style={{ marginTop: 24, paddingTop: 14, borderTop: `1px solid ${BORDER}`, display: "flex", justifyContent: "space-between", fontSize: 11, color: "#3a3a3a" }}>
         <span>Fonte: Discagem_Fila.csv · Fila 1063 - FiergsAtivo</span>
-        <span>Operação: 01–19/jun/2026 · 14 dias úteis</span>
+        <span>Operação: 01–25/jun/2026 · 20 dias úteis</span>
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ export const _F = {
 
 export const _M = {
   label: "MGE 1063 - Ativo", carteira: "1063",
-  periodo: "01/06/2026 a 19/06/2026",
+  periodo: "01/06/2026 a 25/06/2026",
   mailing_carga: 64013, mailing_discador: 64013,
   discados_unicos: 57113, nao_discados: 6900,
   cobertura_pct: 89.22, penetracao_pct: 89.22,

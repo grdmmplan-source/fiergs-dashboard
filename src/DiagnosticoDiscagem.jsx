@@ -15,10 +15,10 @@ const CARD = "#1a1a1a";
 const BORDER = "#2a2a2a";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
-// Fonte: Discagem_Fila.csv (316.444 registros) · Período: 01/06–19/06/2026
+// Fonte: Discagem_Fila.csv (316.444 registros) · Período: 01/06–25/06/2026
 
 const resumoGeral = {
-  periodo: "01/06 – 19/06/2026",
+  periodo: "01/06 – 25/06/2026",
   diasTrabalhados: 14,
   totalTentativas: 316444,
   mailingTotal: 64013,
