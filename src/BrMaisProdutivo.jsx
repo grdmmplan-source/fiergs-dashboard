@@ -175,7 +175,7 @@ function MetricCard({ label, value, sub, color = GREEN, size = "normal" }) {
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: color }} />
       <div style={{ fontSize: 12, color: "#a0a0a0", fontWeight: 500, marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</div>
       <div style={{ color, fontSize: size === "big" ? 28 : 22, fontWeight: 700, lineHeight: 1, marginBottom: 6 }}>{value}</div>
-      {sub && <div style={{ fontSize: 11, color: "#5a5a5a" }}>{sub}</div>}
+      {sub && <div style={{ fontSize: 11, color: "#9a9a9a" }}>{sub}</div>}
     </div>
   );
 }
@@ -204,7 +204,7 @@ function KPITable({ kpis }) {
       <thead>
         <tr style={{ background: "#111" }}>
           {["KPI", "Fórmula", "Benchmark", "Meta", "Status", "Observação"].map(h => (
-            <th key={h} style={{ padding: "8px 10px", color: "#5a5a5a", textAlign: "left", fontWeight: 600, borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>{h}</th>
+            <th key={h} style={{ padding: "8px 10px", color: "#9a9a9a", textAlign: "left", fontWeight: 600, borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>{h}</th>
           ))}
         </tr>
       </thead>
@@ -216,7 +216,7 @@ function KPITable({ kpis }) {
             <td style={{ padding: "8px 10px", color: GREEN, fontWeight: 600 }}>{k.benchmark}</td>
             <td style={{ padding: "8px 10px", color: YELLOW }}>{k.meta}</td>
             <td style={{ padding: "8px 10px" }}><StatusBadge status={k.status} /></td>
-            <td style={{ padding: "8px 10px", color: "#5a5a5a", fontSize: 11 }}>{k.obs}</td>
+            <td style={{ padding: "8px 10px", color: "#9a9a9a", fontSize: 11 }}>{k.obs}</td>
           </tr>
         ))}
       </tbody>
@@ -240,13 +240,13 @@ function TabPerfil() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
         {/* Porte */}
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Distribuição por Porte</div>
+          <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Distribuição por Porte</div>
           <div style={{ display: "flex", gap: 16, marginBottom: 16 }}>
             {porteData.map(p => (
               <div key={p.name} style={{ flex: 1, textAlign: "center" }}>
                 <div style={{ fontSize: 28, fontWeight: 800, color: p.color, fontFamily: "monospace" }}>{p.pct}%</div>
                 <div style={{ color: "#a0a0a0", fontSize: 12 }}>{p.name}</div>
-                <div style={{ color: "#5a5a5a", fontSize: 11 }}>{p.value.toLocaleString("pt-BR")}</div>
+                <div style={{ color: "#9a9a9a", fontSize: 11 }}>{p.value.toLocaleString("pt-BR")}</div>
               </div>
             ))}
           </div>
@@ -260,7 +260,7 @@ function TabPerfil() {
 
         {/* Capital Social */}
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Capital Social — Faixas</div>
+          <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Capital Social — Faixas</div>
           <ResponsiveContainer width="100%" height={160}>
             <BarChart data={capitalData} barCategoryGap="30%">
               <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -270,7 +270,7 @@ function TabPerfil() {
               <Bar dataKey="value" fill={GREEN} radius={[2, 2, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
-          <div style={{ marginTop: 8, fontSize: 11, color: "#5a5a5a" }}>
+          <div style={{ marginTop: 8, fontSize: 11, color: "#9a9a9a" }}>
             66,4% das empresas têm capital ≤ R$ 100k — perfil MEI/ME clássico, decisor = sócio
           </div>
         </div>
@@ -278,7 +278,7 @@ function TabPerfil() {
 
       {/* Segmento × porte */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Top Segmentos × Porte (IBGE)</div>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Top Segmentos × Porte (IBGE)</div>
         <ResponsiveContainer width="100%" height={220}>
           <BarChart data={segmentoData} barCategoryGap="25%">
             <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -296,7 +296,7 @@ function TabPerfil() {
       {/* Regiões + contatos */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Distribuição por Região (RS)</div>
+          <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Distribuição por Região (RS)</div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={regiaoData} layout="vertical" barCategoryGap="20%">
               <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -309,19 +309,19 @@ function TabPerfil() {
         </div>
 
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Disponibilidade de Canais de Contato</div>
+          <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Disponibilidade de Canais de Contato</div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 8 }}>
             {[
               { label: "Com Telefone", value: 20230, pct: 31.6, color: GREEN },
               { label: "Com E-mail", value: 18547, pct: 29.0, color: BLUE },
               { label: "Ambos (Tel + Email)", value: 8300, pct: 13.0, color: YELLOW },
               { label: "Sem Contato Algum", value: 43181, pct: 67.5, color: RED },
-              { label: "WhatsApp Mapeado", value: 0, pct: 0, color: "#5a5a5a" },
+              { label: "WhatsApp Mapeado", value: 0, pct: 0, color: "#9a9a9a" },
             ].map(item => (
               <div key={item.label}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
                   <span style={{ color: "#a0a0a0", fontSize: 12 }}>{item.label}</span>
-                  <span style={{ color: item.color, fontSize: 12, fontWeight: 700, fontFamily: "monospace" }}>{item.pct}% <span style={{ color: "#5a5a5a", fontWeight: 400 }}>({item.value.toLocaleString("pt-BR")})</span></span>
+                  <span style={{ color: item.color, fontSize: 12, fontWeight: 700, fontFamily: "monospace" }}>{item.pct}% <span style={{ color: "#9a9a9a", fontWeight: 400 }}>({item.value.toLocaleString("pt-BR")})</span></span>
                 </div>
                 <div style={{ height: 6, background: "#111", borderRadius: 3 }}>
                   <div style={{ width: item.pct + "%", height: "100%", background: item.color, borderRadius: 3 }} />
@@ -349,7 +349,7 @@ function TabCnaes() {
 
       {/* Top 10 CNAE bar */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Top 10 CNAEs — Volume na Carteira</div>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Top 10 CNAEs — Volume na Carteira</div>
         <ResponsiveContainer width="100%" height={240}>
           <BarChart data={topCnaes} layout="vertical" barCategoryGap="15%">
             <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -363,7 +363,7 @@ function TabCnaes() {
 
       {/* Tabela enriquecimento */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
           Enriquecimento CNAE — Carteira vs. Universo RS
           <span style={{ marginLeft: 12, color: "#4a4a4a", fontWeight: 400 }}>Fonte: Receita Federal / DataSebrae estimado</span>
         </div>
@@ -371,7 +371,7 @@ function TabCnaes() {
           <thead>
             <tr style={{ background: "#111" }}>
               {["CNAE", "Descrição", "Na Carteira", "Universo RS", "Cobertura", "Gap Estimado", "Top UFs (BR)", "Top Cidades (RS)"].map(h => (
-                <th key={h} style={{ padding: "8px 10px", color: "#5a5a5a", textAlign: "left", fontWeight: 600, borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>{h}</th>
+                <th key={h} style={{ padding: "8px 10px", color: "#9a9a9a", textAlign: "left", fontWeight: 600, borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>{h}</th>
               ))}
             </tr>
           </thead>
@@ -394,8 +394,8 @@ function TabCnaes() {
                     </div>
                   </td>
                   <td style={{ padding: "8px 10px", color: RED, fontFamily: "monospace" }}>+{gap.toLocaleString("pt-BR")}</td>
-                  <td style={{ padding: "8px 10px", color: "#5a5a5a", fontSize: 11 }}>{r.topUF}</td>
-                  <td style={{ padding: "8px 10px", color: "#5a5a5a", fontSize: 11 }}>{r.topCidade}</td>
+                  <td style={{ padding: "8px 10px", color: "#9a9a9a", fontSize: 11 }}>{r.topUF}</td>
+                  <td style={{ padding: "8px 10px", color: "#9a9a9a", fontSize: 11 }}>{r.topCidade}</td>
                 </tr>
               );
             })}
@@ -408,7 +408,7 @@ function TabCnaes() {
 
       {/* Insights de mercado externo */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Insights de Mercado Externo Aplicáveis</div>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Insights de Mercado Externo Aplicáveis</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
           {[
             { fonte: "SEBRAE/RS 2024", dado: "RS tem 580k+ MPEs ativas. Indústria de transformação concentra 15% do PIB estadual — maior do Sul.", aplicacao: "Base cobre apenas ~11% do universo RS → enorme potencial de expansão.", color: GREEN },
@@ -421,7 +421,7 @@ function TabCnaes() {
             <div key={i} style={{ background: "#111", border: `1px solid ${item.color}33`, borderRadius: 10, padding: 14 }}>
               <div style={{ color: item.color, fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", marginBottom: 6 }}>{item.fonte}</div>
               <div style={{ color: LIGHT, fontSize: 12, marginBottom: 6 }}>{item.dado}</div>
-              <div style={{ color: "#5a5a5a", fontSize: 11, borderTop: `1px solid ${BORDER}`, paddingTop: 6 }}>→ {item.aplicacao}</div>
+              <div style={{ color: "#9a9a9a", fontSize: 11, borderTop: `1px solid ${BORDER}`, paddingTop: 6 }}>→ {item.aplicacao}</div>
             </div>
           ))}
         </div>
@@ -442,7 +442,7 @@ function TabMapa() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
         {/* Top cidades */}
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Top 10 Cidades — Leads na Carteira</div>
+          <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Top 10 Cidades — Leads na Carteira</div>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={cidadesData} layout="vertical" barCategoryGap="15%">
               <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -456,7 +456,7 @@ function TabMapa() {
 
         {/* Cobertura por região */}
         <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Índice de Cobertura por Região RS</div>
+          <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Índice de Cobertura por Região RS</div>
           <div style={{ color: "#4a4a4a", fontSize: 11, marginBottom: 14 }}>Fórmula: (Registros Carteira por Região ÷ Total MPEs Elegíveis por Região) × 100</div>
           {[
             { regiao: "Serra", carteira: 12691, universo: 68000, pct: 18.7, color: GREEN },
@@ -485,18 +485,18 @@ function TabMapa() {
 
       {/* Matriz CNAE × Região */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
           Matriz Oportunidade — CNAE Prioritário × Região (Gap Estimado)
           <span style={{ marginLeft: 12, color: "#4a4a4a", fontWeight: 400 }}>Empresas elegíveis não cobertas pela carteira atual</span>
         </div>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
           <thead>
             <tr style={{ background: "#111" }}>
-              <th style={{ padding: "8px 12px", color: "#5a5a5a", textAlign: "left", borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>Região</th>
+              <th style={{ padding: "8px 12px", color: "#9a9a9a", textAlign: "left", borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>Região</th>
               {["Construção", "Comércio Veíc.", "Indústria Möv.", "Engenharia", "Elétrica"].map(h => (
-                <th key={h} style={{ padding: "8px 10px", color: "#5a5a5a", textAlign: "center", borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>{h}</th>
+                <th key={h} style={{ padding: "8px 10px", color: "#9a9a9a", textAlign: "center", borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>{h}</th>
               ))}
-              <th style={{ padding: "8px 10px", color: "#5a5a5a", textAlign: "center", borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>Score</th>
+              <th style={{ padding: "8px 10px", color: "#9a9a9a", textAlign: "center", borderBottom: `1px solid ${BORDER}`, fontSize: 11 }}>Score</th>
             </tr>
           </thead>
           <tbody>
@@ -553,14 +553,14 @@ function TabKPIs() {
         {pilares.map((p, i) => (
           <button key={i} onClick={() => setPilar(i)} style={{
             padding: "10px 20px", borderRadius: 6, border: `1px solid ${i === pilar ? p.color : BORDER}`,
-            background: i === pilar ? p.color + "22" : "transparent", color: i === pilar ? p.color : "#5a5a5a",
+            background: i === pilar ? p.color + "22" : "transparent", color: i === pilar ? p.color : "#9a9a9a",
             cursor: "pointer", fontSize: 13, fontWeight: i === pilar ? 700 : 400, transition: "all 0.2s"
           }}>{p.label}</button>
         ))}
       </div>
 
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>
           {pilares[pilar].label} — KPIs com Fórmula, Benchmark e Semáforo
         </div>
         <KPITable kpis={pilares[pilar].data} />
@@ -568,7 +568,7 @@ function TabKPIs() {
 
       {/* Funil esperado */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Funil de Conversão Projetado — Base 64.013 Registros</div>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Funil de Conversão Projetado — Base 64.013 Registros</div>
         <div style={{ display: "flex", gap: 0, alignItems: "stretch" }}>
           {[
             { label: "Carteira Total", value: 64013, pct: "100%", color: "#4a4a4a" },
@@ -583,12 +583,12 @@ function TabKPIs() {
                 background: step.color + "22", border: `1px solid ${step.color}66`, borderRadius: 10,
                 padding: "14px 8px", margin: "0 2px", height: "100%", boxSizing: "border-box"
               }}>
-                <div style={{ fontSize: 11, color: "#5a5a5a", marginBottom: 6 }}>{step.label}</div>
+                <div style={{ fontSize: 11, color: "#9a9a9a", marginBottom: 6 }}>{step.label}</div>
                 <div style={{ fontSize: 20, fontWeight: 800, color: step.color, fontFamily: "monospace" }}>{step.value.toLocaleString("pt-BR")}</div>
                 <div style={{ fontSize: 11, color: step.color + "cc", marginTop: 4 }}>{step.pct}</div>
               </div>
               {i < arr.length - 1 && (
-                <div style={{ position: "absolute", right: -8, top: "50%", transform: "translateY(-50%)", color: "#5a5a5a", fontSize: 16, zIndex: 2 }}>▶</div>
+                <div style={{ position: "absolute", right: -8, top: "50%", transform: "translateY(-50%)", color: "#9a9a9a", fontSize: 16, zIndex: 2 }}>▶</div>
               )}
             </div>
           ))}
@@ -635,7 +635,7 @@ function TabRecomendacoes() {
 
       {/* Roadmap visual */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 10, padding: 20 }}>
-        <div style={{ color: "#5a5a5a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Roadmap de Implantação</div>
+        <div style={{ color: "#9a9a9a", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 16 }}>Roadmap de Implantação</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
           {[
             { fase: "Semana 1–2", label: "Pré-Operação", items: ["Enriquecimento de base (bureau)", "Segmentação MPE elegível", "Script por porte (Micro vs. Pequena)"], color: RED },
@@ -679,11 +679,11 @@ export default function BrMaisProdutivo() {
             <span style={{ background: GREEN, color: "#0d0d0d", fontWeight: 800, fontSize: 11, padding: "2px 8px", borderRadius: 10, letterSpacing: "0.08em" }}>BR + PRODUTIVO</span>
             <span style={{ fontSize: 16, fontWeight: 700 }}>Análise de Mailing — Ação Ativa de Discagem</span>
           </div>
-          <div style={{ fontSize: 12, color: "#5a5a5a" }}>Carteira: 25/mai/26 · Rio Grande do Sul · 100% Ativa na Receita Federal</div>
+          <div style={{ fontSize: 12, color: "#9a9a9a" }}>Carteira: 25/mai/26 · Rio Grande do Sul · 100% Ativa na Receita Federal</div>
         </div>
         <div style={{ textAlign: "right", paddingRight: 4 }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: GREEN, lineHeight: 1 }}>64.013</div>
-          <div style={{ fontSize: 11, color: "#5a5a5a" }}>registros · ~11% cobertura RS</div>
+          <div style={{ fontSize: 11, color: "#9a9a9a" }}>registros · ~11% cobertura RS</div>
         </div>
       </div>
 
@@ -693,7 +693,7 @@ export default function BrMaisProdutivo() {
           <button key={i} onClick={() => setActiveTab(i)} style={{
             padding: "8px 16px", background: "transparent",
             border: "none", borderBottom: `2px solid ${i === activeTab ? GREEN : "transparent"}`,
-            color: i === activeTab ? GREEN : "#5a5a5a",
+            color: i === activeTab ? GREEN : "#9a9a9a",
             cursor: "pointer", fontSize: 12, fontWeight: i === activeTab ? 700 : 400,
             transition: "all 0.15s", fontFamily: "Inter, sans-serif", marginBottom: -1,
           }}>{t}</button>

@@ -1,5 +1,5 @@
 ﻿// AUTO-GERADO por atualizar.ps1 - nao editar manualmente
-// Ultima atualizacao: 19/06/2026 15:35
+// Ultima atualizacao: 26/06/2026 12:10
 
 export const _F = {
   label: "Fiergs0106 - Ativo", carteira: "530",
@@ -58,23 +58,23 @@ export const _M = {
   mailing_carga: 64013, mailing_discador: 64013,
   discados_unicos: 57113, nao_discados: 6900,
   cobertura_pct: 89.22, penetracao_pct: 89.22,
-  total_tentativas: 312114, atendidos: 13658,
-  nao_atendeu: 64946, falha_telefonia: 231471, ocupado: 2038,
-  hit_rate_pct: 4.38,
-  cpc: 5869, cpca: 1263, pct_cpc: 42.97, pct_cpca: 21.52,
-  interessados: 1228, contatos_decisor: 5869,
-  media_tent_empresa: 5.5, sem_sucesso: 43455,
+  total_tentativas: 384492, atendidos: 17818,
+  nao_atendeu: 75947, falha_telefonia: 288391, ocupado: 2335,
+  hit_rate_pct: 4.63,
+  cpc: 7318, cpca: 1427, pct_cpc: 41.07, pct_cpca: 19.5,
+  interessados: 1384, contatos_decisor: 7318,
+  media_tent_empresa: 6.7, sem_sucesso: 39295,
   acordos: 0, conversao_pct: 0,
   por_hora: [
-    { hora: "09h", tentativas: 29304, atendidas: 1471, interesse: 151 },
-    { hora: "10h", tentativas: 39181, atendidas: 1787, interesse: 187 },
-    { hora: "11h", tentativas: 38345, atendidas: 1859, interesse: 174 },
-    { hora: "12h", tentativas: 35381, atendidas: 1493, interesse: 119 },
-    { hora: "13h", tentativas: 21799, atendidas: 892, interesse: 74 },
-    { hora: "14h", tentativas: 36468, atendidas: 1465, interesse: 131 },
-    { hora: "15h", tentativas: 42568, atendidas: 1830, interesse: 177 },
-    { hora: "16h", tentativas: 43190, atendidas: 1824, interesse: 172 },
-    { hora: "17h", tentativas: 25795, atendidas: 1036, interesse: 78 },
+    { hora: "09h", tentativas: 35295, atendidas: 1964, interesse: 178 },
+    { hora: "10h", tentativas: 48806, atendidas: 2290, interesse: 211 },
+    { hora: "11h", tentativas: 47469, atendidas: 2386, interesse: 189 },
+    { hora: "12h", tentativas: 40797, atendidas: 1783, interesse: 130 },
+    { hora: "13h", tentativas: 30028, atendidas: 1335, interesse: 85 },
+    { hora: "14h", tentativas: 46270, atendidas: 2092, interesse: 161 },
+    { hora: "15h", tentativas: 51737, atendidas: 2320, interesse: 197 },
+    { hora: "16h", tentativas: 53576, atendidas: 2413, interesse: 191 },
+    { hora: "17h", tentativas: 30431, atendidas: 1234, interesse: 85 },
     { hora: "18h", tentativas: 83, atendidas: 1, interesse: 0 }
   ],
   por_dia: [
@@ -91,7 +91,9 @@ export const _M = {
     { dia: "16/06", ddd: "Ter", tent: 30940, atend: 1541, naoAtend: 5547, falha: 23740, ocup: 112, int: 85, docs: 18946, hr: 4.98 },
     { dia: "17/06", ddd: "Qua", tent: 33464, atend: 1626, naoAtend: 6612, falha: 25112, ocup: 114, int: 101, docs: 21616, hr: 4.86 },
     { dia: "18/06", ddd: "Qui", tent: 30126, atend: 1477, naoAtend: 5548, falha: 22973, ocup: 128, int: 87, docs: 19623, hr: 4.9 },
-    { dia: "19/06", ddd: "Sex", tent: 10541, atend: 773, naoAtend: 1661, falha: 8068, ocup: 39, int: 60, docs: 9103, hr: 7.33 }
+    { dia: "19/06", ddd: "Sex", tent: 10541, atend: 773, naoAtend: 1661, falha: 8068, ocup: 39, int: 60, docs: 9103, hr: 7.33 },
+    { dia: "22/06", ddd: "Seg", tent: 34296, atend: 2150, naoAtend: 4956, falha: 27070, ocup: 120, int: 80, docs: 20517, hr: 6.27 },
+    { dia: "23/06", ddd: "Ter", tent: 38082, atend: 2010, naoAtend: 6045, falha: 29850, ocup: 177, int: 84, docs: 21854, hr: 5.28 }
   ],
   por_dia_hora: {
     "01/06": [
@@ -243,26 +245,48 @@ export const _M = {
       { hora: "10h", tentativas: 3843, atendidas: 226, interesse: 21 },
       { hora: "11h", tentativas: 2595, atendidas: 202, interesse: 17 },
       { hora: "12h", tentativas: 2310, atendidas: 118, interesse: 2 }
+    ],
+    "22/06": [
+      { hora: "09h", tentativas: 2896, atendidas: 272, interesse: 16 },
+      { hora: "10h", tentativas: 4463, atendidas: 224, interesse: 8 },
+      { hora: "11h", tentativas: 4391, atendidas: 289, interesse: 11 },
+      { hora: "12h", tentativas: 2380, atendidas: 131, interesse: 6 },
+      { hora: "13h", tentativas: 4087, atendidas: 241, interesse: 5 },
+      { hora: "14h", tentativas: 4590, atendidas: 319, interesse: 13 },
+      { hora: "15h", tentativas: 4426, atendidas: 262, interesse: 8 },
+      { hora: "16h", tentativas: 5148, atendidas: 321, interesse: 10 },
+      { hora: "17h", tentativas: 1915, atendidas: 91, interesse: 3 }
+    ],
+    "23/06": [
+      { hora: "09h", tentativas: 3095, atendidas: 221, interesse: 11 },
+      { hora: "10h", tentativas: 5162, atendidas: 279, interesse: 16 },
+      { hora: "11h", tentativas: 4733, atendidas: 238, interesse: 4 },
+      { hora: "12h", tentativas: 3036, atendidas: 159, interesse: 5 },
+      { hora: "13h", tentativas: 4142, atendidas: 202, interesse: 6 },
+      { hora: "14h", tentativas: 5212, atendidas: 308, interesse: 17 },
+      { hora: "15h", tentativas: 4743, atendidas: 228, interesse: 12 },
+      { hora: "16h", tentativas: 5238, atendidas: 268, interesse: 9 },
+      { hora: "17h", tentativas: 2721, atendidas: 107, interesse: 4 }
     ]
   },
   status_dist: [
-    { name: "Atendido",        value: 13658, cor: "#22c55e" },
-    { name: "Falha Telefonia", value: 231471, cor: "#ef4444" },
-    { name: "Nao Atendeu",     value: 64946,    cor: "#6b7280" },
-    { name: "Ocupado",         value: 2038,  cor: "#f59e0b" }
+    { name: "Atendido",        value: 17818, cor: "#22c55e" },
+    { name: "Falha Telefonia", value: 288391, cor: "#ef4444" },
+    { name: "Nao Atendeu",     value: 75947,    cor: "#6b7280" },
+    { name: "Ocupado",         value: 2335,  cor: "#f59e0b" }
   ],
   tabulacoes: [
-    { name: "Fora do perfl", qtd: 3024 },
-    { name: "Desligou", qtd: 2559 },
-    { name: "Ligacao caida", qtd: 2364 },
-    { name: "Engano", qtd: 1668 },
-    { name: "Informacao", qtd: 1472 },
-    { name: "Interesse", qtd: 1228 },
-    { name: "Retorno", qtd: 575 },
-    { name: "Ligacao muda", qtd: 505 },
-    { name: "NAO TABULADA PELO CRM", qtd: 106 },
-    { name: "Caixa postal", qtd: 85 },
-    { name: "Nao atende", qtd: 36 },
-    { name: "Oportunidade", qtd: 35 }
+    { name: "Fora do perfl", qtd: 4122 },
+    { name: "Desligou", qtd: 3343 },
+    { name: "Ligacao caida", qtd: 3124 },
+    { name: "Engano", qtd: 2190 },
+    { name: "Informacao", qtd: 1797 },
+    { name: "Interesse", qtd: 1384 },
+    { name: "Retorno", qtd: 751 },
+    { name: "Ligacao muda", qtd: 738 },
+    { name: "NAO TABULADA PELO CRM", qtd: 171 },
+    { name: "Caixa postal", qtd: 107 },
+    { name: "Nao atende", qtd: 46 },
+    { name: "Oportunidade", qtd: 43 }
   ],
 };
