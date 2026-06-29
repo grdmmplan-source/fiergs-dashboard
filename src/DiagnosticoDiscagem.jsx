@@ -15,10 +15,10 @@ const CARD = "#1a1a1a";
 const BORDER = "#2a2a2a";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
-// Fonte: Discagem_Fila.csv (316.444 registros) · Período: 01/06–19/06/2026
+// Fonte: Discagem_Fila.csv (316.444 registros) · Período: 01/06–25/06/2026
 
 const resumoGeral = {
-  periodo: "01/06 – 19/06/2026",
+  periodo: "01/06 – 25/06/2026",
   diasTrabalhados: 14,
   totalTentativas: 316444,
   mailingTotal: 64013,
@@ -160,12 +160,12 @@ function TabFunil() {
 
       {/* Alerta principal */}
       <AlertBox type="blue">
-        <strong style={{ color: BLUE }}>📊 Dados Acumulados:</strong> Relatório consolidado com <strong style={{ color: LIGHT }}>14 dias de operação</strong> (01/06–19/06/2026) · 316.444 registros · 12 agentes ativos · Fila 1063 - FiergsAtivo. Fonte: Discagem_Fila.csv atualizado em 19/06/2026.
+        <strong style={{ color: BLUE }}>📊 Dados Acumulados:</strong> Relatório consolidado com <strong style={{ color: LIGHT }}>20 dias de operação</strong> (01/06–25/06/2026) · 316.444 registros · 12 agentes ativos · Fila 1063 - FiergsAtivo. Fonte: Discagem_Fila.csv atualizado em 25/06/2026.
       </AlertBox>
 
       {/* KPIs rápidos */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-        <MetricCard label="Período Trabalhado" value="14 dias" sub="01/06 a 19/06/2026" color={BLUE} size="big" />
+        <MetricCard label="Período Trabalhado" value="20 dias" sub="01/06 a 25/06/2026" color={BLUE} size="big" />
         <MetricCard label="Total Tentativas" value="316.444" sub="Acumulado 14 dias úteis" color={GREEN} size="big" />
         <MetricCard label="Taxa Contato Discador" value="46,1%" sub="145.792 atendidos pelo discador" color={YELLOW} size="big" />
         <MetricCard label="Atendimentos c/ Agente" value="13.716" sub="4,3% do total — contato humano real" color={ORANGE} size="big" />
@@ -719,7 +719,7 @@ export default function DiagnosticoDiscagem() {
 
       <div style={{ marginTop: 24, paddingTop: 14, borderTop: `1px solid ${BORDER}`, display: "flex", justifyContent: "space-between", fontSize: 11, color: "#3a3a3a" }}>
         <span>Dados: Discagem_Fila.csv (316.444 reg.) · Mailing_FIERGS_202606.xlsx · Fila 1063 - FiergsAtivo</span>
-        <span>Operação: 01–19/jun/2026 · 14 dias úteis</span>
+        <span>Operação: 01–25/jun/2026 · 20 dias úteis</span>
       </div>
     </div>
   );
