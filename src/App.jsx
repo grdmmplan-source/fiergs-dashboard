@@ -1,5 +1,5 @@
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import {
   BarChart, Bar, ComposedChart, Line,
   PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid,
@@ -164,16 +164,19 @@ const fmt = n => Number(n).toLocaleString("pt-BR");
 const pct = (n, dec = 1) => Number(n).toFixed(dec).replace(".", ",") + "%";
 
 const SECOES = [
-  { id: "visaogeral",        icon: "👁",  label: "Visão Geral" },
-  { id: "cobertura",         icon: "📋", label: "Cobertura Mailing" },
-  { id: "esforco",           icon: "📊", label: "Esforço de Discagem" },
-  { id: "conversao",         icon: "↗",  label: "Conversão" },
-  { id: "coberturaempresas", icon: "🏢", label: "Cobertura Empresas" },
-  { id: "exportar",          icon: "⬇",  label: "Exportar Dados" },
-  { id: "brprodutivo",       icon: "🇧🇷", label: "Perfil BR + Produtivo" },
-  { id: "diagnostico",       icon: "🔬", label: "Diagnóstico Perfil x Discagem" },
-  { id: "performanceagente", icon: "👤", label: "Performance Agente" },
+  { id: "visaogeral",        icon: "👁",  label: "Visão Geral",                   short: "Visão"       },
+  { id: "cobertura",         icon: "📋", label: "Cobertura Mailing",              short: "Cobertura"   },
+  { id: "esforco",           icon: "📊", label: "Esforço de Discagem",            short: "Esforço"     },
+  { id: "conversao",         icon: "↗",  label: "Conversão",                      short: "Conversão"   },
+  { id: "coberturaempresas", icon: "🏢", label: "Cobertura Empresas",             short: "Empresas"    },
+  { id: "brprodutivo",       icon: "🇧🇷", label: "Perfil BR + Produtivo",         short: "BR+Prod"     },
+  { id: "diagnostico",       icon: "🔬", label: "Diagnóstico Perfil x Discagem",  short: "Diagnóstico" },
+  { id: "performanceagente", icon: "👤", label: "Performance Agente",             short: "Agente"      },
+  { id: "exportar",          icon: "⬇",  label: "Exportar Dados",                short: "Exportar"    },
 ];
+
+// Módulos que participam da rotação do Modo Painel (sem Exportar)
+const MODULOS_PAINEL = SECOES.filter(s => s.id !== "exportar").map(s => s.id);
 
 // ============================================================
 // CUSTOM TOOLTIP
@@ -681,10 +684,31 @@ function ExportarDados() {
 const MESES = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
 
 export default function App() {
-  const [campKey, setCampKey] = useState("Consolidado");
-  const [secao,   setSecao]   = useState("visaogeral");
-  const [gran,    setGran]    = useState("mensal");
-  const [sel,     setSel]     = useState(new Set());
+  const [campKey,    setCampKey]    = useState("Consolidado");
+  const [secao,      setSecao]      = useState("visaogeral");
+  const [gran,       setGran]       = useState("mensal");
+  const [sel,        setSel]        = useState(new Set());
+  const [modopainel, setModopainel] = useState(false);
+  const [contagem,   setContagem]   = useState(10);
+  const secaoRef = useRef(secao);
+  secaoRef.current = secao;
+
+  // Timer de rotação do Modo Painel — avança módulo a cada 10 s
+  useEffect(() => {
+    if (!modopainel) { setContagem(10); return; }
+    setContagem(10);
+    const interval = setInterval(() => {
+      setContagem(prev => {
+        if (prev <= 1) {
+          const idx = MODULOS_PAINEL.indexOf(secaoRef.current);
+          setSecao(MODULOS_PAINEL[(idx + 1) % MODULOS_PAINEL.length]);
+          return 10;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [modopainel]);
 
   const base = CAMPANHAS[campKey];
 
@@ -780,19 +804,9 @@ export default function App() {
         </div>
 
         <div style={{ padding: "14px 12px 4px" }}>
-          <div style={{ fontSize: 10, fontWeight: 700, color: "#3a3a3a", letterSpacing: 2, textTransform: "uppercase", padding: "0 4px", marginBottom: 6 }}>Seções</div>
-          {SECOES.map(s => (
-            <div key={s.id} onClick={() => setSecao(s.id)} style={{
-              display: "flex", alignItems: "center", gap: 9, padding: "8px 10px", borderRadius: 6,
-              fontSize: 13, cursor: "pointer", marginBottom: 2, transition: "all .15s",
-              background: secao === s.id ? "rgba(249,115,22,.15)" : "transparent",
-              color: secao === s.id ? "#f97316" : "#a0a0a0",
-              fontWeight: secao === s.id ? 600 : 400,
-            }}>
-              <span style={{ fontSize: 13, width: 16, textAlign: "center" }}>{s.icon}</span>
-              {s.label}
-            </div>
-          ))}
+          <div style={{ fontSize: 10, color: "#3a3a3a", letterSpacing: 1, padding: "0 4px" }}>
+            Módulos na barra superior ↑
+          </div>
         </div>
       </aside>
 
@@ -866,6 +880,52 @@ export default function App() {
               {periodoLabel}
             </span>
           </div>
+        </div>
+
+        {/* BARRA DE MÓDULOS */}
+        <div style={{
+          background: "#0f0f0f", borderBottom: "1px solid #2a2a2a",
+          padding: "0 28px", display: "flex", alignItems: "center",
+          gap: 4, position: "sticky", top: 57, zIndex: 49, overflowX: "auto",
+        }}>
+          {SECOES.map(s => {
+            const ativo = secao === s.id;
+            return (
+              <button key={s.id} onClick={() => { setSecao(s.id); if (modopainel) setModopainel(false); }} style={{
+                background: "transparent",
+                borderBottom: ativo ? "2px solid #f97316" : "2px solid transparent",
+                borderTop: "none", borderLeft: "none", borderRight: "none",
+                color: ativo ? "#f97316" : "#6a6a6a",
+                fontFamily: "Inter, sans-serif", fontSize: 12, fontWeight: ativo ? 700 : 500,
+                padding: "10px 14px", cursor: "pointer", whiteSpace: "nowrap",
+                transition: "all .15s",
+              }}>
+                {s.icon} {s.short}
+              </button>
+            );
+          })}
+
+          {/* Separador */}
+          <div style={{ flex: 1 }} />
+
+          {/* Botão Modo Painel */}
+          <button onClick={() => setModopainel(p => !p)} style={{
+            background: modopainel ? "rgba(168,85,247,.2)" : "rgba(249,115,22,.1)",
+            border: `1px solid ${modopainel ? "rgba(168,85,247,.5)" : "rgba(249,115,22,.3)"}`,
+            color: modopainel ? "#a855f7" : "#f97316",
+            fontFamily: "Inter, sans-serif", fontSize: 12, fontWeight: 700,
+            padding: "5px 14px", borderRadius: 6, cursor: "pointer",
+            display: "flex", alignItems: "center", gap: 6, margin: "0 0 0 8px",
+            transition: "all .2s",
+          }}>
+            {modopainel ? "⏸" : "▶"} Modo Painel
+            {modopainel && (
+              <span style={{
+                background: "#a855f7", color: "#fff", fontSize: 11, fontWeight: 800,
+                borderRadius: 10, padding: "1px 7px", minWidth: 24, textAlign: "center",
+              }}>{contagem}s</span>
+            )}
+          </button>
         </div>
 
         {/* CONTENT */}
