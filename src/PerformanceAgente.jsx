@@ -15,50 +15,42 @@ const LIGHT = "#f0f0f0";
 const CARD = "#1a1a1a";
 const BORDER = "#2a2a2a";
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
+// ─── DATA (dinâmico — gerado por atualizar.ps1 em src/dados.js) ────────────────
+import { _D } from "./dados.js";
 
-const agentes = [
-  { nome: "Mariana Nunes",    id: "6034", total: 2309, convReal: 2306, interesse: 198, oportunidade: 2,  retorno: 104, tma: 35 },
-  { nome: "Sabrina Santana",  id: "6041", total: 1666, convReal: 1664, interesse: 135, oportunidade: 6,  retorno: 123, tma: 50 },
-  { nome: "Kessia Angelo",    id: "6035", total: 1664, convReal: 1661, interesse: 213, oportunidade: 0,  retorno: 24,  tma: 39 },
-  { nome: "Paulo Victor",     id: "6042", total: 1590, convReal: 1590, interesse: 69,  oportunidade: 0,  retorno: 133, tma: 64 },
-  { nome: "Marcia Peixoto",   id: "6052", total: 1435, convReal: 1430, interesse: 133, oportunidade: 8,  retorno: 65,  tma: 51 },
-  { nome: "Simone Victoria",  id: "6037", total: 1382, convReal: 1381, interesse: 127, oportunidade: 0,  retorno: 9,   tma: 43 },
-  { nome: "Caique Fonseca",   id: "6056", total: 1347, convReal: 1346, interesse: 124, oportunidade: 8,  retorno: 24,  tma: 60 },
-  { nome: "Roseli Honorato",  id: "6044", total: 908,  convReal: 907,  interesse: 122, oportunidade: 0,  retorno: 33,  tma: 63 },
-  { nome: "Ana Paula Soares", id: "6079", total: 767,  convReal: 765,  interesse: 42,  oportunidade: 3,  retorno: 27,  tma: 35 },
-  { nome: "Lais Ferreira",    id: "6053", total: 244,  convReal: 244,  interesse: 44,  oportunidade: 0,  retorno: 12,  tma: 50 },
-  { nome: "Flavia Cunha",     id: "6081", total: 245,  convReal: 245,  interesse: 13,  oportunidade: 2,  retorno: 13,  tma: 42 },
-  { nome: "Ana Beatriz",      id: "6080", total: 149,  convReal: 149,  interesse: 12,  oportunidade: 4,  retorno: 8,   tma: 41 },
-];
+const fmt = (n) => Number(n || 0).toLocaleString("pt-BR");
 
-const evolucaoDiaria = [
-  { dia: "01/06", Mariana: 2,  Sabrina: 8,  Kessia: 0,  Paulo: 2,  Marcia: 3,  Simone: 0,  Caique: 9,  Roseli: 6 },
-  { dia: "02/06", Mariana: 6,  Sabrina: 9,  Kessia: 5,  Paulo: 4,  Marcia: 0,  Simone: 0,  Caique: 11, Roseli: 7 },
-  { dia: "03/06", Mariana: 9,  Sabrina: 12, Kessia: 11, Paulo: 5,  Marcia: 0,  Simone: 0,  Caique: 5,  Roseli: 11 },
-  { dia: "05/06", Mariana: 26, Sabrina: 15, Kessia: 15, Paulo: 21, Marcia: 3,  Simone: 17, Caique: 23, Roseli: 20 },
-  { dia: "08/06", Mariana: 31, Sabrina: 23, Kessia: 20, Paulo: 15, Marcia: 9,  Simone: 24, Caique: 20, Roseli: 25 },
-  { dia: "09/06", Mariana: 18, Sabrina: 13, Kessia: 15, Paulo: 16, Marcia: 15, Simone: 11, Caique: 13, Roseli: 13 },
-  { dia: "10/06", Mariana: 15, Sabrina: 0,  Kessia: 6,  Paulo: 10, Marcia: 13, Simone: 14, Caique: 8,  Roseli: 18 },
-  { dia: "11/06", Mariana: 38, Sabrina: 7,  Kessia: 21, Paulo: 37, Marcia: 32, Simone: 16, Caique: 9,  Roseli: 0 },
-  { dia: "12/06", Mariana: 22, Sabrina: 25, Kessia: 18, Paulo: 27, Marcia: 27, Simone: 15, Caique: 18, Roseli: 0 },
-  { dia: "15/06", Mariana: 32, Sabrina: 36, Kessia: 29, Paulo: 17, Marcia: 26, Simone: 0,  Caique: 16, Roseli: 29 },
-  { dia: "16/06", Mariana: 23, Sabrina: 36, Kessia: 12, Paulo: 10, Marcia: 20, Simone: 0,  Caique: 12, Roseli: 19 },
-  { dia: "17/06", Mariana: 29, Sabrina: 32, Kessia: 20, Paulo: 13, Marcia: 31, Simone: 17, Caique: 6,  Roseli: 5 },
-  { dia: "18/06", Mariana: 36, Sabrina: 33, Kessia: 34, Paulo: 19, Marcia: 19, Simone: 12, Caique: 0,  Roseli: 0 },
-  { dia: "19/06", Mariana: 14, Sabrina: 11, Kessia: 24, Paulo: 3,  Marcia: 18, Simone: 5,  Caique: 0,  Roseli: 0 },
-];
+const agentes = _D.agentes;
 
-const AGENT_COLORS = {
-  Mariana:  "#22c55e",
-  Sabrina:  "#3b82f6",
-  Kessia:   "#f59e0b",
-  Paulo:    "#f97316",
-  Marcia:   "#a855f7",
-  Simone:   "#06b6d4",
-  Caique:   "#ec4899",
-  Roseli:   "#84cc16",
-};
+// Eixo de dias e dia-da-semana (derivados de _D)
+const DIAS = _D.dias || [];
+const DIA_SEM = {};
+_D.por_dia.forEach(d => {
+  const m = /^(\d{2}\/\d{2})\s*\(([^)]+)\)/.exec(d.dia);
+  if (m) DIA_SEM[m[1]] = m[2];
+});
+
+// Top agentes com série diária (positivos + volume)
+const topAgD = _D.agente_dia || [];
+
+// Paleta para as linhas/colunas por agente (chaveado por 1º nome)
+const PALETTE = ["#22c55e", "#3b82f6", "#f59e0b", "#f97316", "#a855f7", "#06b6d4", "#ec4899", "#84cc16"];
+const AGENT_COLORS = {};
+topAgD.forEach((a, i) => { AGENT_COLORS[a.primeiro] = PALETTE[i % PALETTE.length]; });
+
+// Evolução diária de positivos: uma linha por dia, uma coluna por agente (1º nome)
+const evolucaoDiaria = DIAS.map(dia => {
+  const row = { dia };
+  topAgD.forEach(a => {
+    const dd = a.dias.find(x => x.dia === dia);
+    row[a.primeiro] = dd ? dd.pos : 0;
+  });
+  return row;
+});
+
+const periodoTxt = _D.resumo.periodo;
+const diasTrab = _D.resumo.diasTrabalhados;
+const nAgentesAtivos = agentes.filter(a => a.total > 100).length;
 
 // Compute derived metrics
 const agentesComp = agentes.map(ag => {
@@ -116,6 +108,10 @@ function TabRanking() {
   const totalOpor = agentesComp.reduce((s, a) => s + a.oportunidade, 0);
   const totalRet = agentesComp.reduce((s, a) => s + a.retorno, 0);
   const avgTma = Math.round(agentesComp.filter(a => a.total > 100).reduce((s, a) => s + a.tma, 0) / agentesComp.filter(a => a.total > 100).length);
+  const topInt  = [...agentesComp].reduce((m, a) => a.interesse > (m.interesse || 0) ? a : m, {});
+  const topPos  = [...agentesComp].reduce((m, a) => a.positivos > (m.positivos || 0) ? a : m, {});
+  const topOpor = [...agentesComp].reduce((m, a) => a.oportunidade > (m.oportunidade || 0) ? a : m, {});
+  const fn = (a) => a && a.nome ? a.nome.split(" ")[0] : "—";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -130,7 +126,7 @@ function TabRanking() {
 
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 4, padding: 20 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-          <div style={{ color: LIGHT, fontSize: 15, fontWeight: 700 }}>Ranking — 20 Dias de Operação</div>
+          <div style={{ color: LIGHT, fontSize: 15, fontWeight: 700 }}>Ranking — {diasTrab} Dias de Operação</div>
           <div style={{ display: "flex", gap: 6 }}>
             {[
               ["positivos", "Positivos"],
@@ -190,12 +186,12 @@ function TabRanking() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 16 }}>
           <AlertBox type="green">
-            🏆 <strong style={{ color: GREEN }}>Top conversão: Kessia Angelo — 213 interesses em 20 dias</strong><br />
-            Kessia lidera em interesse absoluto. Mariana lidera em positivos totais (304) pela constância em retornos (104).
+            🏆 <strong style={{ color: GREEN }}>Top conversão: {fn(topInt)} — {topInt.interesse} interesses em {diasTrab} dias</strong><br />
+            {fn(topInt)} lidera em interesse absoluto. {fn(topPos)} lidera em positivos totais ({topPos.positivos}) somando interesse, oportunidade e retorno.
           </AlertBox>
           <AlertBox type="blue">
-            💼 <strong style={{ color: BLUE }}>Oportunidades quentes: Marcia (8) e Caique (8) lideram</strong><br />
-            35 oportunidades no total — pipeline imediato para fechamento. Roseli e Paulo lideram em retornos acumulados.
+            💼 <strong style={{ color: BLUE }}>Oportunidades quentes: {fn(topOpor)} ({topOpor.oportunidade}) lidera</strong><br />
+            {totalOpor} oportunidades no total — pipeline imediato para fechamento.
           </AlertBox>
         </div>
       </div>
@@ -206,6 +202,11 @@ function TabRanking() {
 function TabVisual() {
   const sorted = [...agentesComp].sort((a, b) => b.positivos - a.positivos);
   const sortedTma = [...agentesComp].filter(a => a.total > 100).sort((a, b) => b.tma - a.tma);
+  const fn = (a) => a.nome.split(" ")[0];
+  const bandAlta  = sortedTma.filter(a => a.tma > 55);
+  const bandMedia = sortedTma.filter(a => a.tma > 40 && a.tma <= 55);
+  const bandBaixa = sortedTma.filter(a => a.tma <= 40);
+  const listaBanda = (arr) => arr.slice(0, 3).map(a => `${fn(a)} (${a.tma}s)`).join(" · ") || "—";
 
   const scatterData = agentesComp.filter(a => a.total > 100).map(a => ({
     nome: a.nome.split(" ")[0],
@@ -219,7 +220,7 @@ function TabVisual() {
 
       {/* Positivos por agente */}
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 4, padding: 20 }}>
-        <SectionHeader title="Positivos por Agente (Interesse + Oportunidade + Retorno)" badge={{ text: "20 dias", color: GREEN }} />
+        <SectionHeader title="Positivos por Agente (Interesse + Oportunidade + Retorno)" badge={{ text: `${diasTrab} dias`, color: GREEN }} />
         <ResponsiveContainer width="100%" height={220}>
           <BarChart data={sorted} barCategoryGap="20%">
             <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -253,18 +254,18 @@ function TabVisual() {
         </ResponsiveContainer>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginTop: 12 }}>
           <div style={{ background: GREEN + "11", border: `1px solid ${GREEN}33`, borderRadius: 4, padding: "10px 12px" }}>
-            <div style={{ color: GREEN, fontSize: 11, fontWeight: 700 }}>Acima de 60s</div>
-            <div style={{ color: LIGHT, fontSize: 13, fontWeight: 700, marginTop: 4 }}>Paulo (64s) · Roseli (63s) · Caique (60s)</div>
+            <div style={{ color: GREEN, fontSize: 11, fontWeight: 700 }}>Acima de 55s</div>
+            <div style={{ color: LIGHT, fontSize: 13, fontWeight: 700, marginTop: 4 }}>{listaBanda(bandAlta)}</div>
             <div style={{ color: "#9a9a9a", fontSize: 11, marginTop: 2 }}>Conversa mais longa — maior engajamento com decisor</div>
           </div>
           <div style={{ background: YELLOW + "11", border: `1px solid ${YELLOW}33`, borderRadius: 4, padding: "10px 12px" }}>
-            <div style={{ color: YELLOW, fontSize: 11, fontWeight: 700 }}>40 a 60s</div>
-            <div style={{ color: LIGHT, fontSize: 13, fontWeight: 700, marginTop: 4 }}>Marcia (51s) · Sabrina (50s) · Lais (50s)</div>
+            <div style={{ color: YELLOW, fontSize: 11, fontWeight: 700 }}>40 a 55s</div>
+            <div style={{ color: LIGHT, fontSize: 13, fontWeight: 700, marginTop: 4 }}>{listaBanda(bandMedia)}</div>
             <div style={{ color: "#9a9a9a", fontSize: 11, marginTop: 2 }}>Faixa produtiva — script sendo completado</div>
           </div>
           <div style={{ background: RED + "11", border: `1px solid ${RED}33`, borderRadius: 4, padding: "10px 12px" }}>
             <div style={{ color: RED, fontSize: 11, fontWeight: 700 }}>Abaixo de 40s</div>
-            <div style={{ color: LIGHT, fontSize: 13, fontWeight: 700, marginTop: 4 }}>Mariana (35s) · Ana Paula (35s)</div>
+            <div style={{ color: LIGHT, fontSize: 13, fontWeight: 700, marginTop: 4 }}>{listaBanda(bandBaixa)}</div>
             <div style={{ color: "#9a9a9a", fontSize: 11, marginTop: 2 }}>Alto volume, TMA curto — volume vs. qualidade</div>
           </div>
         </div>
@@ -325,13 +326,13 @@ function TabVisual() {
 }
 
 function TabEvolucao() {
-  const top5 = ["Mariana", "Sabrina", "Kessia", "Paulo", "Marcia"];
+  const top5 = topAgD.slice(0, 5).map(a => a.primeiro);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
 
       <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: 4, padding: 20 }}>
-        <SectionHeader title="Evolução de Leads Positivos por Agente — 14 Dias" badge={{ text: "Top 5 por volume", color: GREEN }} />
+        <SectionHeader title={`Evolução de Leads Positivos por Agente — ${diasTrab} Dias`} badge={{ text: "Top 5 por volume", color: GREEN }} />
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={evolucaoDiaria}>
             <CartesianGrid strokeDasharray="3 3" stroke={BORDER} />
@@ -346,13 +347,13 @@ function TabEvolucao() {
         </ResponsiveContainer>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginTop: 14 }}>
           <AlertBox type="green">
-            📈 <strong style={{ color: GREEN }}>Crescimento consistente</strong> — Volume de positivos por dia cresceu de 31 (01/06) para picos de 200+ (15/06). Curva de aprendizado da operação ainda ativa.
+            📈 <strong style={{ color: GREEN }}>Crescimento consistente</strong> — Volume de positivos por dia cresceu ao longo da operação. Curva de aprendizado do time em evolução.
           </AlertBox>
           <AlertBox type="yellow">
-            ⚠ <strong style={{ color: YELLOW }}>Ausências impactam resultado</strong> — Dias 10/06 e 11-12/06 mostram oscilações por agentes ausentes. Caique e Roseli estiveram ausentes em 18-19/06.
+            ⚠ <strong style={{ color: YELLOW }}>Ausências impactam resultado</strong> — Oscilações na linha refletem dias com agentes ausentes. Constância na presença é o principal fator de acúmulo.
           </AlertBox>
           <AlertBox type="blue">
-            📋 <strong style={{ color: BLUE }}>Mariana mais consistente</strong> — Única agente ativa nos 14 dias. Maior constância = maior acumulado (304 positivos).
+            📋 <strong style={{ color: BLUE }}>Líder de constância</strong> — {topAgD.length ? topAgD[0].primeiro : "—"} lidera em volume acumulado no período. Maior constância = maior acumulado de positivos.
           </AlertBox>
         </div>
       </div>
@@ -377,44 +378,14 @@ function TabEvolucao() {
 }
 
 function TabPresenca() {
-  const agenteDias = {
-    "Mariana Nunes":   ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Sabrina Santana": ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Kessia Angelo":   ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Paulo Victor":    ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Marcia Peixoto":  ["01/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Simone Victoria": ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","17/06","18/06","19/06"],
-    "Caique Fonseca":  ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06"],
-    "Roseli Honorato": ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","15/06","16/06","17/06"],
-    "Ana Paula":       ["08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Lais Ferreira":   ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Flavia Cunha":    ["08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"],
-    "Ana Beatriz":     ["01/06","02/06","03/06","05/06","08/06","09/06"],
-  };
-
-  const allDays = ["01/06","02/06","03/06","05/06","08/06","09/06","10/06","11/06","12/06","15/06","16/06","17/06","18/06","19/06"];
-  const agentVolume = {
-    "Mariana Nunes":   [34,54,47,125,127,82,85,283,293,251,252,236,234,206],
-    "Sabrina Santana": [28,45,51,93,122,61,18,20,233,211,237,218,232,97],
-    "Kessia Angelo":   [8,44,37,101,122,85,58,177,176,212,148,172,194,130],
-    "Paulo Victor":    [28,48,44,105,112,79,81,185,174,172,154,162,154,92],
-    "Marcia Peixoto":  [19,0,0,0,0,64,73,188,212,179,191,164,193,152],
-    "Simone Victoria": [4,39,49,105,105,92,63,184,221,0,0,191,237,92],
-    "Caique Fonseca":  [39,54,58,122,122,96,65,135,213,139,178,126,0,0],
-    "Roseli Honorato": [29,46,42,92,121,73,76,0,0,214,178,37,0,0],
-    "Ana Paula":       [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    "Lais Ferreira":   [26,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    "Flavia Cunha":    [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    "Ana Beatriz":     [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  };
-
-  const diasSemanas = {
-    "01/06": "Seg", "02/06": "Ter", "03/06": "Qua",
-    "05/06": "Sex", "08/06": "Seg", "09/06": "Ter",
-    "10/06": "Qua", "11/06": "Qui", "12/06": "Sex",
-    "15/06": "Seg", "16/06": "Ter", "17/06": "Qua",
-    "18/06": "Qui", "19/06": "Sex",
-  };
+  const allDays = DIAS;
+  const diasSemanas = DIA_SEM;
+  // Presença + volume por agente (top por volume), derivado de _D.agente_dia
+  const presenca = topAgD.map(a => {
+    const volByDay = {};
+    a.dias.forEach(d => { volByDay[d.dia] = d.vol; });
+    return { nome: a.nome, volumes: allDays.map(d => volByDay[d] || 0) };
+  });
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -437,15 +408,14 @@ function TabPresenca() {
               </tr>
             </thead>
             <tbody>
-              {Object.entries(agenteDias).map(([nome, diasAtivos], ri) => {
-                const volumes = agentVolume[nome] || allDays.map(() => 0);
+              {presenca.map(({ nome, volumes }) => {
                 const total = volumes.reduce((s, v) => s + v, 0);
                 return (
                   <tr key={nome} style={{ borderBottom: `1px solid ${BORDER}` }}>
                     <td style={{ padding: "7px 12px", color: LIGHT, fontWeight: 600 }}>{nome}</td>
                     {allDays.map((d, di) => {
                       const vol = volumes[di] || 0;
-                      const ativo = diasAtivos.includes(d);
+                      const ativo = vol > 0;
                       const intensity = vol > 200 ? 1 : vol > 100 ? 0.7 : vol > 50 ? 0.45 : vol > 0 ? 0.25 : 0;
                       return (
                         <td key={d} style={{ padding: "4px", textAlign: "center" }}>
@@ -489,7 +459,7 @@ function TabPresenca() {
       </div>
 
       <AlertBox type="yellow">
-        <strong style={{ color: YELLOW }}>Insights de Presença:</strong> Mariana Nunes, Sabrina, Kessia, Paulo Victor e Lais foram os agentes mais presentes (14 dias). Marcia Peixoto iniciou a partir do dia 09/06. Caique e Roseli encerraram antes da semana final (17-19/06). Ana Beatriz esteve ativa apenas nas primeiras semanas.
+        <strong style={{ color: YELLOW }}>Insights de Presença:</strong> A tabela mostra o volume diário de chamadas por agente ao longo dos {diasTrab} dias de operação ({periodoTxt}). Células vazias indicam ausência no dia. Constância de presença é o principal fator do volume acumulado.
       </AlertBox>
     </div>
   );
@@ -522,7 +492,7 @@ export default function PerformanceAgente() {
             <span style={{ fontSize: 15, fontWeight: 700 }}>Análise Completa de Agentes</span>
           </div>
           <div style={{ fontSize: 12, color: "#9a9a9a" }}>
-            12 agentes ativos · 01/06–25/06/2026 · 20 dias úteis · Fonte: Discagem_Fila.csv
+            {nAgentesAtivos} agentes ativos · {periodoTxt} · {diasTrab} dias úteis · Fonte: Discagem_Fila.csv
           </div>
         </div>
         <div style={{ display: "flex", gap: 24, textAlign: "right", paddingRight: 4 }}>
@@ -556,7 +526,7 @@ export default function PerformanceAgente() {
 
       <div style={{ marginTop: 24, paddingTop: 14, borderTop: `1px solid ${BORDER}`, display: "flex", justifyContent: "space-between", fontSize: 11, color: "#3a3a3a" }}>
         <span>Fonte: Discagem_Fila.csv · Fila 1063 - FiergsAtivo</span>
-        <span>Operação: 01–25/jun/2026 · 20 dias úteis</span>
+        <span>Operação: {periodoTxt} · {diasTrab} dias úteis</span>
       </div>
     </div>
   );

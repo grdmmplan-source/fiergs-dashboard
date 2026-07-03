@@ -14,4 +14,6 @@ export default defineConfig({
   ...(root ? { root } : {}),
   plugins: [react()],
   base: '/fiergs-dashboard/',
+  // Em drive de rede o file-watch nativo falha (UNKNOWN: watch) — usa polling
+  ...(root ? { server: { watch: { usePolling: true, interval: 300 } } } : {}),
 })

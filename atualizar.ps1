@@ -12,10 +12,16 @@ Set-Location $PSScriptRoot
 
 # ── CONFIGURACOES FIXAS (atualizar se o mailing mudar) ────────────
 $MAILING_CARGA = 64013
+$COM_TELEFONE  = 20230   # registros do mailing com telefone (perfil da carteira)
 $CFG = @{
   "Fiergs0106" = @{ label = "Fiergs0106 - Ativo"; carteira = "530";  discador = 20184 }
   "MGE_1063"   = @{ label = "MGE 1063 - Ativo";   carteira = "1063"; discador = 64013 }
 }
+
+# NOTA: rotulos de STATUS_NEGOCIO sao emitidos CRUS (ASCII) no dados.js;
+# a normalizacao para rotulos com acento + cores e feita no componente JSX
+# (DiagnosticoDiscagem.jsx). Isso evita mojibake por o PS 5.1 ler .ps1 sem BOM
+# como Windows-1252.
 
 # ── MAPEAMENTO ISDN ───────────────────────────────────────────────
 $isdnMap = @{
@@ -236,6 +242,168 @@ function Get-CampJS($rows, $campName) {
   return $jsOut
 }
 
+# ═════════════════════════════════════════════════════════════════
+# 2b. DIAGNOSTICO CONSOLIDADO (_D) - sobre TODAS as linhas
+#     Alimenta as abas Diagnostico e Agente (antes hard-coded).
+# ═════════════════════════════════════════════════════════════════
+function Get-DiagJS($rows) {
+  $cpcSet  = @{}; foreach ($x in $cpcCats)  { $cpcSet[$x]  = 1 }
+  $cpcaSet = @{}; foreach ($x in $cpcaCats) { $cpcaSet[$x] = 1 }
+
+  $tent=0; $atendD=0; $comAg=0; $cpc=0; $cpca=0; $inter=0; $retor=0; $oport=0
+  $negMap=@{}; $isdnCnt=@{}; $horaMap=@{}; $diaMap=@{}; $agMap=@{}
+
+  foreach ($row in $rows) {
+    $tent++
+    $atend = ($row.STATUS -eq "Atendido")
+    if ($atend) { $atendD++ }
+
+    $ag = $row.AGENTE
+    $temAgente = ($ag -ne "---" -and $ag -ne "")
+    if ($temAgente) { $comAg++ }
+
+    $neg = $row.STATUS_NEGOCIO
+    $isPos = $false
+    if ($neg -ne "") {
+      if ($cpcSet.ContainsKey($neg))  { $cpc++  }
+      if ($cpcaSet.ContainsKey($neg)) { $cpca++ }
+      if ($neg -eq "Interesse")    { $inter++; $isPos=$true }
+      if ($neg -eq "Retorno")      { $retor++; $isPos=$true }
+      if ($neg -eq "Oportunidade") { $oport++; $isPos=$true }
+      if ($negMap.ContainsKey($neg)) { $negMap[$neg]++ } else { $negMap[$neg]=1 }
+    }
+
+    $code = $row.ISDN_CODE.Trim()
+    if ($code -ne "") {
+      if ($isdnCnt.ContainsKey($code)) { $isdnCnt[$code]++ } else { $isdnCnt[$code]=1 }
+    }
+
+    # Parse data (mesma logica do Get-CampJS)
+    $data = $row.DATA
+    if ($data.Length -ge 11) {
+      $dia="?"; $hora="?"; $ddd="?"
+      try {
+        if ($data[4] -eq '-') {
+          $dia=$data.Substring(8,2)+"/"+$data.Substring(5,2); $hora=$data.Substring(11,2)+"h"
+          $dateStr=$data.Substring(0,10)
+        } else {
+          $dia=$data.Substring(0,2)+"/"+$data.Substring(3,2); $hora=$data.Substring(11,2)+"h"
+          $dateStr=$data.Substring(6,4)+"-"+$data.Substring(3,2)+"-"+$data.Substring(0,2)
+        }
+        $dt=[DateTime]::ParseExact($dateStr,"yyyy-MM-dd",[cultureinfo]::InvariantCulture)
+        $ddd=$dowPt[$dt.DayOfWeek.ToString()]
+      } catch { $dia="?" }
+
+      if ($dia -ne "?") {
+        if (-not $diaMap.ContainsKey($dia)) { $diaMap[$dia]=@{t=0;a=0;ag=0;pos=0;ddd=$ddd} }
+        $d=$diaMap[$dia]; $d.t++
+        if ($atend)     { $d.a++ }
+        if ($temAgente) { $d.ag++ }
+        if ($isPos)     { $d.pos++ }
+      }
+      if ($hora -ne "?") {
+        if (-not $horaMap.ContainsKey($hora)) { $horaMap[$hora]=@(0,0) }
+        $horaMap[$hora][0]++
+        if ($atend) { $horaMap[$hora][1]++ }
+      }
+    }
+
+    # Stats por agente
+    if ($temAgente) {
+      if (-not $agMap.ContainsKey($ag)) { $agMap[$ag]=@{t=0;conv=0;secs=0;int=0;op=0;ret=0;dias=@{}} }
+      $a=$agMap[$ag]; $a.t++
+      $sec=0; $tc=$row.TEMPO_DE_CONVERSACAO
+      if ($tc -and $tc.Length -ge 8 -and $tc[2] -eq ':') {
+        try { $sec=[int]$tc.Substring(0,2)*3600+[int]$tc.Substring(3,2)*60+[int]$tc.Substring(6,2) } catch { $sec=0 }
+      }
+      if ($sec -gt 0) { $a.conv++; $a.secs+=$sec }
+      if ($neg -eq "Interesse")    { $a.int++ }
+      if ($neg -eq "Oportunidade") { $a.op++  }
+      if ($neg -eq "Retorno")      { $a.ret++ }
+      # Por agente x dia (volume e positivos) — alimenta a aba Agente
+      if ($dia -ne "?") {
+        if (-not $a.dias.ContainsKey($dia)) { $a.dias[$dia]=@{vol=0;pos=0} }
+        $a.dias[$dia].vol++
+        if ($isPos) { $a.dias[$dia].pos++ }
+      }
+    }
+  }
+
+  $positivos = $inter + $retor + $oport
+  $taxaD   = pct $atendD $tent
+  $taxaR   = pct $comAg  $tent
+  $pctCpc  = pct $cpc    $comAg
+  $pctCpca = pct $cpca   $cpc
+
+  $datas   = @($diaMap.Keys | Sort-Object { ($_ -split "/")[1] + ($_ -split "/")[0] })
+  $dtMin   = if ($datas.Count -gt 0) { $datas[0] }  else { "?/?" }
+  $dtMax   = if ($datas.Count -gt 0) { $datas[-1] } else { "?/?" }
+  $periodo = "$dtMin/2026 a $dtMax/2026"
+  $diasTrab = $datas.Count
+
+  $porDiaLines = $datas | ForEach-Object {
+    $d=$diaMap[$_]; $tx=pct $d.a $d.t
+    "    { dia: `"$_ ($($d.ddd))`", total: $($d.t), atendido: $($d.a), comAgente: $($d.ag), positivos: $($d.pos), taxaContato: $tx }"
+  }
+  $porHoraLines = $horaMap.Keys | Sort-Object | ForEach-Object {
+    $h=$horaMap[$_]; $tx=pct $h[1] $h[0]
+    "    { hora: `"$_`", total: $($h[0]), atendido: $($h[1]), taxa: $tx }"
+  }
+  $agLines = $agMap.Keys | Sort-Object { -$agMap[$_].t } | ForEach-Object {
+    $a=$agMap[$_]; $idx=$_.IndexOf("-")
+    $id   = if ($idx -gt 0) { $_.Substring(0,$idx) } else { "" }
+    $nome = if ($idx -gt 0) { $_.Substring($idx+1) } else { $_ }
+    $tma  = if ($a.conv -gt 0) { [int]($a.secs / $a.conv) } else { 0 }
+    "    { nome: `"$nome`", id: `"$id`", total: $($a.t), atendidos: $($a.t), convReal: $($a.conv), tma: $tma, interesse: $($a.int), oportunidade: $($a.op), retorno: $($a.ret) }"
+  }
+  $negLines = $negMap.Keys | Sort-Object { -$negMap[$_] } | ForEach-Object {
+    "    { name: `"$_`", value: $($negMap[$_]) }"
+  }
+  $isdnSorted = @($isdnCnt.Keys | Sort-Object { -$isdnCnt[$_] })
+  $top = @($isdnSorted | Select-Object -First 7)
+  $isdnLines = @(); $topSum = 0
+  foreach ($c in $top) {
+    $cnt=$isdnCnt[$c]; $topSum+=$cnt; $p=pct $cnt $tent
+    $isdnLines += "    { code: `"$c`", count: $cnt, pct: $p }"
+  }
+  $outros = $tent - $topSum
+  if ($outros -gt 0) { $p=pct $outros $tent; $isdnLines += "    { code: `"Outros`", count: $outros, pct: $p }" }
+
+  # Top 8 agentes por volume -> evolucao/presenca por dia (aba Agente)
+  $topAg = @($agMap.Keys | Sort-Object { -$agMap[$_].t } | Select-Object -First 8)
+  $agDiaLines = $topAg | ForEach-Object {
+    $a=$agMap[$_]; $idx=$_.IndexOf("-")
+    $id   = if ($idx -gt 0) { $_.Substring(0,$idx) } else { "" }
+    $nome = if ($idx -gt 0) { $_.Substring($idx+1) } else { $_ }
+    $primeiro = ($nome -split " ")[0]
+    $dLines = $datas | ForEach-Object {
+      $dd=$_; if ($a.dias.ContainsKey($dd)) { $v=$a.dias[$dd] } else { $v=@{vol=0;pos=0} }
+      "        { dia: `"$dd`", vol: $($v.vol), pos: $($v.pos) }"
+    }
+    "    { nome: `"$nome`", primeiro: `"$primeiro`", id: `"$id`", dias: [`n" + ($dLines -join ",`n") + "`n    ] }"
+  }
+  $diasAxis = ($datas | ForEach-Object { "`"$_`"" }) -join ", "
+
+  $jsOut  = "export const _D = {`n"
+  $jsOut += "  resumo: {`n"
+  $jsOut += "    periodo: `"$periodo`", diasTrabalhados: $diasTrab,`n"
+  $jsOut += "    totalTentativas: $tent, mailingTotal: $MAILING_CARGA, comTelefone: $COM_TELEFONE,`n"
+  $jsOut += "    atendidosDiscador: $atendD, taxaContatoDiscador: $taxaD,`n"
+  $jsOut += "    comAgente: $comAg, taxaContatoReal: $taxaR,`n"
+  $jsOut += "    interesse: $inter, retorno: $retor, oportunidade: $oport, totalPositivos: $positivos,`n"
+  $jsOut += "    cpc: $cpc, cpca: $cpca, pctCpc: $pctCpc, pctCpca: $pctCpca`n"
+  $jsOut += "  },`n"
+  $jsOut += "  por_dia: [`n" + ($porDiaLines -join ",`n") + "`n  ],`n"
+  $jsOut += "  por_hora: [`n" + ($porHoraLines -join ",`n") + "`n  ],`n"
+  $jsOut += "  agentes: [`n" + ($agLines -join ",`n") + "`n  ],`n"
+  $jsOut += "  status_negocio: [`n" + ($negLines -join ",`n") + "`n  ],`n"
+  $jsOut += "  isdn: [`n" + ($isdnLines -join ",`n") + "`n  ],`n"
+  $jsOut += "  dias: [$diasAxis],`n"
+  $jsOut += "  agente_dia: [`n" + ($agDiaLines -join ",`n") + "`n  ],`n"
+  $jsOut += "};"
+  return $jsOut
+}
+
 $blocks = @()
 foreach ($name in @("Fiergs0106","MGE_1063")) {
   if ($name -eq "MGE_1063") {
@@ -247,6 +415,9 @@ foreach ($name in @("Fiergs0106","MGE_1063")) {
   if ($rows.Count -gt 0) { $blocks += Get-CampJS $rows $name }
   else { Write-Host "  AVISO: sem dados para $name" -ForegroundColor Yellow }
 }
+
+Write-Host "  Diagnostico consolidado (_D): $($all.Count) registros" -ForegroundColor Gray
+$blocks += Get-DiagJS $all
 
 # ═════════════════════════════════════════════════════════════════
 # 3. GERAR src/dados.js
