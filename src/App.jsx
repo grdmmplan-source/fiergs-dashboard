@@ -167,7 +167,7 @@ const SECOES = [
   { id: "visaogeral",        icon: "👁",  label: "Visão Geral",                   short: "Visão"       },
   { id: "cobertura",         icon: "📋", label: "Cobertura Mailing",              short: "Cobertura"   },
   { id: "esforco",           icon: "📊", label: "Esforço de Discagem",            short: "Esforço"     },
-  { id: "conversao",         icon: "↗",  label: "Conversão",                      short: "Conversão"   },
+  // { id: "conversao",         icon: "↗",  label: "Conversão",                      short: "Conversão"   }, // oculta a pedido
   { id: "coberturaempresas", icon: "🏢", label: "Cobertura Empresas",             short: "Empresas"    },
   { id: "brprodutivo",       icon: "🇧🇷", label: "Perfil BR + Produtivo",         short: "BR+Prod"     },
   { id: "diagnostico",       icon: "🔬", label: "Diagnóstico Perfil x Discagem",  short: "Diagnóstico" },
