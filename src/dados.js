@@ -1,5 +1,5 @@
 ﻿// AUTO-GERADO por atualizar.ps1 - nao editar manualmente
-// Ultima atualizacao: 03/07/2026 13:26
+// Ultima atualizacao: 03/07/2026 13:39
 
 export const _F = {
   label: "Fiergs0106 - Ativo", carteira: "530",
@@ -10,8 +10,8 @@ export const _F = {
   total_tentativas: 4305, atendidos: 34,
   nao_atendeu: 1557, falha_telefonia: 2640, ocupado: 74,
   hit_rate_pct: 0.79,
-  cpc: 8, cpca: 1, pct_cpc: 23.53, pct_cpca: 12.5,
-  interessados: 1, contatos_decisor: 8,
+  cpc: 6, cpca: 1, pct_cpc: 17.65, pct_cpca: 16.67,
+  interessados: 1, contatos_decisor: 6,
   media_tent_empresa: 1, sem_sucesso: 4271,
   acordos: 0, conversao_pct: 0,
   por_hora: [
@@ -61,8 +61,8 @@ export const _M = {
   total_tentativas: 568616, atendidos: 27619,
   nao_atendeu: 103407, falha_telefonia: 434521, ocupado: 3067,
   hit_rate_pct: 4.86,
-  cpc: 12272, cpca: 2159, pct_cpc: 44.43, pct_cpca: 17.59,
-  interessados: 1998, contatos_decisor: 12272,
+  cpc: 4934, cpca: 2159, pct_cpc: 17.86, pct_cpca: 43.76,
+  interessados: 1998, contatos_decisor: 4934,
   media_tent_empresa: 10, sem_sucesso: 29495,
   acordos: 0, conversao_pct: 0,
   por_hora: [
@@ -380,7 +380,7 @@ export const _D = {
     atendidosDiscador: 248867, taxaContatoDiscador: 43.43,
     comAgente: 27698, taxaContatoReal: 4.83,
     interesse: 2002, retorno: 1348, oportunidade: 161, totalPositivos: 3511,
-    cpc: 12285, cpca: 2163, pctCpc: 44.35, pctCpca: 17.61
+    cpc: 4945, cpca: 2163, pctCpc: 17.85, pctCpca: 43.74
   },
   por_dia: [
     { dia: "01/06 (Seg)", total: 12247, atendido: 6733, comAgente: 195, positivos: 31, taxaContato: 54.98 },

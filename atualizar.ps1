@@ -32,7 +32,7 @@ $isdnMap = @{
   "34"="Canal_Indisponivel"; "58"="Canal_Indisponivel"
 }
 
-$cpcCats  = @("Desligou","Informacao","Interesse","Oportunidade","Retorno")
+$cpcCats  = @("Informacao","Interesse","Oportunidade")
 $cpcaCats = @("Interesse","Oportunidade")
 $naCats   = @("Sem_Resposta","Numero_Inexistente","Chamada_Rejeitada","Fora_Servico","Canal_Indisponivel")
 $dowPt    = @{ Monday="Seg"; Tuesday="Ter"; Wednesday="Qua"; Thursday="Qui"; Friday="Sex"; Saturday="Sab"; Sunday="Dom" }
